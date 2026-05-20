@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kit Admin — EBYG Automation</title>
+<title>Kit Admin — Jeong AI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -141,7 +141,7 @@ body{font-family:var(--sans);background:var(--bg);color:#1E293B;min-height:100vh
 <!-- LOGIN -->
 <div id="login-screen">
   <div class="login-card">
-    <div class="login-logo">EBYG AUTOMATION</div>
+    <div class="login-logo">JEONG AI</div>
     <div class="login-title">Admin Dashboard</div>
     <div class="login-sub">Kit license key monitoring</div>
     <input class="login-input" id="admin-pass" type="password" placeholder="Admin password" onkeydown="if(event.key==='Enter')adminLogin()">
@@ -155,7 +155,7 @@ body{font-family:var(--sans);background:var(--bg);color:#1E293B;min-height:100vh
 <!-- ADMIN APP -->
 <div id="admin-screen">
   <div class="topbar">
-    <span class="topbar-brand">EBYG <span>Automation</span></span>
+    <span class="topbar-brand">Jeong <span>AI</span></span>
     <div class="topbar-divider"></div>
     <span class="topbar-section">License Monitor</span>
     <div class="topbar-sp"></div>
@@ -230,11 +230,11 @@ body{font-family:var(--sans);background:var(--bg);color:#1E293B;min-height:100vh
 
 <script>
 // ─── CONFIG ─────────────────────────────────────────────────
-const ADMIN_PASS_HASH_KEY = 'ebyg_admin_ph';
-const SUPA_URL_KEY = 'ebyg_supa_url';
-const SUPA_KEY_KEY = 'ebyg_supa_key';
+const ADMIN_PASS_HASH_KEY = 'jai_admin_ph';
+const SUPA_URL_KEY = 'jai_supa_url';
+const SUPA_KEY_KEY = 'jai_supa_key';
 // Simple admin password check (store a bcrypt hash in production)
-const ADMIN_PASSWORD = 'ebyg-admin-2024'; // CHANGE THIS
+const ADMIN_PASSWORD = 'jai-admin-2024'; // CHANGE THIS
 
 let supabaseUrl = '', supabaseKey = '';
 let allData = [];

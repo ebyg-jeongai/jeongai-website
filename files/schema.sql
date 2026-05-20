@@ -1,5 +1,5 @@
 -- ─────────────────────────────────────────────────────────────
--- EBYG Automation — AI Starter Kit
+-- Jeong AI — AI Starter Kit
 -- Supabase SQL Schema
 -- Run this in your Supabase SQL editor to set up the database
 -- ─────────────────────────────────────────────────────────────
@@ -8,7 +8,7 @@
 -- One row per key sold. Lemon Squeezy webhook creates these.
 CREATE TABLE IF NOT EXISTS license_keys (
   id              BIGSERIAL PRIMARY KEY,
-  key             TEXT NOT NULL UNIQUE,         -- e.g. EBYG-A1B2-C3D4-E5F6
+  key             TEXT NOT NULL UNIQUE,         -- e.g. JAI-A1B2-C3D4-E5F6
   product         TEXT DEFAULT 'ai-starter-kit',
   order_id        TEXT,                          -- Lemon Squeezy order ID
   customer_email  TEXT,                          -- buyer's email (from LS webhook)
@@ -85,5 +85,5 @@ ORDER BY sessions_30d DESC NULLS LAST;
 -- SAMPLE DATA — Test with this before going live
 -- ─────────────────────────────────────────────────────────────
 INSERT INTO license_keys (key, customer_email, customer_name, notes)
-VALUES ('EBYG-TEST-0000-0001', 'test@ebygautomation.com', 'EBYG Test', 'Internal test key')
+VALUES ('JAI-TEST-0000-0001', 'test@jeongai.com', 'Jeong AI Test', 'Internal test key')
 ON CONFLICT (key) DO NOTHING;

@@ -1,4 +1,4 @@
-# EBYG Automation
+# Jeong AI
 
 AI systems and professional websites built around how your business actually works. A division of EBYG Media LLC.
 
@@ -21,7 +21,7 @@ npx serve .
 
 | Branch | Environment | URL |
 |--------|-------------|-----|
-| `master` | Production | ebygautomation.com |
+| `master` | Production | jeongai.com |
 | `develop` | Staging | Azure preview URL |
 | `feature/*` | Local only | — |
 
@@ -77,5 +77,5 @@ See `api/README.md` for setup instructions.
 | Field | Value |
 |-------|-------|
 | Phone | (801) 648-9652 |
-| Email | info@ebygautomation.com |
-| Domain | ebygautomation.com |
+| Email | info@jeongai.com |
+| Domain | jeongai.com |

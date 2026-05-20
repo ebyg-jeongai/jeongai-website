@@ -36,11 +36,11 @@ serve(async (req) => {
       .single();
 
     if (error || !keyRow) {
-      return json({ valid: false, reason: "Key not found. Check for typos or contact hello@ebygautomation.com" }, corsHeaders);
+      return json({ valid: false, reason: "Key not found. Check for typos or contact hello@jeongai.com" }, corsHeaders);
     }
 
     if (keyRow.revoked) {
-      return json({ valid: false, reason: "This key has been revoked. Contact hello@ebygautomation.com" }, corsHeaders);
+      return json({ valid: false, reason: "This key has been revoked. Contact hello@jeongai.com" }, corsHeaders);
     }
 
     // 2. Log this usage session
@@ -91,6 +91,6 @@ function json(data: unknown, headers = {}) {
 }
 
 async function hashIP(ip: string): Promise<string> {
-  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(ip + "ebyg-salt-2024"));
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(ip + "jai-salt-2024"));
   return Array.from(new Uint8Array(buf)).slice(0, 8).map(b => b.toString(16).padStart(2, "0")).join("");
 }

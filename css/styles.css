@@ -1,8 +1,8 @@
 /* ============================================================
-   EBYG Automation — Styles v2
+   Jeong AI — Styles v2
    Design inspired by explanationbygeneration.com
    Brand: Professional, warm, business-first
-   Two brands: EBYG Automation (education) + Jeong AI (partnership)
+   Two brands: Jeong AI (education) + Jeong AI (partnership)
    ============================================================ */
 
 /* ---------- VARIABLES ---------- */
@@ -156,7 +156,7 @@ blockquote {
   font-family: var(--font-heading);
   text-decoration: none;
 }
-.logo-ebyg {
+.logo-jai {
   font-size: 1.6rem;
   font-weight: 700;
   color: var(--primary);
@@ -449,7 +449,7 @@ blockquote {
   border-radius: var(--radius-lg);
   text-align: center;
 }
-.eco-brand-ebyg {
+.eco-brand-jai {
   background: var(--light);
   border: 1px solid var(--border);
 }
@@ -997,7 +997,7 @@ blockquote {
   opacity: 0.5;
   margin-top: 1rem !important;
 }
-.footer-brand .logo-ebyg { color: var(--white); }
+.footer-brand .logo-jai { color: var(--white); }
 .footer-brand .logo-auto { color: rgba(255,255,255,0.5); }
 .footer-links h4 {
   color: var(--white);

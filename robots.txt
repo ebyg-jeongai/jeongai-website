@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.ebygautomation.com/sitemap.xml
+Sitemap: https://www.jeongai.com/sitemap.xml

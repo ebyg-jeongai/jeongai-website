@@ -35,7 +35,7 @@ serve(async (req) => {
     Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
   );
 
-  // Generate a unique EBYG-XXXX-XXXX-XXXX key
+  // Generate a unique JAI-XXXX-XXXX-XXXX key
   const key = generateKey();
 
   const { error } = await supabase.from("license_keys").insert({
@@ -67,7 +67,7 @@ serve(async (req) => {
 function generateKey(): string {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; // no ambiguous chars (0/O, 1/I)
   const seg = () => Array.from({ length: 4 }, () => chars[Math.floor(Math.random() * chars.length)]).join("");
-  return `EBYG-${seg()}-${seg()}-${seg()}`;
+  return `JAI-${seg()}-${seg()}-${seg()}`;
 }
 
 async function verifySignature(body: string, signature: string | null, secret: string): Promise<boolean> {

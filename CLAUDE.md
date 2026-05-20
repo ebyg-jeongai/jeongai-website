@@ -1,4 +1,4 @@
-# EBYG Automation — Claude Code Instructions
+# Jeong AI — Claude Code Instructions
 
 ## Git Workflow
 - Always work on the `develop` branch. Never commit directly to `master` unless explicitly instructed.
@@ -11,10 +11,10 @@
 - Deployment is automatic: push to `develop` → staging, push to `master` → production
 
 ## Contact Info (canonical)
-- **Business:** EBYG Automation (a division of EBYG Media LLC)
+- **Business:** Jeong AI (a division of EBYG Media LLC)
 - **Phone:** (801) 648-9652
-- **Email:** info@ebygautomation.com
+- **Email:** info@jeongai.com
 - **Address:** Fully remote — no physical address displayed
 - **Hours:** Not displayed
 - **Social:** None currently — will be added later
-- **Domain:** ebygautomation.com
+- **Domain:** jeongai.com

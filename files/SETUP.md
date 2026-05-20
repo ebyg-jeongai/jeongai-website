@@ -68,7 +68,7 @@ const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY';  // the anon key, NOT service_role
 Open `admin.html` and change the admin password:
 
 ```javascript
-const ADMIN_PASSWORD = 'ebyg-admin-2024'; // Change this to something strong
+const ADMIN_PASSWORD = 'jai-admin-2024'; // Change this to something strong
 ```
 
 The Supabase URL and service role key are entered at login — no hardcoding needed.
@@ -93,7 +93,7 @@ Now every purchase automatically creates a key in your database.
 In Lemon Squeezy, go to your product → **Confirmation page**:
 
 Add a message like:
-> "Your license key has been emailed to you. Save it — you'll need it to access your kit at kit.ebygautomation.com"
+> "Your license key has been emailed to you. Save it — you'll need it to access your kit at kit.jeongai.com"
 
 To include the actual key in the confirmation email, set up a **Zapier automation**:
 - Trigger: Lemon Squeezy → New Order
@@ -109,7 +109,7 @@ Or use **Make.com** for the same flow.
 **Option A — Host kit.html on your existing site (recommended)**
 
 Upload `kit.html` to your web host as `/kit/index.html`
-→ Accessible at `kit.ebygautomation.com` (set up a subdomain in DNS)
+→ Accessible at `kit.jeongai.com` (set up a subdomain in DNS)
 
 Upload `admin.html` somewhere private — a `/admin` path with HTTP basic auth, or just open it locally.
 
@@ -124,9 +124,9 @@ Drag both HTML files into a new Netlify site. Set up a custom domain for the kit
 1. Insert a test key manually in Supabase:
    ```sql
    INSERT INTO license_keys (key, customer_email, notes)
-   VALUES ('EBYG-TEST-0000-0001', 'you@youremail.com', 'Test key');
+   VALUES ('JAI-TEST-0000-0001', 'you@youremail.com', 'Test key');
    ```
-2. Open `kit.html` → enter `EBYG-TEST-0000-0001` → should unlock
+2. Open `kit.html` → enter `JAI-TEST-0000-0001` → should unlock
 3. Check `admin.html` → the session should appear in the table
 
 ---
@@ -146,4 +146,4 @@ A "device" is tracked by browser fingerprint (non-reversible hash of user agent 
 
 ## Questions
 
-hello@ebygautomation.com
+hello@jeongai.com

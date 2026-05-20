@@ -1,6 +1,6 @@
 """
 Generate: AI Prompt Building Guide for HR Managers
-Brand: EBYG Automation (matches www.ebygautomation.com style)
+Brand: Jeong AI (matches www.jeongai.com style)
 Output: vault/docs/templates/HR-AI-Prompt-Building-Guide.pdf
 """
 
@@ -57,16 +57,13 @@ def draw_header(c):
     y_name = H - 0.55 * inch
     c.setFont("Helvetica-Bold", 28)
     c.setFillColor(WHITE)
-    ebyg_w = c.stringWidth("EBYG", "Helvetica-Bold", 28)
-    c.drawString(x_left, y_name, "EBYG")
-    c.setFont("Helvetica", 28)
-    c.setFillColor(ACCENT_BLUE)
-    c.drawString(x_left + ebyg_w + 4, y_name, "Automation")
+    jai_w = c.stringWidth("Jeong AI", "Helvetica-Bold", 28)
+    c.drawString(x_left, y_name, "Jeong AI")
 
     # Tagline
     c.setFont("Helvetica-Oblique", 9.5)
     c.setFillColor(ACCENT_GOLD)
-    c.drawString(x_left, y_name - 16, "AI Systems Built Around How Your Business Actually Works")
+    c.drawString(x_left, y_name - 16, "AI Systems & Custom Software Solutions")
 
     # Division subtitle
     c.setFont("Helvetica", 7.5)
@@ -78,8 +75,8 @@ def draw_header(c):
     c.setFont("Helvetica", 9)
     c.setFillColor(WHITE)
     c.drawRightString(x_right, H - 0.45 * inch, "(801) 648-9652")
-    c.drawRightString(x_right, H - 0.62 * inch, "info@ebygautomation.com")
-    c.drawRightString(x_right, H - 0.79 * inch, "www.ebygautomation.com")
+    c.drawRightString(x_right, H - 0.62 * inch, "info@jeongai.com")
+    c.drawRightString(x_right, H - 0.79 * inch, "www.jeongai.com")
 
 
 def draw_footer(c):
@@ -96,7 +93,7 @@ def draw_footer(c):
     c.setFont("Helvetica", 7.5)
     c.setFillColor(LIGHT_GRAY)
     c.drawCentredString(W / 2, 0.38 * inch,
-                        "(801) 648-9652  |  info@ebygautomation.com  |  www.ebygautomation.com")
+                        "(801) 648-9652  |  info@jeongai.com  |  www.jeongai.com")
 
     # Philosophy tagline
     c.setFont("Helvetica-Oblique", 7)
@@ -340,14 +337,14 @@ def build_page2(c):
     c.setFont("Helvetica", 10)
     c.setFillColor(ACCENT_BLUE)
     c.drawCentredString(W / 2, y - 34,
-                        "Book a free automation audit at www.ebygautomation.com  |  info@ebygautomation.com")
+                        "Book a free automation audit at www.jeongai.com  |  info@jeongai.com")
 
 
 def main():
     output = "vault/docs/templates/HR-AI-Prompt-Building-Guide.pdf"
     c = canvas.Canvas(output, pagesize=letter)
-    c.setTitle("AI Prompt Building for HR Managers — EBYG Automation")
-    c.setAuthor("EBYG Automation")
+    c.setTitle("AI Prompt Building for HR Managers — Jeong AI")
+    c.setAuthor("Jeong AI")
     c.setSubject("A practical guide to building effective AI prompts for HR professionals")
 
     build_page1(c)

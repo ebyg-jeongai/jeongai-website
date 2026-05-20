@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Kit Admin — EBYG Automation</title>
+  <title>Kit Admin — Jeong AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
 <!-- LOGIN -->
 <div id="login-screen">
   <div class="login-card">
-    <div class="login-logo">EBYG AUTOMATION</div>
+    <div class="login-logo">JEONG AI</div>
     <div class="login-title">Admin Dashboard</div>
     <div class="login-sub">Kit license key monitoring</div>
     <input class="login-input" id="admin-pass" type="password" placeholder="Admin password" onkeydown="if(event.key==='Enter')adminLogin()">
@@ -31,7 +31,7 @@
 <!-- ADMIN APP -->
 <div id="admin-screen">
   <div class="admin-topbar">
-    <span class="admin-topbar-brand">EBYG <span>Automation</span></span>
+    <span class="admin-topbar-brand">Jeong <span>AI</span></span>
     <div class="admin-topbar-divider"></div>
     <span class="admin-topbar-section">License Monitor</span>
     <div class="admin-topbar-spacer"></div>
@@ -106,11 +106,11 @@
 
 <script>
 // ─── CONFIG ─────────────────────────────────────────────────
-const ADMIN_PASS_HASH_KEY = 'ebyg_admin_ph';
-const SUPA_URL_KEY = 'ebyg_supa_url';
-const SUPA_KEY_KEY = 'ebyg_supa_key';
+const ADMIN_PASS_HASH_KEY = 'jai_admin_ph';
+const SUPA_URL_KEY = 'jai_supa_url';
+const SUPA_KEY_KEY = 'jai_supa_key';
 // TODO: Replace with a proper auth mechanism (e.g., Supabase Auth) for production
-const ADMIN_PASSWORD = 'ebyg-admin-2024'; // CHANGE THIS
+const ADMIN_PASSWORD = 'jai-admin-2024'; // CHANGE THIS
 
 let supabaseUrl = '', supabaseKey = '';
 let allData = [];

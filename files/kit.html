@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Starter Kit — EBYG Automation</title>
+<title>AI Starter Kit — Jeong AI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
@@ -676,20 +676,20 @@ body { font-family: var(--sans); background: var(--surface); color: #1E293B; min
       <div class="unlock-logo-mark">
         <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
       </div>
-      <span class="unlock-logo-text">EBYG <span>Automation</span></span>
+      <span class="unlock-logo-text">Jeong <span>AI</span></span>
     </div>
 
     <div class="unlock-card">
       <div class="unlock-eyebrow">AI Starter Kit</div>
       <div class="unlock-title">Enter your<br>license key</div>
-      <div class="unlock-subtitle">Your key was displayed at checkout and emailed to you. It looks like EBYG-XXXX-XXXX-XXXX.</div>
+      <div class="unlock-subtitle">Your key was displayed at checkout and emailed to you. It looks like JAI-XXXX-XXXX-XXXX.</div>
 
       <div class="key-input-wrap">
         <input
           class="key-input"
           id="key-input"
           type="text"
-          placeholder="EBYG-XXXX-XXXX-XXXX"
+          placeholder="JAI-XXXX-XXXX-XXXX"
           maxlength="19"
           autocomplete="off"
           spellcheck="false"
@@ -702,8 +702,8 @@ body { font-family: var(--sans); background: var(--surface); color: #1E293B; min
       </button>
       <div class="unlock-msg" id="unlock-msg"></div>
       <div class="unlock-footer">
-        Lost your key? <a href="mailto:hello@ebygautomation.com">hello@ebygautomation.com</a><br>
-        A product of EBYG Automation · ebygautomation.com
+        Lost your key? <a href="mailto:hello@jeongai.com">hello@jeongai.com</a><br>
+        A product of Jeong AI · jeongai.com
       </div>
     </div>
 
@@ -723,7 +723,7 @@ body { font-family: var(--sans); background: var(--surface); color: #1E293B; min
   <div class="topbar">
     <div class="topbar-logo">
       <div class="topbar-logo-mark">E</div>
-      EBYG Automation
+      Jeong AI
     </div>
     <div class="topbar-divider"></div>
     <span class="topbar-kit">AI Starter Kit</span>
@@ -853,7 +853,7 @@ body { font-family: var(--sans); background: var(--surface); color: #1E293B; min
       <div class="panel" id="panel-scenarios">
         <div class="section-head">
           <h2>Real Business Scenarios</h2>
-          <p>Eight before/after examples from the types of businesses EBYG Automation works with. Your closest match is shown first.</p>
+          <p>Eight before/after examples from the types of businesses Jeong AI works with. Your closest match is shown first.</p>
         </div>
         <div id="scenario-banner" class="p-banner" style="display:none">
           <span class="icon">◈</span>
@@ -868,7 +868,7 @@ body { font-family: var(--sans); background: var(--surface); color: #1E293B; min
           <div class="audit-eyebrow">Your next step</div>
           <div class="audit-title">You've got the tools.<br>Now let's build your system.</div>
           <div class="audit-sub">The Automation Audit is a free 30-minute session where we map your business and identify the 3 automations that would have the biggest impact — right now.</div>
-          <button class="audit-btn" onclick="window.open('https://ebygautomation.com','_blank')">
+          <button class="audit-btn" onclick="window.open('https://jeongai.com','_blank')">
             Book your free Audit <span style="font-size:15px">↗</span>
           </button>
           <div class="audit-note">No pitch. No pressure. Just a clear picture of what to do next.</div>
@@ -889,7 +889,7 @@ body { font-family: var(--sans); background: var(--surface); color: #1E293B; min
 // Replace with your actual Supabase project URL and anon key
 const SUPABASE_URL = 'https://YOUR_PROJECT.supabase.co';
 const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY';
-const STORAGE_KEY = 'ebyg_kit_key';
+const STORAGE_KEY = 'jai_kit_key';
 
 // ─── DATA ────────────────────────────────────────────────────
 const BIZ_LABELS = {contractor:'General Contractor',consultant:'Consultant / Coach',realestate:'Real Estate',agency:'Marketing / Agency',property:'Property Management',healthcare:'Healthcare / Wellness',legal:'Legal / Financial',staffing:'Staffing / HR',other:'Service Business'};
@@ -1020,20 +1020,20 @@ async function validateKey() {
       setTimeout(() => enterKit(), 900);
     } else {
       input.classList.add('error');
-      showMsg('error', result.reason || 'Invalid key. Check for typos or contact hello@ebygautomation.com');
+      showMsg('error', result.reason || 'Invalid key. Check for typos or contact hello@jeongai.com');
       btn.disabled = false;
       btnText.textContent = 'Unlock my kit';
     }
   } catch(e) {
     // Fallback: if Supabase isn't configured yet, validate format only
-    if(key.startsWith('EBYG-') && key.length === 19) {
+    if(key.startsWith('JAI-') && key.length === 19) {
       input.classList.add('success');
       showMsg('success','✓ Key accepted — unlocking your kit...');
       licenseKey = key;
       localStorage.setItem(STORAGE_KEY, key);
       setTimeout(() => enterKit(), 900);
     } else {
-      showMsg('error','Invalid key format. Keys look like EBYG-XXXX-XXXX-XXXX');
+      showMsg('error','Invalid key format. Keys look like JAI-XXXX-XXXX-XXXX');
       input.classList.add('error');
       btn.disabled = false;
       btnText.textContent = 'Unlock my kit';
