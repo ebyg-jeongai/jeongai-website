@@ -1298,6 +1298,7 @@ blockquote {
   .friction-grid { grid-template-columns: repeat(2, 1fr); }
   .wwb-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
   .cs-inner { grid-template-columns: 1fr; }
+  .cs-callout { position: static; }
   .products-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
   .services-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
   .web-services-grid { grid-template-columns: 1fr; max-width: 480px; margin: 2rem auto 0; }
