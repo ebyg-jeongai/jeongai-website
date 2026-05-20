@@ -333,6 +333,52 @@ blockquote {
   font-weight: 500;
 }
 
+/* ---------- OSFA (Not One Size Fits All) ---------- */
+.osfa {
+  padding: 6rem 0;
+  background: var(--dark);
+}
+.osfa-inner { text-align: center; }
+.osfa-tag { color: rgba(255,255,255,0.45) !important; }
+.osfa-heading {
+  color: var(--white);
+  font-size: 2.4rem;
+  margin-bottom: 3rem;
+  line-height: 1.25;
+}
+.osfa-heading em {
+  color: var(--primary-light);
+  font-style: italic;
+}
+.osfa-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  text-align: left;
+}
+.osfa-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+}
+.osfa-card h4 {
+  color: var(--white);
+  font-size: 1.05rem;
+  margin-bottom: 0.65rem;
+}
+.osfa-card p {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.93rem;
+  line-height: 1.7;
+  margin: 0;
+}
+.osfa-card-jeong {
+  border: 1px solid rgba(26,111,184,0.5);
+  background: rgba(10,79,138,0.15);
+}
+.osfa-card-jeong h4 { color: var(--primary-light); }
+.osfa-card-jeong p { color: rgba(255,255,255,0.7); }
+
 /* ---------- ABOUT ---------- */
 .about {
   padding: 6rem 0;
