@@ -23,10 +23,10 @@ jobs:
           action: "upload"
           app_location: "/"
           # api_location: "api"  # uncomment when Azure Functions are added
-          output_location: "/"
+          output_location: ""
           skip_app_build: true
           production_branch: "master"
-          deployment_environment: ${{ github.ref == 'refs/heads/master' && 'production' || 'develop' }}
+          deployment_environment: ${{ github.ref != 'refs/heads/master' && 'develop' || '' }}
   close_pull_request:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
