@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Jeong AI — Editing &amp; Deploying the Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../brand.css">
+</head>
+<body>
+
+  <div class="doc-toolbar no-print">
+    <span class="hint">Training Guide · Print → Save as PDF (US Letter, headers/footers off).</span>
+    <button onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+  <div class="doc">
+
+    <!-- COVER -->
+    <div class="doc-cover">
+      <div class="jai-lockup" style="font-size:1.5rem;">
+        <img class="jai-mark-img" src="../assets/jeong-mark-white.png" alt="Jeong AI">
+        <span class="jai-logo jai-logo--reverse"><span class="jai-mark">Jeong</span><span class="jai-auto">AI</span></span>
+      </div>
+      <div class="doc-kicker" style="margin-top:1.5rem;">Training Guide</div>
+      <h1>Editing &amp; Deploying the Jeong AI Website</h1>
+      <div class="accent"></div>
+      <p class="subtitle">A practical walkthrough for making changes safely and shipping them to staging and production.</p>
+      <div class="doc-meta-inline">
+        Prepared by <strong>Jeong AI</strong> · June 4, 2026 · Version 1.0
+      </div>
+    </div>
+
+    <!-- TOC -->
+    <div class="doc-toc">
+      <h3>Contents</h3>
+      <ol>
+        <li><a href="#s1">The project at a glance</a></li>
+        <li><a href="#s2">Set up &amp; run it locally</a></li>
+        <li><a href="#s3">Make a change and deploy it</a></li>
+        <li><a href="#s4">Quick reference</a></li>
+      </ol>
+    </div>
+
+    <!-- BODY -->
+    <div class="doc-body">
+
+      <p class="doc-lead">The Jeong AI website is a static HTML/CSS/JS site — no frameworks, no build step. You edit files directly and deploy by pushing to Git. This guide gets you from a clean checkout to a live change in production.</p>
+
+      <h2 id="s1"><span class="sec-num">01</span>The project at a glance</h2>
+      <p>Everything is plain HTML, CSS, and JavaScript hosted on <strong>Azure Static Web Apps</strong>. There are no dependencies to install and nothing to compile — what you see in the file is what ships.</p>
+      <ul>
+        <li><strong>Pages</strong> live at the repo root (<code>index.html</code>, checkout and product pages, <code>privacy.html</code>, <code>terms.html</code>).</li>
+        <li><strong>Styles</strong> are in <code>css/</code>, scripts in <code>js/</code>, and the brand kit in <code>brand/</code>.</li>
+        <li><strong>Deployment</strong> is automatic through GitHub Actions — your branch decides where it lands.</li>
+      </ul>
+      <div class="callout note">
+        <span class="callout-label">Branch = environment</span>
+        <code>develop</code> deploys to <strong>staging</strong>; <code>master</code> deploys to <strong>production</strong> (jeongai.com); pull requests get their own preview URL.
+      </div>
+
+      <h2 id="s2"><span class="sec-num">02</span>Set up &amp; run it locally</h2>
+      <ol class="steps">
+        <li>
+          <span class="step-title">Clone the repository</span>
+          <pre><code>git clone &lt;repo-url&gt;
+cd ebyg-automation</code></pre>
+        </li>
+        <li>
+          <span class="step-title">Open or serve the site</span>
+          Open <code>index.html</code> directly in a browser, or run a local server so links resolve cleanly:
+          <pre><code>python -m http.server 8080
+# or:  npx serve .</code></pre>
+        </li>
+        <li>
+          <span class="step-title">View it</span>
+          Visit <code>http://localhost:8080</code>. Edit any file and refresh — changes appear immediately.
+        </li>
+      </ol>
+      <div class="callout tip">
+        <span class="callout-label">Tip</span>
+        In VS Code, the <strong>Live Server</strong> extension auto-reloads the page every time you save. Right-click <code>index.html</code> → "Open with Live Server."
+      </div>
+
+      <h2 id="s3"><span class="sec-num">03</span>Make a change and deploy it</h2>
+      <ol class="steps">
+        <li>
+          <span class="step-title">Start on develop</span>
+          Always work on <code>develop</code> — never commit directly to <code>master</code> unless explicitly told to.
+          <pre><code>git checkout develop
+git branch --show-current   # confirm: develop</code></pre>
+        </li>
+        <li>
+          <span class="step-title">Edit the files</span>
+          Make your changes directly in the HTML/CSS/JS. Preview locally before committing.
+        </li>
+        <li>
+          <span class="step-title">Commit your work</span>
+          <pre><code>git add .
+git commit -m "Describe what changed"</code></pre>
+        </li>
+        <li>
+          <span class="step-title">Push to staging</span>
+          Pushing <code>develop</code> triggers the staging deploy automatically. Review it on the Azure preview URL.
+          <pre><code>git push origin develop</code></pre>
+        </li>
+        <li>
+          <span class="step-title">Promote to production</span>
+          Once staging looks right, merge <code>develop</code> into <code>master</code>. That deploys to jeongai.com.
+          <pre><code>git checkout master
+git merge develop
+git push origin master</code></pre>
+        </li>
+      </ol>
+      <div class="callout warn">
+        <span class="callout-label">Important</span>
+        A push to <code>master</code> goes <strong>live to customers</strong>. Verify on staging first, and never commit straight to <code>master</code> without review.
+      </div>
+
+      <h2 id="s4"><span class="sec-num">04</span>Quick reference</h2>
+      <table class="doc-table">
+        <thead>
+          <tr><th style="width:32%;">Branch / Command</th><th>What it does</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="item-title">develop</td><td>Deploys to the staging environment (Azure preview URL).</td></tr>
+          <tr><td class="item-title">master</td><td>Deploys to production — jeongai.com.</td></tr>
+          <tr><td class="item-title">feature/*</td><td>Local work only; open a PR for a preview environment.</td></tr>
+          <tr><td class="item-title">python -m http.server 8080</td><td>Serve the site locally on port 8080.</td></tr>
+          <tr><td class="item-title">git branch --show-current</td><td>Confirm which branch you're on before committing.</td></tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="doc-footer">
+      <p>Jeong AI · A division of EBYG Media LLC · info@jeongai.com · (801) 648-9652 · jeongai.com</p>
+      <p class="tagline">Consistent presence. Genuine care. Quiet reliability.</p>
+    </div>
+
+  </div>
+</body>
+</html>

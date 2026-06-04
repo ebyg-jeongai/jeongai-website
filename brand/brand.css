@@ -272,11 +272,127 @@ a { color: var(--primary); text-decoration: none; }
 [contenteditable]:focus { outline: 2px solid var(--primary-light); background: var(--purple-pale); }
 
 /* ============================================================
+   DOCUMENT CONTENT COMPONENTS
+   For long-form branded documents (training, guides, reports,
+   SOWs). Used by the brandedjeong skill template.
+   ============================================================ */
+
+/* Cover band — full-bleed branded header for the first page */
+.doc-cover {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: var(--white);
+  margin: -0.75in -0.75in 2rem;
+  padding: 2.25in 0.75in 1.25in;
+}
+.doc-cover .doc-kicker {
+  font-family: var(--font-heading);
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,0.75);
+}
+.doc-cover h1 { color: var(--white); font-size: 2.6rem; margin: 0.75rem 0; max-width: 6.2in; }
+.doc-cover .subtitle { color: rgba(255,255,255,0.85); font-size: 1.05rem; max-width: 5.6in; }
+.doc-cover .accent { width: 90px; height: 3px; background: var(--accent); margin: 1.1rem 0; }
+.doc-cover .doc-meta-inline { font-size: 0.85rem; color: rgba(255,255,255,0.8); margin-top: 1.1rem; }
+.doc-cover .doc-meta-inline strong { color: var(--white); }
+
+/* Body typography for long-form content */
+.doc-body { font-size: 0.95rem; line-height: 1.7; color: var(--text); }
+.doc-body > h2 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem; color: var(--primary-dark);
+  margin: 2.25rem 0 0.4rem;
+  padding-bottom: 0.4rem; border-bottom: 2px solid var(--border);
+}
+.doc-body > h2 .sec-num { color: var(--accent); margin-right: 0.5rem; }
+.doc-body h3 { font-size: 1.05rem; color: var(--dark); margin: 1.5rem 0 0.4rem; }
+.doc-body p { margin-bottom: 0.9rem; }
+.doc-body ul, .doc-body ol { padding-left: 1.4rem; margin-bottom: 0.9rem; }
+.doc-body li { margin-bottom: 0.35rem; }
+.doc-body strong { color: var(--dark); }
+.doc-body code {
+  font-family: 'Consolas', 'Menlo', monospace; font-size: 0.85em;
+  background: var(--light); border: 1px solid var(--border);
+  border-radius: 4px; padding: 0.1em 0.4em; color: var(--primary-dark);
+}
+.doc-body pre {
+  background: var(--dark); color: #e8e8ef; border-radius: var(--radius);
+  padding: 1rem 1.2rem; overflow-x: auto; font-size: 0.82rem;
+  font-family: 'Consolas','Menlo',monospace; margin-bottom: 1rem; line-height: 1.55;
+}
+.doc-body pre code { background: none; border: none; color: inherit; padding: 0; }
+.doc-lead { font-size: 1.1rem; color: var(--text-light); line-height: 1.6; margin-bottom: 1.5rem; }
+
+/* Section eyebrow tag */
+.doc-tag {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem;
+}
+
+/* Numbered step list (training / how-to) */
+.steps { list-style: none; padding-left: 0; counter-reset: step; }
+.steps > li {
+  position: relative; padding: 0 0 1.1rem 3rem; margin: 0;
+  border-left: 2px solid var(--border); margin-left: 1rem;
+}
+.steps > li:last-child { border-left-color: transparent; padding-bottom: 0; }
+.steps > li::before {
+  counter-increment: step; content: counter(step);
+  position: absolute; left: -1rem; top: -0.15rem;
+  width: 2rem; height: 2rem; border-radius: 50%;
+  background: var(--primary); color: #fff;
+  font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.steps > li .step-title { font-family: var(--font-heading); font-weight: 600; color: var(--dark); display: block; margin-bottom: 0.2rem; }
+
+/* Callout boxes */
+.callout {
+  border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.25rem 0;
+  border-left: 4px solid var(--primary); background: var(--light);
+  font-size: 0.9rem;
+}
+.callout .callout-label {
+  font-family: var(--font-heading); font-weight: 700; font-size: 0.78rem;
+  letter-spacing: 0.5px; text-transform: uppercase; display: block; margin-bottom: 0.3rem;
+  color: var(--primary);
+}
+.callout.tip  { border-left-color: #2e7d4f; background: #f0f7f1; }
+.callout.tip  .callout-label { color: #2e7d4f; }
+.callout.warn { border-left-color: var(--accent); background: #fdf1ee; }
+.callout.warn .callout-label { color: var(--accent); }
+.callout.note { border-left-color: var(--purple); background: var(--purple-pale); }
+.callout.note .callout-label { color: var(--purple); }
+
+/* Table of contents */
+.doc-toc {
+  background: var(--light); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; margin-bottom: 2rem;
+}
+.doc-toc h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); margin-bottom: 0.6rem; }
+.doc-toc ol { padding-left: 1.2rem; margin: 0; }
+.doc-toc li { margin-bottom: 0.3rem; font-size: 0.9rem; }
+.doc-toc a { color: var(--primary-dark); }
+
+/* Print toolbar (screen only) */
+.doc-toolbar {
+  max-width: 8.5in; margin: 1rem auto 0; display: flex; gap: 0.75rem;
+  justify-content: flex-end; align-items: center;
+}
+.doc-toolbar .hint { margin-right: auto; font-size: 0.82rem; color: var(--text-light); }
+.doc-toolbar button {
+  font-family: var(--font-heading); font-weight: 600; font-size: 0.85rem;
+  padding: 0.6rem 1.3rem; border-radius: var(--radius); border: 2px solid var(--primary);
+  background: var(--primary); color: #fff; cursor: pointer;
+}
+
+/* ============================================================
    PRINT RULES
    ============================================================ */
 @media print {
   body { background: var(--white); }
-  .no-print { display: none !important; }
+  .no-print, .doc-toolbar { display: none !important; }
   .doc {
     width: auto;
     min-height: auto;
@@ -285,5 +401,10 @@ a { color: var(--primary); text-decoration: none; }
     box-shadow: none;
   }
   [contenteditable]:hover, [contenteditable]:focus { outline: none; background: none; }
+  /* Full-bleed cover prints to page edges */
+  .doc-cover { margin: -0.75in -0.75in 1.5rem; padding: 1.5in 0.75in 1.1in; }
+  /* Avoid awkward page breaks */
+  .doc-body h2, .doc-body h3 { break-after: avoid; }
+  .callout, .steps > li, table, pre, figure { break-inside: avoid; }
   @page { size: letter; margin: 0.75in; }
 }

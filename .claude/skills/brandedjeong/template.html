@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+  Jeong AI branded document template (brandedjeong skill).
+  Lives in: brand/documents/<slug>.html  →  links ../brand.css and ../assets/
+  Replace every {{PLACEHOLDER}} and the BODY content. Keep header/cover/footer.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Jeong AI — {{DOC_TITLE}}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../brand.css">
+</head>
+<body>
+
+  <!-- Toolbar (screen only) -->
+  <div class="doc-toolbar no-print">
+    <span class="hint">{{DOC_TYPE}} · Print → Save as PDF (US Letter, headers/footers off).</span>
+    <button onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+  <div class="doc">
+
+    <!-- COVER -->
+    <div class="doc-cover">
+      <div class="jai-lockup" style="font-size:1.5rem;">
+        <img class="jai-mark-img" src="../assets/jeong-mark-white.png" alt="Jeong AI">
+        <span class="jai-logo jai-logo--reverse"><span class="jai-mark">Jeong</span><span class="jai-auto">AI</span></span>
+      </div>
+      <div class="doc-kicker" style="margin-top:1.5rem;">{{DOC_TYPE}}</div>
+      <h1>{{DOC_TITLE}}</h1>
+      <div class="accent"></div>
+      <p class="subtitle">{{DOC_SUBTITLE}}</p>
+      <div class="doc-meta-inline">
+        Prepared by <strong>Jeong AI</strong> · <span>{{DATE}}</span> · Version <span>{{VERSION}}</span>
+      </div>
+    </div>
+
+    <!-- OPTIONAL: table of contents (remove if short) -->
+    <div class="doc-toc">
+      <h3>Contents</h3>
+      <ol>
+        <li><a href="#s1">{{SECTION_1_TITLE}}</a></li>
+        <li><a href="#s2">{{SECTION_2_TITLE}}</a></li>
+        <li><a href="#s3">{{SECTION_3_TITLE}}</a></li>
+      </ol>
+    </div>
+
+    <!-- BODY -->
+    <div class="doc-body">
+
+      <p class="doc-lead">{{LEAD_PARAGRAPH}}</p>
+
+      <h2 id="s1"><span class="sec-num">01</span>{{SECTION_1_TITLE}}</h2>
+      <p>{{SECTION_1_BODY}}</p>
+
+      <!-- Component examples the skill may use in the body: -->
+
+      <!-- Callouts -->
+      <div class="callout tip">
+        <span class="callout-label">Tip</span>
+        {{TIP_TEXT}}
+      </div>
+
+      <h2 id="s2"><span class="sec-num">02</span>{{SECTION_2_TITLE}}</h2>
+
+      <!-- Numbered steps (great for training / how-to) -->
+      <ol class="steps">
+        <li><span class="step-title">{{STEP_1_TITLE}}</span>{{STEP_1_BODY}}</li>
+        <li><span class="step-title">{{STEP_2_TITLE}}</span>{{STEP_2_BODY}}</li>
+        <li><span class="step-title">{{STEP_3_TITLE}}</span>{{STEP_3_BODY}}</li>
+      </ol>
+
+      <div class="callout warn">
+        <span class="callout-label">Important</span>
+        {{WARNING_TEXT}}
+      </div>
+
+      <h2 id="s3"><span class="sec-num">03</span>{{SECTION_3_TITLE}}</h2>
+      <p>{{SECTION_3_BODY}}</p>
+
+      <!-- Reference table (reuses the brand doc-table) -->
+      <table class="doc-table">
+        <thead>
+          <tr><th style="width:30%;">{{COL_1}}</th><th>{{COL_2}}</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="item-title">{{ROW_1_A}}</td><td>{{ROW_1_B}}</td></tr>
+          <tr><td class="item-title">{{ROW_2_A}}</td><td>{{ROW_2_B}}</td></tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="doc-footer">
+      <p>Jeong AI · A division of EBYG Media LLC · info@jeongai.com · (801) 648-9652 · jeongai.com</p>
+      <p class="tagline">Consistent presence. Genuine care. Quiet reliability.</p>
+    </div>
+
+  </div>
+</body>
+</html>
