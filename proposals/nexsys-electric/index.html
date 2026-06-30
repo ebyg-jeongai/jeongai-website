@@ -283,6 +283,164 @@ a { color: var(--primary); text-decoration: none; }
 [contenteditable]:focus { outline: 2px solid var(--primary-light); background: var(--purple-pale); }
 
 /* ============================================================
+   PLAIN-ENGLISH SUMMARY BOX
+   ============================================================ */
+.plain-summary {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem 1.75rem;
+  margin: 1.5rem 0 2rem;
+}
+.plain-summary .ps-label {
+  font-family: var(--font-heading);
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,0.7);
+  display: block; margin-bottom: 0.55rem;
+}
+.plain-summary p {
+  font-size: 1rem; line-height: 1.65; color: var(--white);
+  margin: 0;
+}
+
+/* ============================================================
+   PACKAGE PRICING CARDS
+   ============================================================ */
+.pkg-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0 1rem;
+}
+.pkg-card {
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  background: var(--white);
+}
+.pkg-card.featured {
+  border-color: var(--primary);
+  background: #f0f5fb;
+}
+.pkg-card .pkg-label {
+  font-family: var(--font-heading);
+  font-size: 0.68rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  color: var(--accent); display: block; margin-bottom: 0.6rem;
+}
+.pkg-card .pkg-name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem; font-weight: 700;
+  color: var(--primary-dark); margin-bottom: 0.3rem;
+}
+.pkg-card .pkg-price {
+  font-family: var(--font-heading);
+  font-size: 2.2rem; font-weight: 700;
+  color: var(--primary-dark); line-height: 1;
+}
+.pkg-card .pkg-freq {
+  font-size: 0.82rem; color: var(--text-light);
+  margin-bottom: 1rem; display: block;
+}
+.pkg-card .pkg-divider {
+  border: none; border-top: 1px solid var(--border);
+  margin: 0.75rem 0;
+}
+.pkg-card .pkg-subtitle {
+  font-size: 0.78rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1px;
+  color: var(--text-light); margin-bottom: 0.5rem;
+}
+.pkg-card .pkg-includes {
+  list-style: none; padding: 0; margin: 0;
+}
+.pkg-card .pkg-includes li {
+  padding: 0.35rem 0 0.35rem 1.6rem;
+  position: relative; font-size: 0.88rem;
+  border-bottom: 1px solid var(--border); color: var(--text);
+}
+.pkg-card .pkg-includes li:last-child { border-bottom: none; }
+.pkg-card .pkg-includes li::before {
+  content: "✓"; position: absolute; left: 0;
+  color: var(--primary); font-weight: 700;
+}
+.pkg-card .pkg-includes li .item-price {
+  float: right; color: var(--text-light);
+  font-size: 0.82rem; font-weight: 600;
+}
+.pkg-system-note {
+  background: #fdf1ee;
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 0.85rem 1.1rem;
+  font-size: 0.88rem;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================================
+   CHECKLIST SECTIONS (handles / provides / not included)
+   ============================================================ */
+.twin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1rem 0 1.5rem;
+}
+.check-card {
+  border-radius: var(--radius-lg);
+  padding: 1.4rem 1.6rem;
+}
+.check-card.jeong { background: #f0f5fb; border: 1px solid #c4d9ee; }
+.check-card.nexsys { background: #f0f7f1; border: 1px solid #b8ddc6; }
+.check-card.excluded { background: var(--light); border: 1px solid var(--border); }
+.check-card h3 {
+  font-size: 0.95rem; font-weight: 700;
+  color: var(--primary-dark); margin-bottom: 0.9rem;
+}
+.check-card.nexsys h3 { color: #2e7d4f; }
+.check-card.excluded h3 { color: var(--text); }
+.check-list {
+  list-style: none; padding: 0; margin: 0;
+}
+.check-list li {
+  padding: 0.4rem 0 0.4rem 1.75rem;
+  position: relative; font-size: 0.88rem;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  line-height: 1.45;
+}
+.check-list li:last-child { border-bottom: none; }
+.check-list li::before {
+  content: "✓"; position: absolute; left: 0;
+  color: var(--primary); font-weight: 700; font-size: 0.95rem;
+}
+.check-card.nexsys .check-list li::before { color: #2e7d4f; }
+.check-card.excluded .check-list li::before {
+  content: "—"; color: var(--text-light); font-weight: 400;
+}
+
+/* ============================================================
+   NEXT STEPS SECTION
+   ============================================================ */
+.next-steps-list {
+  list-style: none; padding: 0; margin: 1rem 0 0; counter-reset: ns;
+}
+.next-steps-list li {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 0.85rem 0; border-bottom: 1px solid var(--border);
+  font-size: 0.92rem; line-height: 1.5;
+}
+.next-steps-list li:last-child { border-bottom: none; }
+.next-steps-list li::before {
+  counter-increment: ns; content: counter(ns);
+  min-width: 2rem; height: 2rem; border-radius: 50%;
+  background: var(--primary); color: #fff;
+  font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ============================================================
    DOCUMENT CONTENT COMPONENTS
    For long-form branded documents (training, guides, reports,
    SOWs). Used by the brandedjeong skill template.
@@ -455,8 +613,11 @@ a { color: var(--primary); text-decoration: none; }
         <li><a href="#s3">Scope of Work</a></li>
         <li><a href="#s4">Timeline</a></li>
         <li><a href="#s5">Investment</a></li>
+        <li><a href="#s5b">What Jeong AI Handles &amp; What Nexsys Provides</a></li>
+        <li><a href="#s5c">Not Included</a></li>
         <li><a href="#s6">Social Media</a></li>
         <li><a href="#s7">Why Jeong AI</a></li>
+        <li><a href="#s8">Next Steps</a></li>
       </ol>
     </div>
 
@@ -465,15 +626,20 @@ a { color: var(--primary); text-decoration: none; }
 
       <p class="doc-lead">Nexsys Electric LLC is a licensed electrical contractor with real capability and happy customers, but right now, none of that is visible online. This proposal outlines the work required to build a complete, durable web presence that generates leads, builds reputation, and positions Nexsys as the go-to electrician for commercial and residential work across SE Idaho.</p>
 
+      <div class="plain-summary">
+        <span class="ps-label">The Short Version</span>
+        <p>Jeong AI will help Nexsys get found on Google, give customers a professional website to land on, create a repeatable review process, launch Google Local Services Ads, and keep the online presence active every month. These pieces work together as one system — this is a complete local growth plan, not a pick-and-choose menu.</p>
+      </div>
+
       <!-- SECTION 1 -->
       <h2 id="s1"><span class="sec-num">01</span>Executive Summary</h2>
       <p>Nexsys Electric has no website, no Google Business Profile, and no searchable presence beyond a Facebook page. In a market where customers search "electrician Idaho Falls" or "electrical panel replacement Pocatello" before calling anyone, that invisibility directly costs jobs.</p>
       <p>The good news: the local bar is low. A competitive scan of SE Idaho electricians — including the three competitors Nexsys named (Mountain Valley Electric, Nelson Electric, and Teton Panel Shop) plus three additional top-reviewed locals — shows that <strong>no pure electrical contractor in this market has a strong web presence</strong>. The leader in reviews among direct competitors has 161. Mountain Valley Electric is the only one with city-targeted pages and a blog. Nelson Electric, Teton Panel Shop, and Inrush Electric have minimal or no websites at all.</p>
-      <p>This means Nexsys can enter the market and lead it digitally within 90 days, with the right foundation in place from the start.</p>
+      <p>Nexsys has a realistic opportunity to become one of the most visible pure electrical contractors online in Southeast Idaho over the next 90–180 days, with the right foundation in place from the start.</p>
 
       <div class="callout tip">
         <span class="callout-label">The Opportunity</span>
-        The dominant market player, First Call Jewel, has 2,598 reviews, but they are a multi-trade HVAC, plumbing, and electrical company. A dedicated electrical contractor with a strong web presence and focused review strategy can own the pure electrical category in this market.
+        The top-reviewed local company, First Call Jewel, has 2,598 reviews — but they are a multi-trade HVAC, plumbing, and electrical company. A dedicated electrical contractor with a strong web presence and a consistent review strategy is well-positioned to stand out as the clear choice for pure electrical work in this market.
       </div>
 
       <!-- SECTION 2 -->
@@ -545,12 +711,12 @@ a { color: var(--primary); text-decoration: none; }
 
       <div class="callout note">
         <span class="callout-label">Key Insight</span>
-        No pure electrician in SE Idaho has more than 161 Google reviews. Only Mountain Valley Electric has city-targeted pages, and no competitor — including them — has claimed city pages for Ammon, Pocatello, Chubbuck, Shelley, or St. Anthony. Building a full-featured site and Google presence now gives Nexsys a durable first-mover advantage in the towns competitors aren't even trying to rank for.
+        No pure electrician in SE Idaho has more than 161 Google reviews. Only Mountain Valley Electric has city-targeted pages, and no competitor — including them — has claimed pages for Ammon, Pocatello, Chubbuck, Shelley, or St. Anthony. Building a full-featured site and Google presence now gives Nexsys a meaningful head start in towns competitors aren't even trying to rank for.
       </div>
 
       <!-- SECTION 3 -->
       <h2 id="s3"><span class="sec-num">03</span>Scope of Work</h2>
-      <p>The work is organized into four phases, delivered in sequence. Each builds on the last. Nothing is optional, they form a complete system.</p>
+      <p>The work is organized into four phases, delivered in sequence. Each builds on the last. These pieces work together as one system, so this proposal is built as a complete launch package rather than a pick-and-choose menu.</p>
 
       <h3>Phase 1, Google Business Profile Setup</h3>
       <ol class="steps">
@@ -577,7 +743,7 @@ a { color: var(--primary); text-decoration: none; }
         </li>
         <li>
           <span class="step-title">City / Location Pages</span>
-          Individual pages for each key SE Idaho market: Idaho Falls, Ammon, Pocatello, Blackfoot, Rexburg, Rigby, and Shelley. Each page targets "[service] in [city]" search queries and links back to relevant service pages, creating a local SEO mesh.
+          Individual pages for each key SE Idaho market: Idaho Falls, Ammon, Pocatello, Blackfoot, Rexburg, Rigby, and Shelley. Each page targets "[service] in [city]" search queries — for example, "electrician in Pocatello" or "panel upgrade in Rexburg" — and links back to relevant service pages so the whole site works together to help Nexsys show up for the searches customers actually make.
         </li>
         <li>
           <span class="step-title">Trust-Building Pages</span>
@@ -585,7 +751,7 @@ a { color: var(--primary); text-decoration: none; }
         </li>
         <li>
           <span class="step-title">Technical Foundation</span>
-          Mobile-first design, fast load times (&lt;2s on 4G), SSL/HTTPS, structured data markup (LocalBusiness schema), Google Analytics and Search Console connected, sitemap submitted. The site is built to rank, not just look good.
+          Mobile-first design, fast load times (under 2 seconds on a phone), SSL/HTTPS security, structured data markup (site setup that helps Google understand who Nexsys is, what services they offer, and what areas they serve), Google Analytics and Search Console connected, sitemap submitted. The site is built to rank, not just look good.
         </li>
       </ol>
 
@@ -597,7 +763,7 @@ a { color: var(--primary); text-decoration: none; }
         </li>
         <li>
           <span class="step-title">Target &amp; Tracking</span>
-          Set a 90-day goal of 50 reviews to establish market presence, and a 6-month goal of 150 to match or exceed every pure electrical competitor in SE Idaho. We set up tracking in a simple dashboard so the count is always visible.
+          Target: 50 reviews in 90 days if Nexsys consistently sends review requests after completed jobs. 6-month target: 150 reviews, which would put Nexsys ahead of every pure electrical competitor in SE Idaho. We set up a simple dashboard so the count is always visible. These are targets, not guarantees — results depend on consistent follow-through after each job.
         </li>
         <li>
           <span class="step-title">Response Templates</span>
@@ -628,12 +794,12 @@ a { color: var(--primary); text-decoration: none; }
         <li>Review monitoring and response within 48 hours</li>
         <li>Monthly search ranking report for core keywords</li>
         <li>Quarterly site content refresh, new city pages, updated service descriptions, blog posts targeting SE Idaho electrical questions</li>
-        <li>Citation building and NAP consistency audit (ensuring Nexsys name, address, and phone are consistent across directories)</li>
+        <li>Directory listing cleanup — making sure the business name, address, and phone number match correctly across important online listings like Yelp, Angi, and local directories</li>
       </ul>
 
       <div class="callout warn">
         <span class="callout-label">Important</span>
-        Local SEO is not a one-time project. The businesses that dominate local search results maintain consistent activity, reviews, content, GBP updates, over time. The monthly retainer is what makes the initial investment compound rather than decay.
+        Local SEO is not a one-time project. The businesses that show up consistently in local search maintain consistent activity — reviews, content, Google Business Profile updates — over time. The monthly plan is what makes the initial setup investment compound rather than fade. Monthly growth services require a 3-month initial commitment after launch. Local SEO, reviews, and Google visibility need consistent activity to build momentum.
       </div>
 
       <h3>Phase 5, Social Media Presence</h3>
@@ -690,8 +856,8 @@ a { color: var(--primary); text-decoration: none; }
           </tr>
           <tr>
             <td class="item-title">Month 3</td>
-            <td>50-review milestone targeted. Remaining city pages complete. First content refresh.</td>
-            <td>Nexsys matches or exceeds all pure electrical competitors in review count and SEO structure.</td>
+            <td>50-review target (if review requests are sent consistently). Remaining city pages complete. First content refresh.</td>
+            <td>Nexsys is on pace to match or exceed pure electrical competitors in review count and site structure.</td>
           </tr>
           <tr>
             <td class="item-title">Months 4-6</td>
@@ -703,60 +869,55 @@ a { color: var(--primary); text-decoration: none; }
 
       <!-- SECTION 5 -->
       <h2 id="s5"><span class="sec-num">05</span>Investment</h2>
-      <table class="doc-table">
-        <thead>
-          <tr>
-            <th style="width:40%;">Service</th>
-            <th>Description</th>
-            <th style="width:18%;" class="num">Investment</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="item-title">Google Business Profile Setup</td>
-            <td><span class="item-desc">Claim, verify, full optimization, categories, services, photos, service areas, Q&amp;A, GBP-to-site link</span></td>
-            <td class="num">$350</td>
-          </tr>
-          <tr>
-            <td class="item-title">Website Build</td>
-            <td><span class="item-desc">6 service pages, 7 city/location pages, About, Contact, Reviews showcase. Mobile-first, fast, schema markup, Analytics + Search Console, SSL</span></td>
-            <td class="num">$2,800</td>
-          </tr>
-          <tr>
-            <td class="item-title">Review Generation System</td>
-            <td><span class="item-desc">Post-job text workflow, direct review link, response templates, 90-day tracking dashboard</span></td>
-            <td class="num">$250</td>
-          </tr>
-          <tr>
-            <td class="item-title">LSA Setup &amp; Launch</td>
-            <td><span class="item-desc">Google Guaranteed verification management, campaign configuration, service area and budget setup</span></td>
-            <td class="num">$400</td>
-          </tr>
-          <tr>
-            <td class="item-title">Monthly Retainer, Ongoing SEO</td>
-            <td><span class="item-desc">GBP posts, review monitoring &amp; response, ranking reports, quarterly content refresh, citation maintenance</span></td>
-            <td class="num">$450/mo</td>
-          </tr>
-          <tr>
-            <td class="item-title">Social Media Setup</td>
-            <td><span class="item-desc">Facebook optimization, Instagram Business profile creation, Nextdoor Business verification, branded content templates</span></td>
-            <td class="num">$299</td>
-          </tr>
-          <tr>
-            <td class="item-title">Monthly Social Media Management</td>
-            <td><span class="item-desc">10 posts/month on Facebook &amp; Instagram, 2 Nextdoor posts, comment &amp; DM monitoring, monthly performance report</span></td>
-            <td class="num">$299/mo</td>
-          </tr>
-        </tbody>
-      </table>
+
+      <p>Pricing is structured as two decisions: a one-time launch package that builds the foundation, and a monthly growth plan that keeps it working. These services are designed to work together — the launch builds the presence, the monthly plan builds the momentum.</p>
+
+      <div class="pkg-grid">
+        <div class="pkg-card featured">
+          <span class="pkg-label">One-Time</span>
+          <div class="pkg-name">Recommended Launch Package</div>
+          <div class="pkg-price">$4,099</div>
+          <span class="pkg-freq">one-time setup investment</span>
+          <hr class="pkg-divider">
+          <p class="pkg-subtitle">Includes</p>
+          <ul class="pkg-includes">
+            <li>Google Business Profile setup &amp; optimization <span class="item-price">$350</span></li>
+            <li>Website build (service pages, city pages, contact) <span class="item-price">$2,800</span></li>
+            <li>Review request system &amp; response templates <span class="item-price">$250</span></li>
+            <li>Google Local Services Ads setup &amp; verification <span class="item-price">$400</span></li>
+            <li>Social media profile setup &amp; branded templates <span class="item-price">$299</span></li>
+          </ul>
+        </div>
+        <div class="pkg-card">
+          <span class="pkg-label">Monthly</span>
+          <div class="pkg-name">Recommended Monthly Growth Plan</div>
+          <div class="pkg-price">$749</div>
+          <span class="pkg-freq">per month &nbsp;·&nbsp; 3-month minimum after launch</span>
+          <hr class="pkg-divider">
+          <p class="pkg-subtitle">Includes</p>
+          <ul class="pkg-includes">
+            <li>Ongoing local SEO <span class="item-price">$450/mo</span></li>
+            <li>Google Business Profile updates &amp; posts</li>
+            <li>Review monitoring &amp; response support</li>
+            <li>Monthly search ranking report</li>
+            <li>Quarterly content refresh</li>
+            <li>Directory listing cleanup &amp; maintenance</li>
+            <li>Social media posting &amp; management <span class="item-price">$299/mo</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pkg-system-note">
+        These pieces are designed to work together as one system, so this proposal is built as a complete launch package rather than a pick-and-choose menu. The monthly plan requires a 3-month initial commitment after launch — local SEO and reviews need consistent activity to build momentum.
+      </div>
 
       <div class="doc-totals">
         <div class="row">
-          <span class="label">One-Time Setup Total</span>
+          <span class="label">Launch Package (one-time)</span>
           <span>$4,099</span>
         </div>
         <div class="row">
-          <span class="label">Monthly Retainer (SEO + Social)</span>
+          <span class="label">Monthly Growth Plan</span>
           <span>$749/mo</span>
         </div>
         <div class="row grand">
@@ -767,7 +928,54 @@ a { color: var(--primary); text-decoration: none; }
 
       <div class="callout note" style="margin-top:1.5rem;">
         <span class="callout-label">Note on Ad Spend</span>
-        Google Local Services Ads charges per verified lead, typically $25-$65 per electrical lead in this market. Ad spend is separate from the above and paid directly to Google. We recommend starting with $300-$500/month in LSA budget once the campaign is live. We manage the campaign; Google bills the ad spend directly to your account.
+        Google Local Services Ads charges per verified lead — typically $25–$65 per electrical lead in this market. Ad spend is separate from the above and billed directly to Nexsys by Google. We recommend starting with $300–$500/month once the campaign is live. We handle campaign management; Google handles the billing.
+      </div>
+
+      <!-- SECTION 5b -->
+      <h2 id="s5b"><span class="sec-num">05b</span>What Jeong AI Handles &amp; What Nexsys Provides</h2>
+      <p>To keep the process simple on Nexsys's end, here is exactly what each side handles.</p>
+
+      <div class="twin-grid">
+        <div class="check-card jeong">
+          <h3>Jeong AI Handles</h3>
+          <ul class="check-list">
+            <li>Google Business Profile claim, setup, and full optimization</li>
+            <li>Website build and launch — service pages, city pages, contact, reviews</li>
+            <li>Review request link setup and response templates</li>
+            <li>Google Local Services Ads setup and verification management</li>
+            <li>Social media profile setup (Facebook, Instagram, Nextdoor) and branded content templates</li>
+            <li>Google Analytics and Search Console setup</li>
+            <li>Monthly SEO, posts, review monitoring, and ranking reports (with monthly plan)</li>
+            <li>All the technical work — Nexsys doesn't need to know how any of it works</li>
+          </ul>
+        </div>
+        <div class="check-card nexsys">
+          <h3>Nexsys Provides</h3>
+          <ul class="check-list">
+            <li>Business name, phone number, address or service area, and preferred email</li>
+            <li>Logo and any existing brand files</li>
+            <li>License and insurance information (required for Google Local Services Ads)</li>
+            <li>Photos of past work, trucks, team, or job sites — even phone photos work</li>
+            <li>Access to or approval for Facebook page and social accounts</li>
+            <li>Final approval on website copy before launch</li>
+            <li>Consistent follow-through on asking happy customers for reviews after jobs</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SECTION 5c -->
+      <h2 id="s5c"><span class="sec-num">05c</span>Not Included</h2>
+      <p>To avoid any surprises, here is what this proposal does not cover:</p>
+      <div class="check-card excluded" style="max-width:100%;">
+        <ul class="check-list">
+          <li>Google ad spend or Local Services Ads budget — paid directly to Google by Nexsys</li>
+          <li>Professional photography or videography</li>
+          <li>Logo redesign or full brand identity work</li>
+          <li>Domain purchase if Nexsys does not already own one (typically $15–20/year)</li>
+          <li>Major custom software functionality or integrations</li>
+          <li>Emergency or after-hours website and social monitoring</li>
+          <li>Large ongoing website changes outside the quarterly content refresh scope</li>
+        </ul>
       </div>
 
       <!-- SECTION 6 -->
@@ -813,18 +1021,30 @@ a { color: var(--primary); text-decoration: none; }
 
       <!-- SECTION 7 -->
       <h2 id="s7"><span class="sec-num">07</span>Why Jeong AI</h2>
-      <p>We built this proposal from real data, not a template. The competitor scan that informed every recommendation in this document was pulled live, Google Places ratings, website structure maps, ad transparency checks, for Nexsys and six competitors in the Idaho Falls market — including the three Nexsys named directly. That's how we work.</p>
+      <p>We built this proposal from real data, not a template. The competitor scan behind every recommendation in this document was pulled live — Google ratings, website structure, ad checks — for Nexsys and six competitors in the Idaho Falls market, including the three Nexsys named directly. That's how we work.</p>
 
       <ul>
         <li><strong>No fluff, no filler.</strong> Every deliverable in this scope exists because it moves the needle for a local service business. We don't add services to inflate a proposal.</li>
-        <li><strong>Local service is our focus.</strong> We build for electricians, plumbers, HVAC contractors, roofers, businesses where Google Business Profile, reviews, and local SEO determine who gets the call. We know the channels that matter here.</li>
-        <li><strong>We write in plain language.</strong> Reports, recommendations, and monthly updates are written for a busy owner, not an SEO agency audience. You'll always know what was done and why.</li>
-        <li><strong>We stay.</strong> The monthly retainer is how we maintain the presence we build. We don't hand off a website and disappear, we're accountable for the results over time.</li>
+        <li><strong>Local service is our focus.</strong> We build for electricians, plumbers, HVAC contractors, roofers — businesses where Google Business Profile, reviews, and local search determine who gets the call. We know the channels that matter here.</li>
+        <li><strong>We write in plain language.</strong> Reports, updates, and recommendations are written for a busy owner, not an SEO agency. You'll always know what was done and why.</li>
+        <li><strong>We stay.</strong> The monthly plan is how we maintain what we build. We don't hand off a website and disappear — we're accountable over time.</li>
       </ul>
+
+      <!-- SECTION 8 -->
+      <h2 id="s8"><span class="sec-num">08</span>Next Steps</h2>
+      <p>If this looks like the right plan, here's how we move forward:</p>
+
+      <ol class="next-steps-list">
+        <li>Approve the Launch Package and Monthly Growth Plan — let us know by email or phone</li>
+        <li>Jeong AI sends a simple agreement and invoice</li>
+        <li>Nexsys provides the basic business info, photos, logo, and account access</li>
+        <li>Jeong AI starts the Google Business Profile, website build, review system, and ad setup</li>
+        <li>First launch target: Google profile and website foundation live within the timeline above</li>
+      </ol>
 
       <div class="callout tip">
         <span class="callout-label">Ready to Start</span>
-        The fastest path to leads is getting the Google Business Profile live. We can begin that this week, no website needed to start. Contact us at <strong>derrick@jeongai.com</strong> or <strong>(801) 695-5673</strong> and we'll send a simple agreement to get moving.
+        The fastest path to leads is getting the Google Business Profile live — we can begin that this week, no website needed to start. Reach Derrick at <strong>derrick@jeongai.com</strong> or <strong>(801) 695-5673</strong>.
       </div>
 
     </div>
