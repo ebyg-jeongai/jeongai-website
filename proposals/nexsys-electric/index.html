@@ -1927,6 +1927,7 @@
   <script>
     // ── Site Preview Modal ──
     (function() {
+      const SITE_BASE = 'https://salmon-wave-0c395d51e.7.azurestaticapps.net';
       const modal    = document.getElementById('pageModal');
       const backdrop = document.getElementById('modalBackdrop');
       const closeBtn = document.getElementById('modalClose');
@@ -1944,7 +1945,7 @@
           : 'nexsyselectric.com — coming soon';
 
         if (isLive) {
-          body.innerHTML = '<iframe src="' + url + '" title="' + title + '"></iframe>';
+          body.innerHTML = '<iframe src="' + SITE_BASE + url + '" title="' + title + '"></iframe>';
         } else {
           body.innerHTML = '<div class="modal-coming-soon">'
             + '<div class="modal-wireframe">'
