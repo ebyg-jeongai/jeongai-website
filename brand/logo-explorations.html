@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Jeong AI — Logo Explorations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="brand.css">
+  <style>
+    body { background: #eef0f3; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 2.5rem 2rem 5rem; }
+    .page-head { margin-bottom: 2rem; }
+    .page-head h1 { font-size: 1.9rem; color: var(--primary-dark); }
+    .page-head p { color: var(--text-light); max-width: 640px; margin-top: 0.5rem; }
+
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);
+    }
+    .card .stage {
+      min-height: 200px; display: flex; align-items: center; justify-content: center;
+      padding: 2.5rem; gap: 1.1rem;
+    }
+    .card .stage.dark  { background: var(--dark); }
+    .card .stage.blue  { background: linear-gradient(135deg, var(--primary-dark), var(--primary)); }
+    .card .stage.mist  { background: var(--light); }
+    .card .meta { padding: 1rem 1.25rem; border-top: 1px solid var(--border); }
+    .card .meta .name { font-family: var(--font-heading); font-weight: 600; color: var(--dark); font-size: 0.95rem; }
+    .card .meta .use  { font-size: 0.8rem; color: var(--text-light); margin-top: 0.2rem; }
+    .card .tag { font-family: var(--font-heading); font-size: 0.65rem; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color: var(--accent); }
+
+    /* Wordmark pieces */
+    .wm { font-family: var(--font-heading); line-height: 1; display:inline-flex; align-items:baseline; gap:0.32rem; }
+    .wm .j  { font-weight: 700; color: var(--primary); }
+    .wm .ai { font-weight: 500; color: var(--text-light); }
+    .wm.rev .j { color:#fff; } .wm.rev .ai { color: rgba(255,255,255,0.72); }
+
+    .division { font-family: var(--font-body); font-size:0.62rem; font-weight:500; letter-spacing:1px; text-transform:uppercase; color:var(--text-light); }
+    .division.rev { color: rgba(255,255,255,0.6); }
+
+    /* Mark sizing */
+    img.mark { display:block; }
+
+    /* Concept-specific lockups */
+    .lk { display:flex; align-items:center; gap:1.1rem; }
+    .lk-stack { flex-direction:column; gap:0.7rem; text-align:center; }
+    .divider { width:2px; align-self:stretch; background:var(--border); }
+    .divider.rev { background: rgba(255,255,255,0.25); }
+
+    .seal {
+      width:96px; height:96px; border-radius:18px; display:flex; align-items:center; justify-content:center;
+      background: var(--white); border:1px solid var(--border);
+    }
+    .seal.blue { background: linear-gradient(135deg,var(--primary-dark),var(--primary)); border:none; }
+    .seal.ink  { background: var(--dark); border:none; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="page-head">
+    <h1>Logo Explorations — 정 (Jeong) brush mark + wordmark</h1>
+    <p>The brush character is <strong>정</strong>, the Korean spelling of “Jeong.” Below are lockup directions pairing it with the Montserrat wordmark. The mark recolors to ink, white, or brand blue so it works on any background.</p>
+  </div>
+
+  <div class="grid">
+
+    <!-- 1. Primary horizontal -->
+    <div class="card">
+      <div class="stage mist">
+        <div class="lk">
+          <img class="mark" src="assets/jeong-mark-ink.png" alt="" style="height:74px;">
+          <span class="wm" style="font-size:2.2rem;"><span class="j">Jeong</span><span class="ai">AI</span></span>
+        </div>
+      </div>
+      <div class="meta"><span class="tag">Option 1 · Primary</span><div class="name">Horizontal lockup</div><div class="use">Website header, email signature, letterhead. The default.</div></div>
+    </div>
+
+    <!-- 2. Horizontal w/ divider + endorsement -->
+    <div class="card">
+      <div class="stage">
+        <div class="lk">
+          <img class="mark" src="assets/jeong-mark-ink.png" alt="" style="height:78px;">
+          <div class="divider"></div>
+          <div style="text-align:left;">
+            <span class="wm" style="font-size:1.9rem;"><span class="j">Jeong</span><span class="ai">AI</span></span>
+            <div class="division" style="margin-top:0.4rem;">A Division of EBYG Media LLC</div>
+          </div>
+        </div>
+      </div>
+      <div class="meta"><span class="tag">Option 2 · Formal</span><div class="name">Lockup with rule + endorsement</div><div class="use">Documents, contracts, proposals — where attribution matters.</div></div>
+    </div>
+
+    <!-- 3. Stacked -->
+    <div class="card">
+      <div class="stage mist">
+        <div class="lk lk-stack">
+          <img class="mark" src="assets/jeong-mark-ink.png" alt="" style="height:96px;">
+          <span class="wm" style="font-size:1.7rem;"><span class="j">Jeong</span><span class="ai">AI</span></span>
+        </div>
+      </div>
+      <div class="meta"><span class="tag">Option 3 · Vertical</span><div class="name">Stacked lockup</div><div class="use">Square spaces, business cards, slide title pages.</div></div>
+    </div>
+
+    <!-- 4. Reversed on blue -->
+    <div class="card">
+      <div class="stage blue">
+        <div class="lk">
+          <img class="mark" src="assets/jeong-mark-white.png" alt="" style="height:74px;">
+          <span class="wm rev" style="font-size:2.2rem;"><span class="j">Jeong</span><span class="ai">AI</span></span>
+        </div>
+      </div>
+      <div class="meta"><span class="tag">Option 4 · Reversed</span><div class="name">White mark on Jeong Blue</div><div class="use">Dark hero sections, proposal covers, social headers.</div></div>
+    </div>
+
+    <!-- 5. App / seal mark in rounded square -->
+    <div class="card">
+      <div class="stage mist" style="gap:2rem;">
+        <div class="seal"><img class="mark" src="assets/jeong-mark-blue.png" alt="" style="height:64px;"></div>
+        <div class="seal blue"><img class="mark" src="assets/jeong-mark-white.png" alt="" style="height:64px;"></div>
+        <div class="seal ink"><img class="mark" src="assets/jeong-mark-white.png" alt="" style="height:64px;"></div>
+      </div>
+      <div class="meta"><span class="tag">Option 5 · Icon</span><div class="name">App / favicon / avatar mark</div><div class="use">Standalone mark in a rounded tile — favicon, social avatar, app icon.</div></div>
+    </div>
+
+    <!-- 6. Terracotta accent seal + wordmark -->
+    <div class="card">
+      <div class="stage">
+        <div class="lk">
+          <div class="seal" style="width:84px;height:84px;background:var(--purple-pale);border-color:var(--purple-light);">
+            <img class="mark" src="assets/jeong-mark-terracotta.png" alt="" style="height:56px;">
+          </div>
+          <span class="wm" style="font-size:2rem;"><span class="j">Jeong</span><span class="ai">AI</span></span>
+        </div>
+      </div>
+      <div class="meta"><span class="tag">Option 6 · Accent</span><div class="name">Terracotta seal variant</div><div class="use">A warmer, branded take — mark as a colored “stamp” beside the name.</div></div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

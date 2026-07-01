@@ -1,0 +1,410 @@
+/* ============================================================
+   Jeong AI — Brand Tokens & Document Foundation
+   Single source of truth for brand guidelines, invoices,
+   and proposals. Mirrors the design tokens in /css/styles.css.
+   A division of EBYG Media LLC.
+   ============================================================ */
+
+:root {
+  /* ---- Core palette ---- */
+  --primary:        #0a4f8a;  /* Jeong Blue — primary brand color */
+  --primary-dark:   #083d6b;  /* Deep blue — headers, emphasis */
+  --primary-light:  #1a6fb8;  /* Bright blue — links, hovers */
+  --accent:         #c7553b;  /* Terracotta — CTAs, highlights, accent rules */
+  --accent-hover:   #a8432d;
+
+  /* ---- Secondary / partnership ---- */
+  --purple:         #7C3AED;
+  --purple-mid:     #8B5CF6;
+  --purple-light:   #EDE9FE;
+  --purple-pale:    #F5F3FF;
+
+  /* ---- Neutrals ---- */
+  --dark:           #1a1a2e;  /* Headings */
+  --text:           #3a3a4a;  /* Body text */
+  --text-light:     #6b6b7b;  /* Secondary text, labels */
+  --light:          #f7f8fa;  /* Section / table backgrounds */
+  --white:          #ffffff;
+  --border:         #e2e4e8;
+
+  /* ---- Elevation ---- */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+
+  /* ---- Shape & motion ---- */
+  --radius:    6px;
+  --radius-lg: 12px;
+  --transition: 0.25s ease;
+
+  /* ---- Type ---- */
+  --font-heading: 'Montserrat', 'Segoe UI', sans-serif;
+  --font-body: 'Source Sans 3', 'Source Sans Pro', 'Segoe UI', sans-serif;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--light);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--dark);
+  line-height: 1.25;
+  font-weight: 600;
+}
+a { color: var(--primary); text-decoration: none; }
+
+/* ============================================================
+   WORDMARK — the Jeong AI logotype (text-only, no image asset)
+   ============================================================ */
+.jai-logo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  font-family: var(--font-heading);
+  line-height: 1;
+}
+.jai-logo .jai-mark  { font-weight: 700; color: var(--primary); }
+.jai-logo .jai-auto  { font-weight: 500; color: var(--text-light); }
+/* Reversed (on dark backgrounds) */
+.jai-logo--reverse .jai-mark { color: var(--white); }
+.jai-logo--reverse .jai-auto { color: rgba(255,255,255,0.7); }
+.jai-division {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+/* ---- Lockups: brush mark (정) + wordmark ----
+   The mark height tracks the wordmark; set font-size on the container
+   and the mark scales with it via em units. */
+.jai-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  font-size: 2rem;            /* drives both mark + wordmark size */
+}
+.jai-lockup .jai-mark-img {
+  height: 1.5em;              /* mark ~1.5x the wordmark cap height */
+  width: auto;
+  display: block;
+}
+.jai-lockup .jai-logo { font-size: inherit; }
+/* Stacked variant */
+.jai-lockup--stack { flex-direction: column; gap: 0.4em; text-align: center; }
+.jai-lockup--stack .jai-mark-img { height: 2em; }
+/* Formal variant: vertical rule + endorsement */
+.jai-lockup--formal { gap: 0.7em; }
+.jai-lockup--formal .rule { width: 2px; align-self: stretch; background: var(--border); }
+.jai-lockup--formal .jai-division { margin-top: 0.2em; }
+
+/* Seal / tile (icon use) */
+.jai-seal {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 22%;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+}
+.jai-seal img { height: 64%; width: auto; }
+
+/* ============================================================
+   PRINT-READY DOCUMENT SHELL  (invoice + proposal)
+   US Letter, 0.75in margins, prints clean to PDF.
+   ============================================================ */
+.doc {
+  width: 8.5in;
+  min-height: 11in;
+  margin: 1.5rem auto;
+  padding: 0.75in;
+  background: var(--white);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+/* Top brand bar */
+.doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 1.25rem;
+  border-bottom: 3px solid var(--primary);
+  margin-bottom: 0.4rem;
+}
+.doc-header .jai-logo { font-size: 1.9rem; }
+/* Terracotta accent rule under the primary border */
+.doc-accent-rule {
+  height: 3px;
+  background: var(--accent);
+  width: 90px;
+  margin-bottom: 2rem;
+}
+.doc-brand-contact {
+  text-align: right;
+  font-size: 0.78rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+.doc-brand-contact strong { color: var(--text); }
+
+/* Document title / meta */
+.doc-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+.doc-title {
+  font-size: 2rem;
+  color: var(--primary-dark);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.doc-meta { text-align: right; font-size: 0.85rem; line-height: 1.8; }
+.doc-meta .label {
+  color: var(--text-light);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+.doc-meta .value { color: var(--dark); font-weight: 600; }
+
+/* Bill-to / parties */
+.doc-parties {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+.party-block { flex: 1; }
+.party-label {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.party-name { font-weight: 600; color: var(--dark); font-size: 1.05rem; }
+.party-detail { font-size: 0.88rem; color: var(--text-light); line-height: 1.65; }
+
+/* Line-item table */
+.doc-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+.doc-table thead th {
+  background: var(--primary);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
+  padding: 0.7rem 0.9rem;
+}
+.doc-table thead th.num { text-align: right; }
+.doc-table tbody td {
+  padding: 0.85rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+  vertical-align: top;
+}
+.doc-table tbody td.num { text-align: right; white-space: nowrap; }
+.doc-table tbody tr:nth-child(even) { background: var(--light); }
+.doc-table .item-title { font-weight: 600; color: var(--dark); }
+.doc-table .item-desc { font-size: 0.82rem; color: var(--text-light); margin-top: 0.2rem; }
+
+/* Totals */
+.doc-totals { width: 320px; margin-left: auto; }
+.doc-totals .row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.9rem;
+}
+.doc-totals .row.grand {
+  background: var(--primary-dark);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  border-radius: var(--radius);
+  margin-top: 0.4rem;
+}
+.doc-totals .row .label { color: inherit; }
+
+/* Notes / terms */
+.doc-section { margin-top: 2.25rem; }
+.doc-section h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+.doc-section p, .doc-section li { font-size: 0.88rem; color: var(--text); line-height: 1.7; }
+.doc-section ul { padding-left: 1.2rem; }
+
+/* Footer */
+.doc-footer {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+.doc-footer .tagline {
+  color: var(--accent);
+  font-style: italic;
+  margin-top: 0.3rem;
+}
+
+/* Editable hint — screen only */
+[contenteditable]:hover { outline: 1px dashed var(--border); }
+[contenteditable]:focus { outline: 2px solid var(--primary-light); background: var(--purple-pale); }
+
+/* ============================================================
+   DOCUMENT CONTENT COMPONENTS
+   For long-form branded documents (training, guides, reports,
+   SOWs). Used by the brandedjeong skill template.
+   ============================================================ */
+
+/* Cover band — full-bleed branded header for the first page */
+.doc-cover {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: var(--white);
+  margin: -0.75in -0.75in 2rem;
+  padding: 2.25in 0.75in 1.25in;
+}
+.doc-cover .doc-kicker {
+  font-family: var(--font-heading);
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,0.75);
+}
+.doc-cover h1 { color: var(--white); font-size: 2.6rem; margin: 0.75rem 0; max-width: 6.2in; }
+.doc-cover .subtitle { color: rgba(255,255,255,0.85); font-size: 1.05rem; max-width: 5.6in; }
+.doc-cover .accent { width: 90px; height: 3px; background: var(--accent); margin: 1.1rem 0; }
+.doc-cover .doc-meta-inline { font-size: 0.85rem; color: rgba(255,255,255,0.8); margin-top: 1.1rem; }
+.doc-cover .doc-meta-inline strong { color: var(--white); }
+
+/* Body typography for long-form content */
+.doc-body { font-size: 0.95rem; line-height: 1.7; color: var(--text); }
+.doc-body > h2 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem; color: var(--primary-dark);
+  margin: 2.25rem 0 0.4rem;
+  padding-bottom: 0.4rem; border-bottom: 2px solid var(--border);
+}
+.doc-body > h2 .sec-num { color: var(--accent); margin-right: 0.5rem; }
+.doc-body h3 { font-size: 1.05rem; color: var(--dark); margin: 1.5rem 0 0.4rem; }
+.doc-body p { margin-bottom: 0.9rem; }
+.doc-body ul, .doc-body ol { padding-left: 1.4rem; margin-bottom: 0.9rem; }
+.doc-body li { margin-bottom: 0.35rem; }
+.doc-body strong { color: var(--dark); }
+.doc-body code {
+  font-family: 'Consolas', 'Menlo', monospace; font-size: 0.85em;
+  background: var(--light); border: 1px solid var(--border);
+  border-radius: 4px; padding: 0.1em 0.4em; color: var(--primary-dark);
+}
+.doc-body pre {
+  background: var(--dark); color: #e8e8ef; border-radius: var(--radius);
+  padding: 1rem 1.2rem; overflow-x: auto; font-size: 0.82rem;
+  font-family: 'Consolas','Menlo',monospace; margin-bottom: 1rem; line-height: 1.55;
+}
+.doc-body pre code { background: none; border: none; color: inherit; padding: 0; }
+.doc-lead { font-size: 1.1rem; color: var(--text-light); line-height: 1.6; margin-bottom: 1.5rem; }
+
+/* Section eyebrow tag */
+.doc-tag {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem;
+}
+
+/* Numbered step list (training / how-to) */
+.steps { list-style: none; padding-left: 0; counter-reset: step; }
+.steps > li {
+  position: relative; padding: 0 0 1.1rem 3rem; margin: 0;
+  border-left: 2px solid var(--border); margin-left: 1rem;
+}
+.steps > li:last-child { border-left-color: transparent; padding-bottom: 0; }
+.steps > li::before {
+  counter-increment: step; content: counter(step);
+  position: absolute; left: -1rem; top: -0.15rem;
+  width: 2rem; height: 2rem; border-radius: 50%;
+  background: var(--primary); color: #fff;
+  font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.steps > li .step-title { font-family: var(--font-heading); font-weight: 600; color: var(--dark); display: block; margin-bottom: 0.2rem; }
+
+/* Callout boxes */
+.callout {
+  border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.25rem 0;
+  border-left: 4px solid var(--primary); background: var(--light);
+  font-size: 0.9rem;
+}
+.callout .callout-label {
+  font-family: var(--font-heading); font-weight: 700; font-size: 0.78rem;
+  letter-spacing: 0.5px; text-transform: uppercase; display: block; margin-bottom: 0.3rem;
+  color: var(--primary);
+}
+.callout.tip  { border-left-color: #2e7d4f; background: #f0f7f1; }
+.callout.tip  .callout-label { color: #2e7d4f; }
+.callout.warn { border-left-color: var(--accent); background: #fdf1ee; }
+.callout.warn .callout-label { color: var(--accent); }
+.callout.note { border-left-color: var(--purple); background: var(--purple-pale); }
+.callout.note .callout-label { color: var(--purple); }
+
+/* Table of contents */
+.doc-toc {
+  background: var(--light); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; margin-bottom: 2rem;
+}
+.doc-toc h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); margin-bottom: 0.6rem; }
+.doc-toc ol { padding-left: 1.2rem; margin: 0; }
+.doc-toc li { margin-bottom: 0.3rem; font-size: 0.9rem; }
+.doc-toc a { color: var(--primary-dark); }
+
+/* Print toolbar (screen only) */
+.doc-toolbar {
+  max-width: 8.5in; margin: 1rem auto 0; display: flex; gap: 0.75rem;
+  justify-content: flex-end; align-items: center;
+}
+.doc-toolbar .hint { margin-right: auto; font-size: 0.82rem; color: var(--text-light); }
+.doc-toolbar button {
+  font-family: var(--font-heading); font-weight: 600; font-size: 0.85rem;
+  padding: 0.6rem 1.3rem; border-radius: var(--radius); border: 2px solid var(--primary);
+  background: var(--primary); color: #fff; cursor: pointer;
+}
+
+/* ============================================================
+   PRINT RULES
+   ============================================================ */
+@media print {
+  body { background: var(--white); }
+  .no-print, .doc-toolbar { display: none !important; }
+  .doc {
+    width: auto;
+    min-height: auto;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+  [contenteditable]:hover, [contenteditable]:focus { outline: none; background: none; }
+  /* Full-bleed cover prints to page edges */
+  .doc-cover { margin: -0.75in -0.75in 1.5rem; padding: 1.5in 0.75in 1.1in; }
+  /* Avoid awkward page breaks */
+  .doc-body h2, .doc-body h3 { break-after: avoid; }
+  .callout, .steps > li, table, pre, figure { break-inside: avoid; }
+  @page { size: letter; margin: 0.75in; }
+}

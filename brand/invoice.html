@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Jeong AI — Invoice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="brand.css">
+  <style>
+    .toolbar {
+      max-width: 8.5in; margin: 1rem auto 0; display: flex; gap: 0.75rem;
+      justify-content: flex-end; align-items: center;
+    }
+    .toolbar .hint { margin-right: auto; font-size: 0.82rem; color: var(--text-light); }
+    .toolbar button {
+      font-family: var(--font-heading); font-weight: 600; font-size: 0.85rem;
+      padding: 0.6rem 1.3rem; border-radius: var(--radius); border: 2px solid var(--primary);
+      background: var(--primary); color: #fff; cursor: pointer;
+    }
+    .toolbar button.alt { background: transparent; color: var(--primary); }
+  </style>
+</head>
+<body>
+
+  <!-- Toolbar (screen only) -->
+  <div class="toolbar no-print">
+    <span class="hint">Click any field to edit, then Print → Save as PDF (US Letter).</span>
+    <button class="alt" onclick="addRow()">+ Add line item</button>
+    <button onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+  <div class="doc">
+
+    <!-- HEADER -->
+    <div class="doc-header">
+      <div class="jai-lockup jai-lockup--formal" style="font-size:1.7rem;">
+        <img class="jai-mark-img" src="assets/jeong-mark-ink.png" alt="Jeong AI">
+        <div class="rule"></div>
+        <div>
+          <div class="jai-logo"><span class="jai-mark">Jeong</span><span class="jai-auto">AI</span></div>
+          <div class="jai-division">A Division of EBYG Media LLC</div>
+        </div>
+      </div>
+      <div class="doc-brand-contact">
+        <strong>Jeong AI</strong><br>
+        (801) 648-9652<br>
+        info@jeongai.com<br>
+        jeongai.com
+      </div>
+    </div>
+    <div class="doc-accent-rule"></div>
+
+    <!-- TITLE + META -->
+    <div class="doc-title-row">
+      <div>
+        <div class="doc-title">Invoice</div>
+      </div>
+      <div class="doc-meta">
+        <div><span class="label">Invoice #</span><br><span class="value" contenteditable="true">INV-2026-001</span></div>
+        <div style="margin-top:0.6rem;"><span class="label">Issue Date</span><br><span class="value" contenteditable="true">June 3, 2026</span></div>
+        <div style="margin-top:0.6rem;"><span class="label">Due Date</span><br><span class="value" contenteditable="true">June 17, 2026</span></div>
+      </div>
+    </div>
+
+    <!-- PARTIES -->
+    <div class="doc-parties">
+      <div class="party-block">
+        <div class="party-label">Bill To</div>
+        <div class="party-name" contenteditable="true">Client Company Name</div>
+        <div class="party-detail" contenteditable="true">
+          Attn: Contact Name<br>
+          123 Client Street<br>
+          City, ST 00000<br>
+          client@email.com
+        </div>
+      </div>
+      <div class="party-block">
+        <div class="party-label">From</div>
+        <div class="party-name">Jeong AI</div>
+        <div class="party-detail">
+          A division of EBYG Media LLC<br>
+          (801) 648-9652<br>
+          info@jeongai.com<br>
+          jeongai.com
+        </div>
+      </div>
+    </div>
+
+    <!-- LINE ITEMS -->
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th style="width:48%;">Description</th>
+          <th class="num" style="width:14%;">Qty / Hrs</th>
+          <th class="num" style="width:19%;">Rate</th>
+          <th class="num" style="width:19%;">Amount</th>
+        </tr>
+      </thead>
+      <tbody id="lineItems">
+        <tr>
+          <td>
+            <div class="item-title" contenteditable="true">Custom Automation Workflow</div>
+            <div class="item-desc" contenteditable="true">Design and build of [workflow] integrating [systems].</div>
+          </td>
+          <td class="num" contenteditable="true">1</td>
+          <td class="num" contenteditable="true">$2,500.00</td>
+          <td class="num" contenteditable="true">$2,500.00</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="item-title" contenteditable="true">Discovery &amp; Setup</div>
+            <div class="item-desc" contenteditable="true">Initial audit, requirements, and environment configuration.</div>
+          </td>
+          <td class="num" contenteditable="true">4</td>
+          <td class="num" contenteditable="true">$150.00</td>
+          <td class="num" contenteditable="true">$600.00</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- TOTALS -->
+    <div class="doc-totals">
+      <div class="row"><span class="label">Subtotal</span><span contenteditable="true">$3,100.00</span></div>
+      <div class="row"><span class="label">Tax (0%)</span><span contenteditable="true">$0.00</span></div>
+      <div class="row grand"><span class="label">Total Due</span><span contenteditable="true">$3,100.00</span></div>
+    </div>
+
+    <!-- PAYMENT / NOTES -->
+    <div class="doc-section">
+      <h3>Payment Details</h3>
+      <p contenteditable="true">Payment due within 14 days of issue. Pay by [ACH / card / check]. Make checks payable to EBYG Media LLC. Remit questions to info@jeongai.com.</p>
+    </div>
+    <div class="doc-section">
+      <h3>Notes</h3>
+      <p contenteditable="true">Thank you for partnering with Jeong AI. This invoice covers work described above; ongoing support is billed separately per our agreement.</p>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="doc-footer">
+      <p>Jeong AI · A division of EBYG Media LLC · info@jeongai.com · (801) 648-9652 · jeongai.com</p>
+      <p class="tagline">Consistent presence. Genuine care. Quiet reliability.</p>
+    </div>
+
+  </div>
+
+  <script>
+    function addRow() {
+      var tbody = document.getElementById('lineItems');
+      var tr = document.createElement('tr');
+      tr.innerHTML =
+        '<td><div class="item-title" contenteditable="true">New item</div>' +
+        '<div class="item-desc" contenteditable="true">Description</div></td>' +
+        '<td class="num" contenteditable="true">1</td>' +
+        '<td class="num" contenteditable="true">$0.00</td>' +
+        '<td class="num" contenteditable="true">$0.00</td>';
+      tbody.appendChild(tr);
+    }
+  </script>
+</body>
+</html>

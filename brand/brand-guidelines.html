@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Jeong AI — Brand Guidelines</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="brand.css">
+  <style>
+    body { background: var(--light); }
+    .bg-wrap { max-width: 960px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+
+    /* Cover */
+    .bg-cover {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 4rem 3rem;
+      margin-bottom: 3rem;
+      box-shadow: var(--shadow-lg);
+    }
+    .bg-cover .jai-logo { font-size: 3rem; margin-bottom: 1rem; }
+    .bg-cover h1 { color: var(--white); font-size: 2.4rem; }
+    .bg-cover p { color: rgba(255,255,255,0.85); font-size: 1.1rem; max-width: 540px; margin-top: 0.75rem; }
+    .bg-cover .division { color: rgba(255,255,255,0.6); letter-spacing: 1px; text-transform: uppercase; font-size: 0.75rem; margin-top: 1.5rem; }
+
+    /* Sections */
+    section.bg-section {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .bg-section > h2 {
+      font-size: 1.6rem;
+      color: var(--primary-dark);
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 1.75rem;
+    }
+    .bg-section > h2 .num { color: var(--accent); margin-right: 0.6rem; }
+    .bg-section h3 { font-size: 1rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin: 1.75rem 0 0.75rem; }
+    .bg-section h3:first-of-type { margin-top: 0; }
+    .bg-section p { margin-bottom: 1rem; max-width: 680px; }
+    .bg-section ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+    .bg-section li { margin-bottom: 0.4rem; }
+
+    /* Color grid */
+    .swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; }
+    .swatch { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .swatch .chip { height: 90px; }
+    .swatch .meta { padding: 0.7rem 0.85rem; }
+    .swatch .name { font-family: var(--font-heading); font-weight: 600; font-size: 0.85rem; color: var(--dark); }
+    .swatch .hex { font-size: 0.8rem; color: var(--text-light); font-variant-numeric: tabular-nums; }
+    .swatch .role { font-size: 0.72rem; color: var(--text-light); margin-top: 0.25rem; }
+
+    /* Type specimens */
+    .spec { padding: 1rem 0; border-bottom: 1px solid var(--border); }
+    .spec:last-child { border-bottom: none; }
+    .spec .tag { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light); display: block; margin-bottom: 0.4rem; }
+    .spec-h1 { font-size: 3.2rem; line-height: 1.15; }
+    .spec-h2 { font-size: 2.4rem; }
+    .spec-h3 { font-size: 1.4rem; }
+    .spec-body { font-size: 1.05rem; max-width: 640px; }
+    .spec-label { font-family: var(--font-heading); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--primary); }
+
+    /* Logo demos */
+    .logo-demos { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .logo-demo { flex: 1; min-width: 220px; border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; text-align: center; }
+    .logo-demo.dark { background: var(--dark); border-color: var(--dark); }
+    .logo-demo .cap { display:block; font-size: 0.72rem; color: var(--text-light); margin-top: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+    .logo-demo.dark .cap { color: rgba(255,255,255,0.5); }
+
+    /* Buttons */
+    .btn-demo { display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.95rem; font-weight: 600; padding: 0.85rem 2rem; border-radius: var(--radius); border: 2px solid transparent; cursor: pointer; margin-right: 0.75rem; }
+    .btn-demo.primary { background: var(--primary); color: var(--white); border-color: var(--primary); }
+    .btn-demo.outline { background: transparent; color: var(--primary); border-color: var(--primary); }
+
+    /* Voice do/don't */
+    .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .voice-card { border-radius: var(--radius); padding: 1.25rem 1.5rem; }
+    .voice-card.do  { background: #f0f7f1; border-left: 4px solid #2e7d4f; }
+    .voice-card.dont{ background: #fdf1ee; border-left: 4px solid var(--accent); }
+    .voice-card .head { font-family: var(--font-heading); font-weight: 700; margin-bottom: 0.6rem; }
+    .voice-card.do .head { color: #2e7d4f; }
+    .voice-card.dont .head { color: var(--accent); }
+    .voice-card p { font-size: 0.9rem; margin-bottom: 0.5rem; }
+
+    .quick-links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+    .quick-links a { background: var(--primary); color: #fff; padding: 0.7rem 1.4rem; border-radius: var(--radius); font-weight: 600; font-size: 0.9rem; }
+    .quick-links a.alt { background: var(--accent); }
+
+    @media (max-width: 640px) {
+      .voice-grid { grid-template-columns: 1fr; }
+      .spec-h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="bg-wrap">
+
+  <!-- COVER -->
+  <div class="bg-cover">
+    <div class="jai-lockup" style="font-size:2.4rem;">
+      <img class="jai-mark-img" src="assets/jeong-mark-white.png" alt="Jeong AI">
+      <span class="jai-logo jai-logo--reverse"><span class="jai-mark">Jeong</span><span class="jai-auto">AI</span></span>
+    </div>
+    <h1 style="margin-top:1.25rem;">Brand Guidelines</h1>
+    <p>The visual and verbal system for Jeong AI. Use this as the single source of truth for the website, invoices, proposals, and any branded material.</p>
+    <div class="division">A Division of EBYG Media LLC · Version 1.0 · 2026</div>
+  </div>
+
+  <!-- 1. BRAND ESSENCE -->
+  <section class="bg-section">
+    <h2><span class="num">01</span>Brand Essence</h2>
+    <h3>What we are</h3>
+    <p>Jeong AI builds AI systems, custom software, and automated workflows designed around how a specific business actually works — not generic SaaS sold to ten thousand companies at once.</p>
+    <h3>Positioning statement</h3>
+    <p style="font-size:1.25rem; color:var(--primary-dark); font-family:var(--font-heading); font-weight:600; max-width:620px;">"Software is not one size fits all."</p>
+    <h3>Brand personality</h3>
+    <ul>
+      <li><strong>Professional</strong> — credible, precise, business-first.</li>
+      <li><strong>Warm</strong> — human and approachable, never cold or corporate-jargony.</li>
+      <li><strong>Reliable</strong> — an operational partner, not a subscription you forget about.</li>
+    </ul>
+    <p style="color:var(--text-light); font-style:italic;">Internal north star: <em>"Consistent presence. Genuine care. Quiet reliability."</em></p>
+  </section>
+
+  <!-- 2. LOGO -->
+  <section class="bg-section">
+    <h2><span class="num">02</span>Logo System</h2>
+    <p>The identity has two parts: the <strong>정 brush mark</strong> — the Korean spelling of "Jeong," hand-rendered in calligraphy — and the <strong>Montserrat wordmark</strong> ("Jeong" bold 700 in Jeong Blue, "AI" medium 500 in muted gray). They combine into a small set of approved lockups, each with a defined role.</p>
+
+    <h3>The brush mark — 정</h3>
+    <div class="logo-demos">
+      <div class="logo-demo">
+        <img src="assets/jeong-mark-ink.png" alt="Jeong brush mark, ink" style="height:120px; margin:0 auto;">
+        <span class="cap">Ink — on light</span>
+      </div>
+      <div class="logo-demo dark">
+        <img src="assets/jeong-mark-white.png" alt="Jeong brush mark, white" style="height:120px; margin:0 auto;">
+        <span class="cap">White — on dark</span>
+      </div>
+      <div class="logo-demo">
+        <div class="jai-seal" style="width:120px; height:120px; margin:0 auto;"><img src="assets/jeong-mark-white.png" alt="Jeong app icon"></div>
+        <span class="cap">Icon / favicon tile</span>
+      </div>
+    </div>
+
+    <h3>Approved lockups &amp; their roles</h3>
+    <div class="logo-demos">
+      <div class="logo-demo">
+        <div class="jai-lockup" style="font-size:1.6rem;"><img class="jai-mark-img" src="assets/jeong-mark-ink.png" alt=""><span class="jai-logo"><span class="jai-mark">Jeong</span><span class="jai-auto">AI</span></span></div>
+        <span class="cap">Primary — header, signature, letterhead</span>
+      </div>
+      <div class="logo-demo">
+        <div class="jai-lockup jai-lockup--formal" style="font-size:1.4rem;"><img class="jai-mark-img" src="assets/jeong-mark-ink.png" alt=""><div class="rule"></div><div><span class="jai-logo"><span class="jai-mark">Jeong</span><span class="jai-auto">AI</span></span><div class="jai-division">A Division of EBYG Media LLC</div></div></div>
+        <span class="cap">Formal — documents, invoices, proposals</span>
+      </div>
+      <div class="logo-demo">
+        <div class="jai-lockup jai-lockup--stack" style="font-size:1.4rem;"><img class="jai-mark-img" src="assets/jeong-mark-ink.png" alt=""><span class="jai-logo"><span class="jai-mark">Jeong</span><span class="jai-auto">AI</span></span></div>
+        <span class="cap">Stacked — cards, square spaces</span>
+      </div>
+      <div class="logo-demo dark">
+        <div class="jai-lockup" style="font-size:1.6rem;"><img class="jai-mark-img" src="assets/jeong-mark-white.png" alt=""><span class="jai-logo jai-logo--reverse"><span class="jai-mark">Jeong</span><span class="jai-auto">AI</span></span></div>
+        <span class="cap">Reversed — dark backgrounds, covers</span>
+      </div>
+    </div>
+
+    <h3>Rules</h3>
+    <ul>
+      <li><strong>Mark color follows background:</strong> ink (or Jeong Blue) on light, white on dark. Never place the dark mark on a dark field.</li>
+      <li><strong>Clear space:</strong> keep space around the lockup equal to the height of the 정 mark's lower loop.</li>
+      <li><strong>Pairing:</strong> the mark sits to the left of (or centered above) the wordmark — at roughly 1.5× the wordmark's cap height. Don't shrink it below the cap height.</li>
+      <li><strong>Don't:</strong> recolor "Jeong" to the accent, restyle the wordmark in another typeface, stretch or add effects to the brush mark, or rotate it.</li>
+      <li>The brush mark may be used <strong>alone</strong> as an icon (favicon, avatar, app tile) — preferably in the blue seal tile.</li>
+    </ul>
+    <p style="font-size:0.85rem; color:var(--text-light);">See the full lockup sheet: <a href="logo-explorations.html">logo-explorations.html</a>. Source assets live in <code>brand/assets/</code> (ink, white, blue, terracotta + icon tiles).</p>
+  </section>
+
+  <!-- 3. COLOR -->
+  <section class="bg-section">
+    <h2><span class="num">03</span>Color Palette</h2>
+    <h3>Primary</h3>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="chip" style="background:#0a4f8a"></div><div class="meta"><div class="name">Jeong Blue</div><div class="hex">#0A4F8A</div><div class="role">Primary brand, buttons, headers</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#083d6b"></div><div class="meta"><div class="name">Deep Blue</div><div class="hex">#083D6B</div><div class="role">Emphasis, dark bars, totals</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#1a6fb8"></div><div class="meta"><div class="name">Bright Blue</div><div class="hex">#1A6FB8</div><div class="role">Links, hover states</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#c7553b"></div><div class="meta"><div class="name">Terracotta</div><div class="hex">#C7553B</div><div class="role">Accent, CTAs, accent rules</div></div></div>
+    </div>
+    <h3>Neutrals</h3>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="chip" style="background:#1a1a2e"></div><div class="meta"><div class="name">Ink</div><div class="hex">#1A1A2E</div><div class="role">Headings</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#3a3a4a"></div><div class="meta"><div class="name">Body</div><div class="hex">#3A3A4A</div><div class="role">Paragraph text</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#6b6b7b"></div><div class="meta"><div class="name">Muted</div><div class="hex">#6B6B7B</div><div class="role">Secondary text, labels</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#f7f8fa; border-bottom:1px solid #e2e4e8"></div><div class="meta"><div class="name">Mist</div><div class="hex">#F7F8FA</div><div class="role">Section backgrounds</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#e2e4e8"></div><div class="meta"><div class="name">Border</div><div class="hex">#E2E4E8</div><div class="role">Dividers, table lines</div></div></div>
+    </div>
+    <h3>Secondary (partnership accents — use sparingly)</h3>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="chip" style="background:#7C3AED"></div><div class="meta"><div class="name">Purple</div><div class="hex">#7C3AED</div><div class="role">Secondary brand accent</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#8B5CF6"></div><div class="meta"><div class="name">Purple Mid</div><div class="hex">#8B5CF6</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#EDE9FE"></div><div class="meta"><div class="name">Purple Light</div><div class="hex">#EDE9FE</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#F5F3FF; border-bottom:1px solid #e2e4e8"></div><div class="meta"><div class="name">Purple Pale</div><div class="hex">#F5F3FF</div></div></div>
+    </div>
+    <h3>Usage ratio</h3>
+    <p>Lead with blue and neutrals. Terracotta is an <em>accent</em> — reserve it for calls-to-action, accent rules, and section tags (roughly 10% of any layout). Purple is a secondary flavor for partnership/education contexts; don't mix it heavily with terracotta.</p>
+  </section>
+
+  <!-- 4. TYPOGRAPHY -->
+  <section class="bg-section">
+    <h2><span class="num">04</span>Typography</h2>
+    <p><strong>Headings:</strong> Montserrat (400–700). <strong>Body:</strong> Source Sans 3 (300–600). Both from Google Fonts. Base body size 16–17px, line-height ~1.6.</p>
+    <div class="spec"><span class="tag">Section tag · Montserrat 600 · uppercase · +2px tracking · Jeong Blue</span><span class="spec-label">What We Build</span></div>
+    <div class="spec"><span class="tag">H1 · Montserrat 600 · 3.2rem</span><div class="spec-h1">Built for your business.</div></div>
+    <div class="spec"><span class="tag">H2 · Montserrat 600 · 2.4rem</span><div class="spec-h2">Software is not one size fits all.</div></div>
+    <div class="spec"><span class="tag">H3 · Montserrat 600 · 1.4rem</span><div class="spec-h3">An operational partner, not a subscription.</div></div>
+    <div class="spec"><span class="tag">Body · Source Sans 3 · 1.05rem · 1.6 line-height</span><p class="spec-body">The tools running your business should be built for your business — not the other ten thousand companies on the same SaaS. We build AI agents, custom software, and automated workflows that fit exactly.</p></div>
+  </section>
+
+  <!-- 5. UI ELEMENTS -->
+  <section class="bg-section">
+    <h2><span class="num">05</span>Buttons &amp; Shape</h2>
+    <p>Buttons use Montserrat 600, 2px borders, 6px radius. Primary buttons fill with Jeong Blue and shift to terracotta on hover.</p>
+    <p style="margin-bottom:1.5rem;">
+      <span class="btn-demo primary">Book a Free Audit</span>
+      <span class="btn-demo outline">See What We Build</span>
+    </p>
+    <h3>Shape language</h3>
+    <ul>
+      <li>Corner radius: <strong>6px</strong> default, <strong>12px</strong> for cards/large surfaces.</li>
+      <li>Shadows are soft and low-opacity (never harsh) — sm / md / lg scale.</li>
+      <li>Accent rules: a short terracotta bar (~90px × 3px) under headers and section breaks.</li>
+    </ul>
+  </section>
+
+  <!-- 6. VOICE -->
+  <section class="bg-section">
+    <h2><span class="num">06</span>Voice &amp; Tone</h2>
+    <p>Direct, confident, and human. We speak to business owners, not engineers. Short sentences. Concrete benefits. No hype, no buzzword soup.</p>
+    <div class="voice-grid">
+      <div class="voice-card do">
+        <div class="head">✓ Do</div>
+        <p>"We build tools that fit exactly how you work."</p>
+        <p>"Retain an operational partner, not a software subscription."</p>
+        <p>Lead with the customer's problem and outcome.</p>
+      </div>
+      <div class="voice-card dont">
+        <div class="head">✕ Don't</div>
+        <p>"Leverage synergistic AI-driven paradigms."</p>
+        <p>Over-promise or use fear-based urgency.</p>
+        <p>Bury the point under technical jargon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. CONTACT -->
+  <section class="bg-section">
+    <h2><span class="num">07</span>Canonical Details</h2>
+    <ul>
+      <li><strong>Legal:</strong> Jeong AI, a division of EBYG Media LLC</li>
+      <li><strong>Phone:</strong> (801) 648-9652</li>
+      <li><strong>Email:</strong> info@jeongai.com</li>
+      <li><strong>Web:</strong> jeongai.com</li>
+      <li><strong>Address:</strong> Fully remote — no physical address displayed</li>
+    </ul>
+    <p style="color:var(--accent); font-weight:600;">⚠ Note: older "EBYG Automation" branding (navy/gold, ebygautomation.com) is retired. Always use the Jeong AI details above.</p>
+    <h3>Branded templates</h3>
+    <div class="quick-links no-print">
+      <a href="invoice.html">Open Invoice Template →</a>
+      <a href="proposal.html" class="alt">Open Proposal Template →</a>
+    </div>
+  </section>
+
+  <div class="doc-footer" style="border:none;">
+    <div class="jai-logo" style="justify-content:center; font-size:1.1rem;"><span class="jai-mark">Jeong</span><span class="jai-auto">AI</span></div>
+    <p class="tagline">Consistent presence. Genuine care. Quiet reliability.</p>
+    <p>info@jeongai.com · (801) 648-9652 · jeongai.com</p>
+  </div>
+
+</div>
+</body>
+</html>

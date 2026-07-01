@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Jeong AI — Proposal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="brand.css">
+  <style>
+    .toolbar {
+      max-width: 8.5in; margin: 1rem auto 0; display: flex; gap: 0.75rem;
+      justify-content: flex-end; align-items: center;
+    }
+    .toolbar .hint { margin-right: auto; font-size: 0.82rem; color: var(--text-light); }
+    .toolbar button {
+      font-family: var(--font-heading); font-weight: 600; font-size: 0.85rem;
+      padding: 0.6rem 1.3rem; border-radius: var(--radius); border: 2px solid var(--primary);
+      background: var(--primary); color: #fff; cursor: pointer;
+    }
+    .toolbar button.alt { background: transparent; color: var(--primary); }
+
+    /* Proposal cover band */
+    .prop-cover {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: #fff; margin: -0.75in -0.75in 2rem; padding: 2.5in 0.75in 1.25in;
+    }
+    .prop-cover .jai-logo { font-size: 1.7rem; }
+    .prop-cover h1 { color: #fff; font-size: 2.6rem; margin-top: 1.5rem; max-width: 6in; }
+    .prop-cover .prepared { margin-top: 1.5rem; font-size: 0.9rem; color: rgba(255,255,255,0.8); }
+    .prop-cover .prepared strong { color: #fff; }
+    .prop-cover .accent { width: 90px; height: 3px; background: var(--accent); margin-top: 1.25rem; }
+
+    .pkg { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 1.25rem; }
+    .pkg.featured { border-color: var(--accent); box-shadow: var(--shadow-md); }
+    .pkg .pkg-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.75rem; }
+    .pkg .pkg-name { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--primary-dark); }
+    .pkg .pkg-price { font-family: var(--font-heading); font-weight: 700; font-size: 1.3rem; color: var(--accent); }
+    .pkg ul { padding-left: 1.2rem; }
+    .pkg li { font-size: 0.9rem; margin-bottom: 0.35rem; }
+
+    .timeline { display: flex; gap: 0; margin: 1rem 0; }
+    .phase { flex: 1; text-align: center; position: relative; padding-top: 1.25rem; }
+    .phase::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 14px; height: 14px; border-radius: 50%; background: var(--primary); }
+    .phase::after { content: ''; position: absolute; top: 6px; left: 50%; width: 100%; height: 2px; background: var(--border); z-index: -1; }
+    .phase:last-child::after { display: none; }
+    .phase .pname { font-family: var(--font-heading); font-weight: 600; font-size: 0.85rem; color: var(--dark); }
+    .phase .pdur { font-size: 0.78rem; color: var(--text-light); }
+
+    .sign-row { display: flex; gap: 3rem; margin-top: 1.5rem; }
+    .sign-block { flex: 1; }
+    .sign-line { border-bottom: 1.5px solid var(--dark); height: 2.5rem; }
+    .sign-label { font-size: 0.78rem; color: var(--text-light); margin-top: 0.4rem; }
+
+    @media print { .prop-cover { margin: 0 0 2rem; padding: 1.5in 0 1rem; } }
+  </style>
+</head>
+<body>
+
+  <!-- Toolbar (screen only) -->
+  <div class="toolbar no-print">
+    <span class="hint">Click any field to edit, then Print → Save as PDF (US Letter).</span>
+    <button onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+  <div class="doc">
+
+    <!-- COVER -->
+    <div class="prop-cover">
+      <div class="jai-lockup" style="font-size:1.7rem;">
+        <img class="jai-mark-img" src="assets/jeong-mark-white.png" alt="Jeong AI">
+        <span class="jai-logo jai-logo--reverse"><span class="jai-mark">Jeong</span><span class="jai-auto">AI</span></span>
+      </div>
+      <h1 contenteditable="true">Automation &amp; Custom Software Proposal</h1>
+      <div class="accent"></div>
+      <div class="prepared">
+        Prepared for <strong contenteditable="true">Client Company Name</strong><br>
+        Prepared by <strong>Jeong AI</strong> · <span contenteditable="true">June 3, 2026</span>
+      </div>
+    </div>
+
+    <!-- 1. OVERVIEW -->
+    <div class="doc-section" style="margin-top:0;">
+      <h3>01 · Overview</h3>
+      <p contenteditable="true">Thank you for the opportunity. This proposal outlines how Jeong AI will build software designed around how <em>your</em> business actually works — not a generic platform retrofitted to fit. Below is our understanding of your goals, the proposed scope, investment, and timeline.</p>
+    </div>
+
+    <!-- 2. THE CHALLENGE -->
+    <div class="doc-section">
+      <h3>02 · The Challenge</h3>
+      <p contenteditable="true">[Summarize the client's current pain — manual processes, disconnected tools, time lost to repetitive work. Be specific and show you listened.]</p>
+    </div>
+
+    <!-- 3. PROPOSED SOLUTION -->
+    <div class="doc-section">
+      <h3>03 · Proposed Solution</h3>
+      <p contenteditable="true">[Describe the system you'll build and the outcome it delivers. Frame around the business result, not the technology.]</p>
+      <ul contenteditable="true">
+        <li>Deliverable one — what it does and why it matters.</li>
+        <li>Deliverable two — what it does and why it matters.</li>
+        <li>Deliverable three — what it does and why it matters.</li>
+      </ul>
+    </div>
+
+    <!-- 4. INVESTMENT -->
+    <div class="doc-section">
+      <h3>04 · Investment</h3>
+      <div class="pkg">
+        <div class="pkg-head">
+          <span class="pkg-name" contenteditable="true">Foundation</span>
+          <span class="pkg-price" contenteditable="true">$X,XXX</span>
+        </div>
+        <ul contenteditable="true">
+          <li>Scope item</li>
+          <li>Scope item</li>
+        </ul>
+      </div>
+      <div class="pkg featured">
+        <div class="pkg-head">
+          <span class="pkg-name" contenteditable="true">Complete System <span style="font-size:0.7rem; color:var(--accent); letter-spacing:1px;">★ RECOMMENDED</span></span>
+          <span class="pkg-price" contenteditable="true">$XX,XXX</span>
+        </div>
+        <ul contenteditable="true">
+          <li>Everything in Foundation</li>
+          <li>Scope item</li>
+          <li>Scope item</li>
+        </ul>
+      </div>
+      <div class="pkg">
+        <div class="pkg-head">
+          <span class="pkg-name" contenteditable="true">Ongoing Partnership</span>
+          <span class="pkg-price" contenteditable="true">$XXX / mo</span>
+        </div>
+        <ul contenteditable="true">
+          <li>Monitoring, maintenance, and iteration</li>
+          <li>Priority support</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 5. TIMELINE -->
+    <div class="doc-section">
+      <h3>05 · Timeline</h3>
+      <div class="timeline">
+        <div class="phase"><div class="pname" contenteditable="true">Discovery</div><div class="pdur" contenteditable="true">Week 1</div></div>
+        <div class="phase"><div class="pname" contenteditable="true">Build</div><div class="pdur" contenteditable="true">Weeks 2–4</div></div>
+        <div class="phase"><div class="pname" contenteditable="true">Test &amp; Refine</div><div class="pdur" contenteditable="true">Week 5</div></div>
+        <div class="phase"><div class="pname" contenteditable="true">Launch</div><div class="pdur" contenteditable="true">Week 6</div></div>
+      </div>
+    </div>
+
+    <!-- 6. WHY JEONG AI -->
+    <div class="doc-section">
+      <h3>06 · Why Jeong AI</h3>
+      <p contenteditable="true">You retain an operational partner, not a software subscription. We build tools that fit exactly how you work, then stand behind them. Consistent presence, genuine care, quiet reliability.</p>
+    </div>
+
+    <!-- 7. ACCEPTANCE -->
+    <div class="doc-section">
+      <h3>07 · Acceptance</h3>
+      <p>To proceed, sign below or reply to confirm. This proposal is valid for <span contenteditable="true">30</span> days.</p>
+      <div class="sign-row">
+        <div class="sign-block">
+          <div class="sign-line"></div>
+          <div class="sign-label">Client signature &amp; date</div>
+        </div>
+        <div class="sign-block">
+          <div class="sign-line"></div>
+          <div class="sign-label">Jeong AI · authorized signature &amp; date</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="doc-footer">
+      <p>Jeong AI · A division of EBYG Media LLC · info@jeongai.com · (801) 648-9652 · jeongai.com</p>
+      <p class="tagline">Consistent presence. Genuine care. Quiet reliability.</p>
+    </div>
+
+  </div>
+</body>
+</html>
