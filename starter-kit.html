@@ -101,14 +101,14 @@
     <div class="unlock-card">
       <div class="unlock-eyebrow">AI Starter Kit</div>
       <div class="unlock-title">Enter your<br>license key</div>
-      <div class="unlock-subtitle">Your key was displayed at checkout and emailed to you. It looks like JAI-XXXX-XXXX-XXXX.</div>
+      <div class="unlock-subtitle">Your license key was emailed to you after purchase. It looks like xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.</div>
 
       <div class="key-input-wrap">
         <input
           class="key-input"
           id="key-input"
           type="text"
-          placeholder="JAI-XXXX-XXXX-XXXX"
+          placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
           maxlength="19"
           autocomplete="off"
           spellcheck="false"
@@ -405,8 +405,8 @@
 <script>
 // ─── CONFIG ──────────────────────────────────────────────────
 // Replace with your actual Supabase project URL and anon key
-const SUPABASE_URL = 'https://YOUR_PROJECT.supabase.co';
-const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY';
+const SUPABASE_URL = 'https://trznodwzsvabolqwpqpi.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_gFQ2FahPvBHIyUxRIBJ4GQ_GYG8K0WI';
 const STORAGE_KEY = 'jai_kit_key';
 
 // ─── DATA ────────────────────────────────────────────────────
@@ -502,12 +502,13 @@ let selectedBiz = '', selectedPain = '', promptCat = 'all', licenseKey = '';
 
 // ─── KEY VALIDATION ──────────────────────────────────────────
 function formatKey(input) {
-  let v = input.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+  let v = input.value.toLowerCase().replace(/[^a-f0-9]/g, '');
   let parts = [];
-  parts.push(v.slice(0,4));
-  if(v.length > 4) parts.push(v.slice(4,8));
+  if(v.length > 0) parts.push(v.slice(0,8));
   if(v.length > 8) parts.push(v.slice(8,12));
   if(v.length > 12) parts.push(v.slice(12,16));
+  if(v.length > 16) parts.push(v.slice(16,20));
+  if(v.length > 20) parts.push(v.slice(20,32));
   input.value = parts.filter(p=>p).join('-');
   input.classList.remove('error','success');
   document.getElementById('unlock-msg').textContent = '';
@@ -544,14 +545,14 @@ async function validateKey() {
     }
   } catch(e) {
     // Fallback: if Supabase isn't configured yet, validate format only
-    if(key.startsWith('JAI-') && key.length === 18) {
+    if(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(key)) {
       input.classList.add('success');
       showMsg('success','Key accepted — unlocking your kit...');
       licenseKey = key;
       localStorage.setItem(STORAGE_KEY, key);
       setTimeout(() => enterKit(), 900);
     } else {
-      showMsg('error','Invalid key format. Keys look like JAI-XXXX-XXXX-XXXX');
+      showMsg('error','Invalid key. Check for typos or contact info@jeongai.com');
       input.classList.add('error');
       btn.disabled = false;
       btnText.textContent = 'Unlock my kit';

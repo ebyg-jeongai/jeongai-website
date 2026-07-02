@@ -117,7 +117,7 @@
         <div class="inc-row l2"><span class="inc-check l2">✓</span>DIY vs. Jeong AI guide</div>
       </div>
 
-      <input class="key-input" id="key-input" type="text" placeholder="JAI-XXXX-XXXX-XXXX"
+      <input class="key-input" id="key-input" type="text" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         maxlength="19" autocomplete="off" spellcheck="false"
         oninput="formatKey(this)" onkeydown="if(event.key==='Enter')validateKey()">
       <button class="unlock-btn" id="unlock-btn" onclick="validateKey()">
@@ -530,8 +530,8 @@
   <script src="js/main.js"></script>
 <script>
 // ══ CONFIG ════════════════════════════════════════════════════
-const SUPABASE_URL      = 'https://YOUR_PROJECT.supabase.co';
-const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY';
+const SUPABASE_URL      = 'https://trznodwzsvabolqwpqpi.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_gFQ2FahPvBHIyUxRIBJ4GQ_GYG8K0WI';
 const STORAGE_KEY       = 'jai_blueprint_key';
 
 // ══ STATE ═════════════════════════════════════════════════════
@@ -939,11 +939,13 @@ const DECISIONS = [
 //  KEY VALIDATION
 // ══════════════════════════════════════════════════════════════
 function formatKey(inp) {
-  let v = inp.value.toUpperCase().replace(/[^A-Z0-9]/g,'');
-  let p = [v.slice(0,4)];
-  if(v.length>4) p.push(v.slice(4,8));
+  let v = inp.value.toLowerCase().replace(/[^a-f0-9]/g,'');
+  let p = [];
+  if(v.length>0) p.push(v.slice(0,8));
   if(v.length>8) p.push(v.slice(8,12));
   if(v.length>12) p.push(v.slice(12,16));
+  if(v.length>16) p.push(v.slice(16,20));
+  if(v.length>20) p.push(v.slice(20,32));
   inp.value = p.filter(x=>x).join('-');
   inp.classList.remove('error','success');
   document.getElementById('unlock-msg').textContent='';
@@ -968,12 +970,12 @@ async function validateKey() {
       btn.disabled=false; btnTxt.textContent='Unlock Blueprint';
     }
   } catch(e) {
-    if(key.startsWith('JAI-')&&key.length===18) {
+    if(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(key)) {
       inp.classList.add('success'); showMsg('success','✓ Key accepted — unlocking your blueprint...');
       licenseKey=key; localStorage.setItem(STORAGE_KEY,key);
       setTimeout(()=>enterKit(),900);
     } else {
-      showMsg('error','Invalid key format. Keys look like JAI-XXXX-XXXX-XXXX');
+      showMsg('error','Invalid key. Check for typos or contact info@jeongai.com');
       inp.classList.add('error'); btn.disabled=false; btnTxt.textContent='Unlock Blueprint';
     }
   }
