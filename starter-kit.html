@@ -544,7 +544,7 @@ async function validateKey() {
     }
   } catch(e) {
     // Fallback: if Supabase isn't configured yet, validate format only
-    if(key.startsWith('JAI-') && key.length === 19) {
+    if(key.startsWith('JAI-') && key.length === 18) {
       input.classList.add('success');
       showMsg('success','Key accepted — unlocking your kit...');
       licenseKey = key;

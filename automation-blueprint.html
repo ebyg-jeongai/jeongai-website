@@ -968,7 +968,7 @@ async function validateKey() {
       btn.disabled=false; btnTxt.textContent='Unlock Blueprint';
     }
   } catch(e) {
-    if(key.startsWith('JAI-')&&key.length===19) {
+    if(key.startsWith('JAI-')&&key.length===18) {
       inp.classList.add('success'); showMsg('success','✓ Key accepted — unlocking your blueprint...');
       licenseKey=key; localStorage.setItem(STORAGE_KEY,key);
       setTimeout(()=>enterKit(),900);
