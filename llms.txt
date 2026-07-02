@@ -1,0 +1,47 @@
+# Jeong AI
+
+> Jeong AI builds custom software, AI agents, and automated workflows for small businesses. A division of EBYG Media LLC.
+
+Jeong AI is named after the Korean concept 정 (Jeong) — the bond that forms between people through consistent presence, genuine care, and quiet reliability over time. This philosophy drives every system we build.
+
+## What We Do
+
+Jeong AI solves operational friction for small businesses across four functions: Operations, Sales & Communication, Administration, and Finance & Reporting. We build systems that fit exactly how a business works — not the other way around.
+
+### Services
+
+- **AI Agents & Automation** — Custom AI agents and automated workflows embedded in existing tools (email, CRM, documents, project management). No ripping and replacing existing systems.
+- **Custom Software** — Purpose-built applications: scheduling systems, client portals, internal tools, dashboards. Engineered around how your team actually works.
+- **Professional Websites** — Clean, fast, mobile-responsive websites with ongoing management, security, and hosting included.
+
+### Implementation Tiers
+
+- **Jeong Assistant** ($2,500–$3,500) — Focused AI relief for administration: email summarization, document organization, meeting notes, scheduling support.
+- **Jeong Operations Agent** ($4,000–$6,000) — Targets operations and sales: inbox triage, CRM updates, lead follow-up automation.
+- **Jeong Business System** ($6,000–$10,000) — Full AI system across all four business functions.
+- **Jeong Partner** (ongoing retainer) — Continuous AI operations partner with ongoing optimization and expansion.
+
+### Digital Products
+
+- **AI Starter Kit** ($29) — 13 curated AI tools, prompt library, setup guides, real automation examples for small businesses.
+- **AI Automation Blueprint** ($79) — Everything in the Starter Kit plus the Jeong AI 4-stage framework, 20 workflow templates, interactive system builder, and implementation checklists.
+- **Small Business AI Toolkit** ($149) — Complete AI system package with full playbooks, workflow examples across industries, templates, and a credit toward Jeong AI implementation.
+
+## Contact
+
+- **Website:** https://www.jeongai.com
+- **Email:** info@jeongai.com
+- **Phone:** (801) 648-9652
+- **Entity:** Jeong AI, a division of EBYG Media LLC
+- **Location:** Fully remote, serving US small businesses
+
+## Pages
+
+- [Home](https://www.jeongai.com/) — Main site with full service overview, philosophy, and contact
+- [AI Starter Kit](https://www.jeongai.com/checkout-starter-kit.html) — Product page for the $29 starter kit
+- [AI Automation Blueprint](https://www.jeongai.com/checkout-blueprint.html) — Product page for the $79 blueprint
+- [Small Business AI Toolkit](https://www.jeongai.com/checkout-toolkit.html) — Product page for the $149 toolkit
+- [AI Starter Kit (product detail)](https://www.jeongai.com/starter-kit.html) — Full interactive product page for the $29 starter kit
+- [AI Automation Blueprint (product detail)](https://www.jeongai.com/automation-blueprint.html) — Full interactive product page for the $79 blueprint
+- [Privacy Policy](https://www.jeongai.com/privacy.html)
+- [Terms of Service](https://www.jeongai.com/terms.html)
