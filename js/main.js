@@ -114,7 +114,7 @@
     });
   });
 
-  // ---------- FORM (placeholder handler) ----------
+  // ---------- AUDIT FORM — Web3Forms ----------
   var form = document.getElementById('audit-form');
   if (form) {
     form.addEventListener('submit', function (e) {
@@ -125,20 +125,44 @@
       btn.textContent = 'Sending...';
       btn.disabled = true;
 
-      // Simulate submission (replace with actual endpoint)
-      setTimeout(function () {
-        btn.textContent = 'Request Received!';
-        btn.style.background = '#2a9d5c';
-        btn.style.borderColor = '#2a9d5c';
+      var data = new FormData(form);
 
-        setTimeout(function () {
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      })
+      .then(function (res) { return res.json(); })
+      .then(function (json) {
+        if (json.success) {
+          btn.textContent = 'Request Received!';
+          btn.style.background = '#2a9d5c';
+          btn.style.borderColor = '#2a9d5c';
           form.reset();
+          // GA4 conversion event — fires when analytics is added
+          if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', { event_category: 'audit_form' });
+          }
+          setTimeout(function () {
+            btn.textContent = originalText;
+            btn.style.background = '';
+            btn.style.borderColor = '';
+            btn.disabled = false;
+          }, 4000);
+        } else {
+          throw new Error(json.message || 'Submission failed');
+        }
+      })
+      .catch(function () {
+        btn.textContent = 'Something went wrong — please email info@jeongai.com';
+        btn.style.background = '#c0392b';
+        btn.style.borderColor = '#c0392b';
+        setTimeout(function () {
           btn.textContent = originalText;
           btn.style.background = '';
           btn.style.borderColor = '';
           btn.disabled = false;
-        }, 3000);
-      }, 1200);
+        }, 5000);
+      });
     });
   }
 
