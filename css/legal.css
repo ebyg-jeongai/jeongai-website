@@ -74,6 +74,18 @@
   color: var(--accent);
 }
 
+.legal-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0 1.5rem;
+}
+
+.legal-closing {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.75;
+}
+
 /* Simplified footer on legal pages */
 .legal-page + .site-footer {
   border-top: 1px solid rgba(255,255,255,0.05);
