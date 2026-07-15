@@ -34,3 +34,5 @@ dist/
 # Claude Code
 .claude/*
 !.claude/skills/
+.firecrawl/
+.playwright-mcp/

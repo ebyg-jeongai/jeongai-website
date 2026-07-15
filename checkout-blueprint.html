@@ -20,7 +20,7 @@
   <title>AI Automation Blueprint — Jeong AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/checkout.css">
   <link rel="icon" type="image/png" href="favicon.png">
@@ -59,6 +59,65 @@
         "url": "https://www.jeongai.com"
       }
     }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.jeongai.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.jeongai.com/#products" },
+      { "@type": "ListItem", "position": 3, "name": "Automation Blueprint — Checkout", "item": "https://www.jeongai.com/checkout-blueprint.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I need to buy the Starter Kit first?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The Blueprint includes everything from the Starter Kit. You get full access to all Level 1 content plus the Level 2 frameworks, templates, and tools."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between the Starter Kit and the Blueprint?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Starter Kit teaches you what tools to use and gives you prompts and scenarios. The Blueprint teaches you how to build complete automation systems — with frameworks, workflow templates, an interactive system builder, and implementation checklists."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the system builder work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The system builder is an interactive drag-and-drop canvas where you design your automation architecture. Pick nodes from the palette (triggers, actions, AI steps, integrations) and connect them to map out your workflows visually."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this a subscription?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The Blueprint is a one-time purchase of $79. You get lifetime access to all content and future updates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I upgrade to the Toolkit later?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. When you're ready for the complete package, you can upgrade to the Small Business AI Toolkit (Level 3), which includes everything in the Blueprint plus additional playbooks, industry workflows, and a credit toward Jeong AI implementation."
+        }
+      }
+    ]
   }
   </script>
 </head>
@@ -333,7 +392,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Jeong AI / Jeong AI. All rights reserved.</p>
+        <p>&copy; 2026 Jeong AI &mdash; a division of EBYG Media LLC. All rights reserved.</p>
         <div class="footer-legal">
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms of Service</a>
@@ -382,6 +441,16 @@
         header.classList.toggle('scrolled', window.scrollY > 60);
       });
     }
+  </script>
+  <script>
+    // GA4 checkout funnel tracking
+    document.querySelectorAll('.lemonsqueezy-button').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        if (typeof gtag === 'function') {
+          gtag('event', 'begin_checkout', { item_id: btn.getAttribute('data-product') || 'unknown' });
+        }
+      });
+    });
   </script>
 </body>
 </html>

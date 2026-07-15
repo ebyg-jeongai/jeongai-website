@@ -20,7 +20,7 @@
   <title>AI Starter Kit — Jeong AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/checkout.css">
   <link rel="icon" type="image/png" href="favicon.png">
@@ -59,6 +59,65 @@
         "url": "https://www.jeongai.com"
       }
     }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.jeongai.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.jeongai.com/#products" },
+      { "@type": "ListItem", "position": 3, "name": "AI Starter Kit — Checkout", "item": "https://www.jeongai.com/checkout-starter-kit.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I access the Starter Kit after purchase?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "After purchase, you'll receive a license key via email. Enter it on the Starter Kit page to unlock all content instantly. Your key works across devices."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this a subscription?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The AI Starter Kit is a one-time purchase of $29. You get lifetime access to the current content and any future updates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need technical skills?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not at all. The Starter Kit is designed for business owners with zero AI experience. Every tool recommendation includes setup guides written in plain language."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I upgrade to the Blueprint or Toolkit later?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Each level builds on the previous one. When you're ready, you can upgrade to the AI Automation Blueprint (Level 2) or Small Business AI Toolkit (Level 3), which include everything in the Starter Kit plus additional resources."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What industries does this cover?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Starter Kit is designed for any small business — contractors, real estate, consulting, agencies, healthcare, legal, and more. The tools and prompts are organized by business function (operations, sales, admin, finance), which applies across industries."
+        }
+      }
+    ]
   }
   </script>
 </head>
@@ -173,6 +232,9 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             Secure checkout via Lemon Squeezy
           </div>
+          <div style="text-align:center;margin-top:0.75rem;font-size:0.9rem;">
+            Not sure yet? <a href="starter-kit-demo.html" style="font-weight:600;text-decoration:underline;">Try the free interactive demo &#8594;</a>
+          </div>
         </div>
 
       </div>
@@ -264,6 +326,7 @@
       <h2>Ready to Start Using AI in Your Business?</h2>
       <p>Join business owners who are saving hours every week with practical AI tools and prompts — no technical skills required.</p>
       <a href="https://jeongai.lemonsqueezy.com/checkout/buy/03db4541-beef-440c-a6cc-92f635aae5b7" class="checkout-btn btn-level-1 lemonsqueezy-button" data-product="starter-kit" style="max-width:360px;margin:0 auto;">Buy Now — $29</a>
+      <p style="margin-top:0.9rem;font-size:0.9rem;"><a href="starter-kit-demo.html" style="text-decoration:underline;">Or try the free interactive demo first &#8594;</a></p>
     </div>
   </section>
 
@@ -306,7 +369,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Jeong AI / Jeong AI. All rights reserved.</p>
+        <p>&copy; 2026 Jeong AI &mdash; a division of EBYG Media LLC. All rights reserved.</p>
         <div class="footer-legal">
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms of Service</a>
@@ -322,6 +385,16 @@
   <!-- Lemon Squeezy overlay widget -->
   <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
   <script>
+
+    // GA4 checkout funnel tracking
+    document.querySelectorAll('.lemonsqueezy-button').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        if (typeof gtag === 'function') {
+          gtag('event', 'begin_checkout', { item_id: btn.getAttribute('data-product') || 'unknown' });
+        }
+      });
+    });
+
     // FAQ accordion
     document.querySelectorAll('.faq-question').forEach(function(btn) {
       btn.addEventListener('click', function() {

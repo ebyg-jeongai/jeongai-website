@@ -2,3 +2,24 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.jeongai.com/sitemap.xml
+
+# AI crawlers — explicitly permitted
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+# LLM-readable site summary: https://www.jeongai.com/llms.txt

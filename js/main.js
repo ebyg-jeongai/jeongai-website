@@ -19,39 +19,45 @@
     lastScroll = y;
   }
 
-  window.addEventListener('scroll', onScroll, { passive: true });
+  if (header) window.addEventListener('scroll', onScroll, { passive: true });
 
   // ---------- MOBILE NAV ----------
   const toggle = document.getElementById('mobile-toggle');
   const nav = document.getElementById('main-nav');
 
-  toggle.addEventListener('click', function () {
-    toggle.classList.toggle('active');
-    nav.classList.toggle('open');
-  });
-
-  // Close mobile nav on link click
-  nav.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function () {
-      toggle.classList.remove('active');
-      nav.classList.remove('open');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () {
+      var isOpen = toggle.classList.toggle('active');
+      nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
-  });
+
+    // Close mobile nav on link click
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        toggle.classList.remove('active');
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
 
   // ---------- SCROLL TO TOP ----------
   const scrollBtn = document.getElementById('scroll-top');
 
-  window.addEventListener('scroll', function () {
-    if (window.scrollY > 600) {
-      scrollBtn.classList.add('visible');
-    } else {
-      scrollBtn.classList.remove('visible');
-    }
-  }, { passive: true });
+  if (scrollBtn) {
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 600) {
+        scrollBtn.classList.add('visible');
+      } else {
+        scrollBtn.classList.remove('visible');
+      }
+    }, { passive: true });
 
-  scrollBtn.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+    scrollBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   // ---------- SCROLL REVEAL ----------
   function addRevealClasses() {

@@ -3,1172 +3,143 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AI Starter Kit — Jeong AI. 13 curated AI tools, 20+ ready-to-use prompts, setup guides, and real business scenarios.">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CX2B49MG98"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CX2B49MG98');
+  </script>
+  <meta name="description" content="Try the AI Starter Kit free — interactive demo with real tools, prompts, and setup guides. Personalize it to your business and see how it works before you buy.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="AI Starter Kit — Jeong AI">
-  <meta property="og:description" content="13 curated AI tools, 20+ ready-to-use prompts, setup guides, and real business scenarios.">
+  <meta property="og:title" content="AI Starter Kit — Free Interactive Demo | Jeong AI">
+  <meta property="og:description" content="Try before you buy. Personalize the kit to your business, copy real prompts, and preview the full setup guides.">
   <meta property="og:site_name" content="Jeong AI">
   <meta property="og:locale" content="en_US">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <title>AI Starter Kit — Jeong AI</title>
+  <title>AI Starter Kit — Free Interactive Demo | Jeong AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-/* ============================================================
-   Jeong AI — Starter Kit Demo
-   Design: restrained, typographic, calm. No decoration for
-   decoration's sake. Let whitespace and hierarchy do the work.
-   ============================================================ */
-
-:root {
-  --primary: #0a4f8a;
-  --primary-dark: #083d6b;
-  --primary-light: #1a6fb8;
-  --accent: #c7553b;
-  --accent-hover: #a8432d;
-  --dark: #141726;
-  --text: #1e2028;
-  --text-light: #5e6272;
-  --light: #f5f6f8;
-  --white: #ffffff;
-  --border: #e3e5ea;
-  --radius: 8px;
-  --radius-sm: 6px;
-  --font-heading: 'Montserrat', sans-serif;
-  --font-body: 'Source Sans 3', 'Source Sans Pro', sans-serif;
-  --max-width: 1200px;
-  --header-h: 72px;
-}
-
-/* --- Reset --- */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
-body {
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--text);
-  background: var(--white);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-img { max-width: 100%; display: block; }
-a { color: var(--primary); text-decoration: none; }
-a:hover { color: var(--primary-dark); }
-ul { list-style: none; }
-button { font-family: inherit; }
-
-/* --- Utilities --- */
-.container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 2rem; }
-
-/* --- Header --- */
-.site-header {
-  position: fixed; top: 0; left: 0; right: 0;
-  height: var(--header-h);
-  background: var(--white);
-  z-index: 1000;
-  border-bottom: 1px solid var(--border);
-}
-.header-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
-.logo { display: flex; align-items: baseline; gap: 0.3rem; font-family: var(--font-heading); text-decoration: none; }
-.logo-jai { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
-.logo-auto { font-size: 1rem; font-weight: 500; color: var(--text-light); }
-.nav-list { display: flex; align-items: center; gap: 2rem; }
-.nav-list a { font-family: var(--font-heading); font-size: 0.85rem; font-weight: 500; color: var(--text-light); }
-.nav-list a:hover { color: var(--text); }
-.nav-cta { background: var(--primary); color: var(--white) !important; padding: 0.5rem 1.1rem; border-radius: var(--radius-sm); }
-.nav-cta:hover { background: var(--primary-dark); color: var(--white) !important; }
-.mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-.mobile-toggle span { width: 24px; height: 2px; background: var(--dark); border-radius: 1px; }
-
-/* --- Footer --- */
-.site-footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 3.5rem 0 0; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
-.footer-brand p { font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.6; }
-.footer-division { font-size: 0.8rem; opacity: 0.4; margin-top: 0.75rem !important; }
-.footer-brand .logo-jai { color: var(--white); }
-.footer-brand .logo-auto { color: rgba(255,255,255,0.45); }
-.footer-links h4 { color: var(--white); font-family: var(--font-heading); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1rem; }
-.footer-links li { margin-bottom: 0.5rem; }
-.footer-links a { color: rgba(255,255,255,0.5); font-size: 0.88rem; }
-.footer-links a:hover { color: rgba(255,255,255,0.85); }
-.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; font-size: 0.82rem; }
-.footer-legal { display: flex; gap: 1.5rem; }
-.footer-legal a { color: rgba(255,255,255,0.4); }
-.footer-legal a:hover { color: rgba(255,255,255,0.7); }
-
-
-/* ============================================================
-   UNLOCK SCREEN
-   Feel: quiet room, one clear action. No decoration.
-   ============================================================ */
-
-#unlock-screen {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: var(--dark);
-}
-.unlock-inner {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-}
-.unlock-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 3rem;
-}
-.unlock-logo-mark {
-  width: 32px; height: 32px;
-  background: var(--primary);
-  border-radius: var(--radius-sm);
-  display: flex; align-items: center; justify-content: center;
-}
-.unlock-logo-mark svg { width: 16px; height: 16px; fill: #fff; }
-.unlock-logo-text {
-  font-family: var(--font-heading);
-  font-size: 14px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.85);
-  letter-spacing: 0.01em;
-}
-.unlock-logo-text span { color: rgba(255,255,255,0.45); font-weight: 500; }
-
-.unlock-card {
-  width: 100%;
-  max-width: 420px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: var(--radius);
-  padding: 2.5rem 2.5rem 2rem;
-  text-align: center;
-}
-.unlock-eyebrow {
-  font-family: var(--font-heading);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
-  margin-bottom: 1.5rem;
-}
-.unlock-title {
-  font-family: var(--font-heading);
-  font-size: 28px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.2;
-  margin-bottom: 0.75rem;
-}
-.unlock-subtitle {
-  font-family: var(--font-body);
-  font-size: 14px;
-  color: rgba(255,255,255,0.4);
-  line-height: 1.65;
-  margin-bottom: 2rem;
-}
-.key-input-wrap { margin-bottom: 1rem; }
-.key-input {
-  width: 100%;
-  padding: 14px 16px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: var(--radius-sm);
-  font-family: 'Courier New', monospace;
-  font-size: 15px;
-  letter-spacing: 0.1em;
-  color: #fff;
-  text-align: center;
-  outline: none;
-  transition: border-color 0.2s;
-}
-.key-input::placeholder { color: rgba(255,255,255,0.18); letter-spacing: 0.05em; font-size: 13px; }
-.key-input:focus { border-color: rgba(255,255,255,0.25); }
-.key-input.error { border-color: #e05252; }
-.key-input.success { border-color: #3da87a; }
-
-.unlock-btn {
-  width: 100%;
-  padding: 13px;
-  background: var(--primary);
-  color: #fff;
-  border: none;
-  border-radius: var(--radius-sm);
-  font-family: var(--font-heading);
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.15s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-.unlock-btn:hover { background: var(--primary-dark); }
-.unlock-btn:disabled { opacity: 0.35; cursor: not-allowed; }
-
-.unlock-msg {
-  margin-top: 0.75rem;
-  font-size: 13px;
-  min-height: 20px;
-  font-weight: 500;
-}
-.unlock-msg.error { color: #f5a3a3; }
-.unlock-msg.success { color: #6ee7b7; }
-.unlock-msg.loading { color: rgba(255,255,255,0.5); }
-
-.unlock-footer {
-  font-size: 12px;
-  color: rgba(255,255,255,0.18);
-  margin-top: 1.75rem;
-  line-height: 1.7;
-}
-.unlock-footer a { color: rgba(255,255,255,0.3); }
-.unlock-footer a:hover { color: rgba(255,255,255,0.5); }
-
-.features-row {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  margin-top: 3rem;
-  flex-wrap: wrap;
-}
-.feature-pill {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  color: rgba(255,255,255,0.3);
-  font-weight: 400;
-}
-.feature-pill .dot {
-  width: 4px; height: 4px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.25);
-}
-
-
-/* ============================================================
-   KIT APP SHELL
-   ============================================================ */
-
-body.kit-active .site-header,
-body.kit-active .site-footer { display: none; }
-
-#kit-screen { display: none; }
-
-.kit-topbar {
-  position: sticky; top: 0; z-index: 100;
-  background: var(--dark);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  padding: 0 1.75rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  height: 56px;
-}
-.kit-topbar-logo {
-  display: flex; align-items: center; gap: 8px;
-  font-family: var(--font-heading);
-  font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.9);
-}
-.kit-topbar-logo-mark {
-  width: 26px; height: 26px;
-  background: var(--primary);
-  border-radius: var(--radius-sm);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 11px; font-weight: 700; color: #fff;
-}
-.kit-topbar-divider { width: 1px; height: 18px; background: rgba(255,255,255,0.1); }
-.kit-topbar-kit { font-size: 12px; color: rgba(255,255,255,0.4); font-weight: 400; }
-.kit-topbar-spacer { flex: 1; }
-.kit-topbar-user { font-size: 11px; color: rgba(255,255,255,0.25); font-family: 'Courier New', monospace; letter-spacing: 0.04em; }
-.progress-wrap { flex: 1; max-width: 140px; }
-.progress-track { height: 2px; background: rgba(255,255,255,0.07); border-radius: 1px; overflow: hidden; }
-.progress-fill { height: 100%; background: var(--primary-light); border-radius: 1px; transition: width 0.4s ease; }
-
-.kit-layout { display: flex; min-height: calc(100vh - 56px); }
-
-
-/* ============================================================
-   SIDEBAR
-   Feel: OS-level navigation. Quiet, obvious, no decoration.
-   ============================================================ */
-
-.kit-sidebar {
-  width: 232px;
-  flex-shrink: 0;
-  background: var(--white);
-  border-right: 1px solid var(--border);
-  padding: 1.25rem 0;
-  position: sticky;
-  top: 56px;
-  height: calc(100vh - 56px);
-  overflow-y: auto;
-}
-.sidebar-section { margin-bottom: 0.25rem; }
-.sidebar-label {
-  font-family: var(--font-heading);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-light);
-  padding: 1rem 1.25rem 0.4rem;
-  opacity: 0.6;
-}
-.nav-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 1.25rem;
-  font-family: var(--font-body);
-  font-size: 13.5px;
-  color: var(--text-light);
-  cursor: pointer;
-  transition: color 0.15s, background 0.15s;
-  border-left: 2px solid transparent;
-}
-.nav-item:hover { color: var(--text); background: var(--light); }
-.nav-item.active {
-  color: var(--primary);
-  background: rgba(10,79,138,0.04);
-  border-left-color: var(--primary);
-  font-weight: 600;
-}
-.nav-icon { width: 16px; opacity: 0.45; flex-shrink: 0; font-size: 14px; }
-.nav-item.active .nav-icon { opacity: 0.8; }
-.nav-badge {
-  margin-left: auto;
-  font-family: var(--font-heading);
-  font-size: 10px;
-  color: var(--text-light);
-  padding: 1px 6px;
-  border-radius: 8px;
-  font-weight: 500;
-  background: var(--light);
-}
-
-.sidebar-profile {
-  margin: 0 0.75rem 1rem;
-  background: var(--dark);
-  border-radius: var(--radius);
-  padding: 12px 14px;
-}
-.sidebar-biz { font-size: 12px; font-weight: 600; color: #fff; margin-bottom: 2px; }
-.sidebar-pain { font-size: 11px; color: rgba(255,255,255,0.45); }
-.sidebar-change {
-  font-size: 11px;
-  color: rgba(255,255,255,0.2);
-  cursor: pointer;
-  margin-top: 6px;
-  display: inline-block;
-}
-.sidebar-change:hover { color: rgba(255,255,255,0.5); }
-
-
-/* ============================================================
-   MAIN CONTENT AREA
-   ============================================================ */
-
-.kit-main { flex: 1; overflow-y: auto; }
-
-.panel { display: none; padding: 2.5rem; max-width: 880px; }
-.panel.active { display: block; }
-
-
-/* ============================================================
-   ONBOARDING
-   Feel: clear, confident, one-thing-at-a-time.
-   ============================================================ */
-
-.onboard-hero {
-  background: var(--dark);
-  border-radius: var(--radius);
-  padding: 2.5rem;
-  color: #fff;
-  margin-bottom: 2rem;
-}
-.oh-eyebrow {
-  font-family: var(--font-heading);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
-  margin-bottom: 0.75rem;
-  font-weight: 500;
-}
-.oh-title {
-  font-family: var(--font-heading);
-  font-size: 26px;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 0.75rem;
-}
-.oh-sub {
-  font-size: 14.5px;
-  color: rgba(255,255,255,0.45);
-  line-height: 1.65;
-  max-width: 480px;
-}
-
-.q-section { margin-bottom: 1.75rem; }
-.q-label {
-  font-family: var(--font-heading);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 0.75rem;
-}
-.pill-grid { display: flex; flex-wrap: wrap; gap: 8px; }
-.pill {
-  padding: 9px 16px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  font-size: 13.5px;
-  cursor: pointer;
-  background: var(--white);
-  color: var(--text-light);
-  transition: all 0.15s;
-  font-family: var(--font-body);
-}
-.pill:hover { border-color: var(--text-light); color: var(--text); }
-.pill.on {
-  border-color: var(--primary);
-  background: var(--primary);
-  color: #fff;
-  font-weight: 500;
-}
-
-.launch-btn {
-  padding: 12px 28px;
-  background: var(--primary);
-  color: #fff;
-  border: none;
-  border-radius: var(--radius-sm);
-  font-family: var(--font-heading);
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.15s;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.launch-btn:hover { background: var(--primary-dark); }
-.launch-btn:disabled { opacity: 0.25; cursor: not-allowed; }
-
-
-/* ============================================================
-   SECTION HEADERS
-   ============================================================ */
-
-.kit-section-head { margin-bottom: 1.5rem; }
-.kit-section-head h2 {
-  font-family: var(--font-heading);
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 0.3rem;
-}
-.kit-section-head p {
-  font-size: 14px;
-  color: var(--text-light);
-  line-height: 1.6;
-}
-
-
-/* ============================================================
-   PERSONALIZED BANNER
-   ============================================================ */
-
-.p-banner {
-  background: var(--light);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 12px 16px;
-  font-size: 13px;
-  color: var(--text-light);
-  margin-bottom: 1.5rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  line-height: 1.55;
-}
-.p-banner .icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; color: var(--primary); }
-
-
-/* ============================================================
-   TOOL CARDS
-   Restrained. Let the content speak. One treatment per card.
-   ============================================================ */
-
-.tools-section-label {
-  font-family: var(--font-heading);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-light);
-  margin: 1.25rem 0 0.6rem;
-}
-.tool-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 12px;
-  margin-bottom: 1rem;
-}
-.tool-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 16px 18px;
-  transition: border-color 0.15s;
-}
-.tool-card:hover { border-color: #c0c4cc; }
-.tool-card.top { border-left: 3px solid var(--primary); }
-.top-tag {
-  position: absolute; top: -1px; right: 12px;
-  background: var(--primary);
-  color: #fff;
-  font-family: var(--font-heading);
-  font-size: 10px;
-  font-weight: 600;
-  padding: 2px 8px 3px;
-  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
-  letter-spacing: 0.03em;
-  /* Hidden — the left border already signals "recommended". */
-  display: none;
-}
-.tool-name {
-  font-family: var(--font-heading);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 2px;
-}
-.tool-cost { font-size: 12px; color: var(--text-light); font-weight: 400; margin-bottom: 6px; }
-.stars { font-size: 11px; color: #d4a843; margin: 0 0 8px; letter-spacing: -0.5px; opacity: 0.7; }
-.tool-desc { font-size: 13px; color: var(--text-light); line-height: 1.55; margin-bottom: 12px; }
-.tool-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-.tool-badge {
-  font-family: var(--font-body);
-  font-size: 11px;
-  color: var(--text-light);
-  font-weight: 400;
-}
-.tool-link {
-  font-family: var(--font-heading);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--primary);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  padding: 4px 10px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  transition: border-color 0.15s;
-  white-space: nowrap;
-}
-.tool-link:hover { border-color: var(--primary); }
-
-
-/* ============================================================
-   PROMPT LIBRARY
-   ============================================================ */
-
-.search-row { display: flex; gap: 8px; margin-bottom: 1rem; flex-wrap: wrap; align-items: center; }
-.kit-search-inp {
-  flex: 1;
-  min-width: 200px;
-  padding: 10px 14px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  font-family: var(--font-body);
-  font-size: 14px;
-  color: var(--text);
-  background: var(--white);
-  outline: none;
-  transition: border-color 0.15s;
-}
-.kit-search-inp:focus { border-color: var(--primary); }
-.chip {
-  padding: 7px 14px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  font-size: 12.5px;
-  cursor: pointer;
-  background: var(--white);
-  color: var(--text-light);
-  transition: all 0.15s;
-  font-family: var(--font-body);
-  white-space: nowrap;
-}
-.chip:hover { border-color: var(--text-light); color: var(--text); }
-.chip.on {
-  border-color: var(--primary);
-  background: var(--primary);
-  color: #fff;
-  font-weight: 500;
-}
-
-.prompt-count { font-size: 12px; color: var(--text-light); margin-bottom: 0.75rem; }
-.prompt-list { display: flex; flex-direction: column; gap: 6px; }
-
-.prompt-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  border-left: 3px solid var(--border);
-  overflow: hidden;
-  cursor: pointer;
-  transition: border-color 0.15s;
-}
-.prompt-card:hover { border-color: #c0c4cc; }
-.prompt-card.ops { border-left-color: #2d8a62; }
-.prompt-card.sales { border-left-color: var(--primary); }
-.prompt-card.admin { border-left-color: #6d3ac7; }
-.prompt-card.finance { border-left-color: #b27718; }
-.prompt-card-head {
-  padding: 14px 16px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-}
-.prompt-meta { flex: 1; }
-.prompt-cat-tag {
-  font-family: var(--font-heading);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-  display: block;
-  color: var(--text-light);
-}
-.prompt-cat-tag.ops { color: #2d8a62; }
-.prompt-cat-tag.sales { color: var(--primary); }
-.prompt-cat-tag.admin { color: #6d3ac7; }
-.prompt-cat-tag.finance { color: #b27718; }
-.prompt-title { font-family: var(--font-heading); font-size: 13.5px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
-.prompt-preview { font-size: 13px; color: var(--text-light); line-height: 1.5; }
-.chevron { font-size: 14px; color: var(--text-light); transition: transform 0.2s; flex-shrink: 0; margin-top: 3px; opacity: 0.5; }
-.chevron.open { transform: rotate(180deg); }
-
-.prompt-body { display: none; padding: 0 16px 16px; }
-.prompt-body.open { display: block; }
-.prompt-text {
-  font-family: 'Courier New', monospace;
-  font-size: 12.5px;
-  line-height: 1.7;
-  color: var(--text);
-  background: var(--light);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 14px 16px;
-  margin: 0 0 10px;
-  white-space: pre-wrap;
-  word-break: break-word;
-}
-.copy-row { display: flex; align-items: center; gap: 10px; }
-.copy-btn {
-  display: flex; align-items: center; gap: 5px;
-  padding: 6px 12px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  font-size: 12px;
-  background: var(--white);
-  color: var(--text-light);
-  cursor: pointer;
-  transition: border-color 0.15s, color 0.15s;
-  font-family: var(--font-body);
-}
-.copy-btn:hover { border-color: var(--primary); color: var(--primary); }
-.why-tag { font-size: 12px; color: var(--text-light); line-height: 1.5; flex: 1; }
-
-
-/* ============================================================
-   SETUP GUIDES
-   ============================================================ */
-
-.guide-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  margin-bottom: 8px;
-}
-.guide-head {
-  padding: 14px 18px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  cursor: pointer;
-  transition: background 0.15s;
-}
-.guide-head:hover { background: var(--light); }
-.guide-icon {
-  width: 36px; height: 36px;
-  border-radius: var(--radius-sm);
-  background: var(--dark);
-  color: #fff;
-  font-size: 14px;
-  font-weight: 700;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  font-family: var(--font-heading);
-}
-.guide-info { flex: 1; }
-.guide-title { font-family: var(--font-heading); font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 1px; }
-.guide-meta { font-size: 12px; color: var(--text-light); }
-.guide-arrow { font-size: 13px; color: var(--text-light); transition: transform 0.2s; opacity: 0.5; }
-.guide-arrow.open { transform: rotate(90deg); }
-.guide-body { display: none; padding: 0 18px 18px; border-top: 1px solid var(--border); }
-.guide-body.open { display: block; }
-.guide-intro { font-size: 13.5px; color: var(--text-light); line-height: 1.6; padding: 14px 0; border-bottom: 1px solid var(--light); margin-bottom: 4px; }
-.step-row { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--light); }
-.step-row:last-child { border-bottom: none; }
-.step-num {
-  width: 24px; height: 24px; border-radius: 50%;
-  background: var(--light);
-  color: var(--text-light);
-  font-family: var(--font-heading);
-  font-size: 11px; font-weight: 600;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0; margin-top: 2px;
-}
-.step-content { flex: 1; }
-.step-title { font-family: var(--font-heading); font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
-.step-desc { font-size: 13px; color: var(--text-light); line-height: 1.55; }
-.step-code {
-  font-family: 'Courier New', monospace;
-  font-size: 12px;
-  line-height: 1.65;
-  background: var(--light);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 10px 12px;
-  margin-top: 8px;
-  color: var(--text);
-  white-space: pre-wrap;
-}
-.step-code strong { color: var(--primary); font-weight: 600; }
-
-
-/* ============================================================
-   SCENARIOS
-   Clean before/after. Let the story sell.
-   ============================================================ */
-
-.scenario-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  margin-bottom: 10px;
-}
-.sc-header {
-  background: var(--dark);
-  padding: 12px 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-.sc-industry { font-family: var(--font-heading); font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.85); }
-.sc-role { font-size: 11px; color: rgba(255,255,255,0.35); }
-.sc-match {
-  font-family: var(--font-heading);
-  font-size: 10px; font-weight: 500;
-  color: rgba(255,255,255,0.45);
-  padding: 2px 8px;
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 999px;
-}
-.sc-body { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); }
-.sc-col { background: var(--white); padding: 16px 18px; }
-.sc-col-head {
-  font-family: var(--font-heading);
-  font-size: 10px; font-weight: 600;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  margin-bottom: 8px;
-}
-.sc-col.before .sc-col-head { color: #c04040; }
-.sc-col.after .sc-col-head { color: #2d8a62; }
-.sc-text { font-size: 13px; color: var(--text-light); line-height: 1.6; }
-.sc-result {
-  background: #edf7f1;
-  padding: 12px 18px;
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-}
-.sc-result-check { color: #2d8a62; font-size: 13px; flex-shrink: 0; margin-top: 1px; font-weight: 600; }
-.sc-result-text { font-size: 13px; color: #1a5c3a; line-height: 1.5; }
-
-
-/* ============================================================
-   UPGRADE
-   Clean cards. Let the offer speak.
-   ============================================================ */
-
-.upgrade-cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin-bottom: 1.75rem;
-}
-.upgrade-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.75rem;
-  position: relative;
-  transition: border-color 0.15s;
-}
-.upgrade-card:hover { border-color: #c0c4cc; }
-.upgrade-card.featured { border-color: var(--primary); }
-.upgrade-badge {
-  position: absolute;
-  top: -1px; right: 14px;
-  background: var(--primary);
-  color: #fff;
-  font-family: var(--font-heading);
-  font-size: 10px;
-  font-weight: 600;
-  padding: 3px 10px;
-  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
-  letter-spacing: 0.03em;
-}
-.upgrade-level {
-  font-family: var(--font-heading);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-light);
-  margin-bottom: 0.5rem;
-}
-.upgrade-title {
-  font-family: var(--font-heading);
-  font-size: 19px;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 0.25rem;
-}
-.upgrade-price {
-  font-family: var(--font-heading);
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 0.75rem;
-}
-.upgrade-desc {
-  font-size: 13.5px;
-  color: var(--text-light);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-.upgrade-features {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1.25rem;
-}
-.upgrade-features li {
-  font-size: 13px;
-  color: var(--text);
-  line-height: 1.5;
-  padding: 4px 0 4px 20px;
-  position: relative;
-}
-.upgrade-features li::before {
-  content: '\2713';
-  position: absolute;
-  left: 0;
-  color: #2d8a62;
-  font-weight: 600;
-  font-size: 12px;
-}
-.upgrade-features li.upgrade-included {
-  color: var(--primary);
-  font-weight: 600;
-  font-style: italic;
-  margin-bottom: 2px;
-}
-.upgrade-features li.upgrade-included::before { content: '\25CF'; color: var(--primary); }
-.upgrade-features li.upgrade-bonus { color: var(--primary); font-weight: 500; }
-.upgrade-features li.upgrade-bonus::before { content: '\2605'; color: var(--accent); }
-.upgrade-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 20px;
-  border: 1px solid var(--primary);
-  border-radius: var(--radius-sm);
-  font-family: var(--font-heading);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--primary);
-  background: var(--white);
-  text-decoration: none;
-  transition: background 0.15s;
-  cursor: pointer;
-}
-.upgrade-btn:hover { background: rgba(10,79,138,0.04); }
-.upgrade-btn.primary { background: var(--primary); color: #fff; border-color: var(--primary); }
-.upgrade-btn.primary:hover { background: var(--primary-dark); }
-.upgrade-note {
-  font-size: 13.5px;
-  color: var(--text-light);
-  line-height: 1.6;
-  padding: 1rem 1.25rem;
-  background: var(--light);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-}
-.upgrade-note a { color: var(--primary); font-weight: 600; }
-.upgrade-note a:hover { text-decoration: underline; }
-
-
-/* ============================================================
-   AUDIT CTA
-   ============================================================ */
-
-.audit-hero {
-  background: var(--dark);
-  border-radius: var(--radius);
-  padding: 3rem 2.5rem;
-  text-align: center;
-  color: #fff;
-  margin-bottom: 1.5rem;
-}
-.audit-eyebrow {
-  font-family: var(--font-heading);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
-  margin-bottom: 1rem;
-  font-weight: 500;
-}
-.audit-title {
-  font-family: var(--font-heading);
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-.audit-sub {
-  font-size: 14.5px;
-  color: rgba(255,255,255,0.45);
-  line-height: 1.7;
-  max-width: 440px;
-  margin: 0 auto 2rem;
-}
-.audit-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 13px 28px;
-  background: var(--white);
-  color: var(--dark);
-  border: none;
-  border-radius: var(--radius-sm);
-  font-family: var(--font-heading);
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: opacity 0.15s;
-}
-.audit-btn:hover { opacity: 0.88; }
-.audit-note { font-size: 12px; color: rgba(255,255,255,0.25); margin-top: 1rem; }
-.audit-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
-.audit-step {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.25rem;
-}
-.as-num {
-  width: 26px; height: 26px; border-radius: 50%;
-  background: var(--light);
-  color: var(--text-light);
-  font-family: var(--font-heading);
-  font-size: 12px; font-weight: 600;
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 10px;
-}
-.as-title { font-family: var(--font-heading); font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
-.as-desc { font-size: 12.5px; color: var(--text-light); line-height: 1.55; }
-
-
-/* ============================================================
-   UTILITIES
-   ============================================================ */
-
-.spinner {
-  display: inline-block;
-  width: 16px; height: 16px;
-  border: 2px solid rgba(255,255,255,0.2);
-  border-top-color: #fff;
-  border-radius: 50%;
-  animation: kit-spin 0.7s linear infinite;
-}
-@keyframes kit-spin { to { transform: rotate(360deg); } }
-@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-.fade-up { animation: fadeUp 0.3s ease forwards; }
-
-/* Focus — keyboard only, not mouse */
-:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
-:focus:not(:focus-visible) { outline: none; }
-
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-
-@media (max-width: 768px) {
-  .mobile-toggle { display: flex; }
-  .main-nav {
-    position: fixed; top: var(--header-h); left: 0; right: 0;
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
-    padding: 1.25rem 2rem;
-    transform: translateY(-110%);
-    transition: transform 0.3s ease;
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/kit.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="canonical" href="https://www.jeongai.com/starter-kit-demo.html">
+  <meta property="og:url" content="https://www.jeongai.com/starter-kit-demo.html">
+  <meta property="og:image" content="https://www.jeongai.com/brand/assets/jeong-og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="AI Starter Kit Demo — Jeong AI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Starter Kit — Free Interactive Demo | Jeong AI">
+  <meta name="twitter:description" content="Try before you buy. Personalize the kit to your business, copy real prompts, and preview the full setup guides.">
+  <meta name="twitter:image" content="https://www.jeongai.com/brand/assets/jeong-og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.jeongai.com/" },
+      { "@type": "ListItem", "position": 2, "name": "AI Starter Kit", "item": "https://www.jeongai.com/checkout-starter-kit.html" },
+      { "@type": "ListItem", "position": 3, "name": "Interactive Demo", "item": "https://www.jeongai.com/starter-kit-demo.html" }
+    ]
   }
-  .main-nav.open { transform: translateY(0); }
-  .nav-list { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
-}
+  </script>
+  <style>
+    /* ── Demo ribbon ── */
+    .demo-ribbon {
+      position: sticky; top: 0; z-index: 300;
+      display: flex; align-items: center; justify-content: center; gap: 14px;
+      flex-wrap: wrap;
+      background: linear-gradient(90deg, #1d3557, #2b4a75);
+      color: #fff; padding: 10px 16px;
+      font-family: 'Montserrat', sans-serif; font-size: 13px;
+    }
+    .demo-ribbon .rb-tag {
+      background: #e07a5f; color: #fff; font-weight: 700;
+      font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 4px;
+    }
+    .demo-ribbon .rb-text { opacity: .92; }
+    .demo-ribbon .rb-cta {
+      background: #fff; color: #1d3557; font-weight: 700; font-size: 12px;
+      padding: 6px 16px; border-radius: 6px; text-decoration: none;
+      white-space: nowrap; transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .demo-ribbon .rb-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,.25); }
 
-@media (max-width: 700px) {
-  .kit-sidebar { display: none; }
-  .sc-body { grid-template-columns: 1fr; }
-  .audit-steps { grid-template-columns: 1fr; }
-  .tool-grid { grid-template-columns: 1fr; }
-  .upgrade-cards { grid-template-columns: 1fr; }
-  .panel { padding: 1.5rem; }
-  .kit-topbar { padding: 0 1rem; }
-  .unlock-card { padding: 2rem 1.5rem; }
-  .unlock-title { font-size: 24px; }
-  .onboard-hero { padding: 2rem 1.5rem; }
-  .oh-title { font-size: 22px; }
-  .audit-hero { padding: 2.5rem 1.5rem; }
-  .audit-title { font-size: 24px; }
-  .features-row { gap: 1rem; }
-  .feature-pill { font-size: 11px; }
-}
+    /* ── Locked cards ── */
+    .locked-card { position: relative; overflow: hidden; }
+    .locked-blur { filter: blur(4px); opacity: .55; pointer-events: none; user-select: none; }
+    .locked-overlay {
+      position: absolute; inset: 0; z-index: 5;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+      background: rgba(255,255,255,.35); text-align: center; padding: 16px;
+    }
+    .locked-overlay .lock-icon {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: #1d3557; color: #fff;
+      display: flex; align-items: center; justify-content: center; font-size: 15px;
+    }
+    .locked-overlay .lock-label {
+      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 13px; color: #1d3557;
+    }
+    .locked-overlay .lock-cta {
+      font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 12px;
+      color: #fff; background: #e07a5f; padding: 7px 16px; border-radius: 6px;
+      text-decoration: none; transition: background .15s ease;
+    }
+    .locked-overlay .lock-cta:hover { background: #c96548; }
 
-@media (max-width: 544px) {
-  .container { padding: 0 1.25rem; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
-}
-</style>
+    /* ── Upsell strip inside panels ── */
+    .demo-upsell {
+      margin-top: 1.75rem; padding: 1.25rem 1.5rem;
+      border: 2px dashed #e07a5f; border-radius: 12px;
+      background: #fdf5f2;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    }
+    .demo-upsell .du-text { font-family: 'Montserrat', sans-serif; font-size: 14px; color: #1d3557; }
+    .demo-upsell .du-text strong { font-weight: 700; }
+    .demo-upsell .du-btn {
+      background: #e07a5f; color: #fff; font-family: 'Montserrat', sans-serif;
+      font-weight: 700; font-size: 13px; padding: 10px 22px; border-radius: 8px;
+      text-decoration: none; white-space: nowrap; transition: background .15s ease, transform .15s ease;
+    }
+    .demo-upsell .du-btn:hover { background: #c96548; transform: translateY(-1px); }
+
+    @media (max-width: 640px) {
+      .demo-ribbon { font-size: 12px; gap: 8px; }
+      .demo-ribbon .rb-text { display: none; }
+    }
+  </style>
 </head>
-<body>
-
-  <!-- ========== HEADER ========== -->
-  <header class="site-header" id="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">
-        <span class="logo-jai">Jeong</span><span class="logo-auto">AI</span>
-      </a>
-      <nav class="main-nav" id="main-nav">
-        <ul class="nav-list">
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#friction">The Problem</a></li>
-          <li><a href="index.html#products">Products</a></li>
-          <li><a href="index.html#jeong-ai">Jeong AI</a></li>
-          <li><a href="index.html#how-it-works">How It Works</a></li>
-          <li><a href="index.html#contact" class="nav-cta">Free Audit</a></li>
-        </ul>
-      </nav>
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+<body class="kit-active">
 
 <!-- ══════════════════════════════════════════════════════════ -->
-<!--  UNLOCK SCREEN                                             -->
+<!--  DEMO RIBBON                                               -->
 <!-- ══════════════════════════════════════════════════════════ -->
-<div id="unlock-screen">
-  <div class="unlock-inner">
-    <div class="unlock-logo">
-      <div class="unlock-logo-mark">
-        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-      </div>
-      <span class="unlock-logo-text">Jeong <span>AI</span></span>
-    </div>
-
-    <div class="unlock-card">
-      <div class="unlock-eyebrow">AI Starter Kit</div>
-      <div class="unlock-title">Unlock your toolkit</div>
-      <div class="unlock-subtitle">Enter the key from your purchase confirmation.<br>Format: JAI-XXXX-XXXX-XXXX</div>
-
-      <div class="key-input-wrap">
-        <input
-          class="key-input"
-          id="key-input"
-          type="text"
-          placeholder="JAI-XXXX-XXXX-XXXX"
-          maxlength="19"
-          autocomplete="off"
-          spellcheck="false"
-          oninput="formatKey(this)"
-          onkeydown="if(event.key==='Enter')validateKey()"
-        >
-      </div>
-      <button class="unlock-btn" id="unlock-btn" onclick="validateKey()">
-        <span id="unlock-btn-text">Unlock</span>
-      </button>
-      <div class="unlock-msg" id="unlock-msg"></div>
-      <div class="unlock-footer">
-        Lost your key? <a href="mailto:info@jeongai.com">info@jeongai.com</a><br>
-        Jeong AI &middot; jeongai.com
-      </div>
-    </div>
-
-    <div class="features-row">
-      <div class="feature-pill"><span class="dot"></span>13 AI tools</div>
-      <div class="feature-pill"><span class="dot"></span>100+ prompts</div>
-      <div class="feature-pill"><span class="dot"></span>3 setup guides</div>
-      <div class="feature-pill"><span class="dot"></span>8 business scenarios</div>
-    </div>
-  </div>
+<div class="demo-ribbon">
+  <span class="rb-tag">Free Demo</span>
+  <span class="rb-text">You're previewing the AI Starter Kit — a sample of the tools, prompts &amp; guides is unlocked.</span>
+  <a href="checkout-starter-kit.html" class="rb-cta demo-cta">Unlock everything — $29</a>
 </div>
 
 <!-- ══════════════════════════════════════════════════════════ -->
-<!--  KIT APP                                                   -->
+<!--  KIT APP (DEMO MODE)                                       -->
 <!-- ══════════════════════════════════════════════════════════ -->
-<div id="kit-screen">
+<div id="kit-screen" style="display:block">
   <div class="kit-topbar">
     <div class="kit-topbar-logo">
-      <div class="kit-topbar-logo-mark">E</div>
+      <div class="kit-topbar-logo-mark">J</div>
       Jeong AI
     </div>
     <div class="kit-topbar-divider"></div>
-    <span class="kit-topbar-kit">AI Starter Kit</span>
+    <span class="kit-topbar-kit">AI Starter Kit &middot; Demo</span>
     <div class="kit-topbar-spacer"></div>
     <div class="progress-wrap">
       <div class="progress-track"><div class="progress-fill" id="prog-bar" style="width:5%"></div></div>
     </div>
-    <span class="kit-topbar-user" id="topbar-key-display"></span>
+    <span class="kit-topbar-user">Demo mode</span>
   </div>
 
   <div class="kit-layout">
@@ -1186,27 +157,24 @@ body.kit-active .site-footer { display: none; }
         </div>
       </div>
       <div class="sidebar-section">
-        <div class="sidebar-label">Your kit</div>
+        <div class="sidebar-label">Demo preview</div>
         <div class="nav-item" data-panel="tools" onclick="showPanel('tools')">
-          <span class="nav-icon">&#9889;</span> Top Tools <span class="nav-badge">13</span>
+          <span class="nav-icon">&#9889;</span> Top Tools <span class="nav-badge">4/13</span>
         </div>
         <div class="nav-item" data-panel="prompts" onclick="showPanel('prompts')">
-          <span class="nav-icon">&#128172;</span> Prompts <span class="nav-badge">20+</span>
+          <span class="nav-icon">&#128172;</span> Prompts <span class="nav-badge">4/20</span>
         </div>
         <div class="nav-item" data-panel="setup" onclick="showPanel('setup')">
-          <span class="nav-icon">&#9654;</span> Setup Guides
+          <span class="nav-icon">&#9654;</span> Setup Guides <span class="nav-badge">1/3</span>
         </div>
         <div class="nav-item" data-panel="scenarios" onclick="showPanel('scenarios')">
-          <span class="nav-icon">&#9672;</span> Scenarios
+          <span class="nav-icon">&#9672;</span> Scenarios <span class="nav-badge">2/8</span>
         </div>
       </div>
       <div class="sidebar-section">
-        <div class="sidebar-label">Next step</div>
+        <div class="sidebar-label">Get the full kit</div>
         <div class="nav-item" data-panel="upgrade" onclick="showPanel('upgrade')">
-          <span class="nav-icon">&#9650;</span> Upgrade
-        </div>
-        <div class="nav-item" data-panel="audit" onclick="showPanel('audit')">
-          <span class="nav-icon">&#8594;</span> Free Audit
+          <span class="nav-icon">&#9650;</span> Unlock Everything
         </div>
       </div>
     </nav>
@@ -1217,9 +185,9 @@ body.kit-active .site-footer { display: none; }
       <!-- ONBOARD PANEL -->
       <div class="panel active" id="panel-onboard">
         <div class="onboard-hero">
-          <div class="oh-eyebrow">Get started</div>
-          <div class="oh-title">Make it yours.</div>
-          <div class="oh-sub">Two answers. Your tools, prompts, and scenarios reconfigure to match.</div>
+          <div class="oh-eyebrow">Free demo &middot; No sign-up required</div>
+          <div class="oh-title">Try the kit. Personalize it.</div>
+          <div class="oh-sub">Two answers and this demo reconfigures around your business — exactly like the full kit does. A sample of every section is unlocked so you can see how it works.</div>
         </div>
         <div class="q-section">
           <div class="q-label">What type of business do you run?</div>
@@ -1245,7 +213,7 @@ body.kit-active .site-footer { display: none; }
           </div>
         </div>
         <button class="launch-btn" id="launch-btn" disabled onclick="launchKit()">
-          Build my kit <span style="font-size:16px">&#8594;</span>
+          Build my demo kit <span style="font-size:16px">&#8594;</span>
         </button>
       </div>
 
@@ -1253,20 +221,24 @@ body.kit-active .site-footer { display: none; }
       <div class="panel" id="panel-tools">
         <div class="kit-section-head">
           <h2>Your Top Tools</h2>
-          <p>13 AI tools across four business functions. Highlighted tools match your friction area.</p>
+          <p>The full kit includes 13 curated AI tools across all four business functions. In the demo, 4 are unlocked — the rest come with the kit.</p>
         </div>
         <div id="tools-banner" class="p-banner" style="display:none">
           <span class="icon">&#9733;</span>
           <span id="tools-banner-text"></span>
         </div>
         <div id="tools-output"></div>
+        <div class="demo-upsell">
+          <span class="du-text"><strong>9 more tools</strong> — including finance, CRM, and advanced automation picks — are in the full kit.</span>
+          <a href="checkout-starter-kit.html" class="du-btn demo-cta">Get the full kit — $29</a>
+        </div>
       </div>
 
       <!-- PROMPTS PANEL -->
       <div class="panel" id="panel-prompts">
         <div class="kit-section-head">
           <h2>Prompt Library</h2>
-          <p>Fill in the brackets, paste into ChatGPT or Claude.</p>
+          <p>Copy any unlocked prompt, fill in the brackets, and paste into ChatGPT or Claude. The full kit has 20+ prompts across operations, sales, admin, and finance.</p>
         </div>
         <div class="search-row">
           <input class="kit-search-inp" id="prompt-search" placeholder="Search prompts..." oninput="renderPrompts()">
@@ -1278,38 +250,62 @@ body.kit-active .site-footer { display: none; }
         </div>
         <div class="prompt-count" id="prompt-count"></div>
         <div class="prompt-list" id="prompt-list"></div>
+        <div class="demo-upsell">
+          <span class="du-text"><strong>16 more prompts</strong> — the full library covers every recurring task in a service business.</span>
+          <a href="checkout-starter-kit.html" class="du-btn demo-cta">Unlock all 20+ prompts — $29</a>
+        </div>
       </div>
 
       <!-- SETUP PANEL -->
       <div class="panel" id="panel-setup">
         <div class="kit-section-head">
           <h2>Setup Guides</h2>
-          <p>Pick one. Complete it today. You'll be running AI in your business in 20 minutes.</p>
+          <p>Step-by-step guides that get real tools running in your business. The full ChatGPT guide is unlocked below — try it today.</p>
         </div>
         <div id="setup-output"></div>
+        <div class="demo-upsell">
+          <span class="du-text"><strong>Zapier &amp; Otter.ai guides</strong> — build your first lead automation and never take meeting notes again.</span>
+          <a href="checkout-starter-kit.html" class="du-btn demo-cta">Unlock all 3 guides — $29</a>
+        </div>
       </div>
 
       <!-- SCENARIOS PANEL -->
       <div class="panel" id="panel-scenarios">
         <div class="kit-section-head">
           <h2>Real Business Scenarios</h2>
-          <p>Before and after examples from businesses like yours. Closest match shown first.</p>
-        </div>
-        <div id="scenario-banner" class="p-banner" style="display:none">
-          <span class="icon">&#9672;</span>
-          <span id="scenario-banner-text"></span>
+          <p>Before/after examples from the types of businesses Jeong AI works with. Two are unlocked in the demo — the full kit has eight.</p>
         </div>
         <div id="scenarios-output"></div>
+        <div class="demo-upsell">
+          <span class="du-text"><strong>6 more scenarios</strong> — real estate, agencies, property management, healthcare, staffing &amp; financial advisory.</span>
+          <a href="checkout-starter-kit.html" class="du-btn demo-cta">See all 8 scenarios — $29</a>
+        </div>
       </div>
 
       <!-- UPGRADE PANEL -->
       <div class="panel" id="panel-upgrade">
         <div class="kit-section-head">
-          <h2>Ready for More?</h2>
-          <p>Frameworks, templates, and systems to build real automation into your business.</p>
+          <h2>Like What You See?</h2>
+          <p>The full AI Starter Kit unlocks everything in this demo — all 13 tools, 20+ prompts, 3 setup guides, and 8 scenarios — personalized to your business, yours forever.</p>
         </div>
 
         <div class="upgrade-cards">
+          <div class="upgrade-card featured">
+            <div class="upgrade-badge">You're previewing this</div>
+            <div class="upgrade-level">Level 1</div>
+            <h3 class="upgrade-title">AI Starter Kit</h3>
+            <p class="upgrade-price">$29</p>
+            <p class="upgrade-desc">Everything in this demo, fully unlocked. Instant access after checkout.</p>
+            <ul class="upgrade-features">
+              <li>All 13 curated AI tools with recommendations</li>
+              <li>Complete 20+ prompt library</li>
+              <li>All 3 step-by-step setup guides</li>
+              <li>All 8 real business scenarios</li>
+              <li>Personalized to your business type &amp; friction area</li>
+            </ul>
+            <a href="checkout-starter-kit.html" class="upgrade-btn primary demo-cta">Get the Starter Kit &#8599;</a>
+          </div>
+
           <div class="upgrade-card">
             <div class="upgrade-level">Level 2</div>
             <h3 class="upgrade-title">AI Automation Blueprint</h3>
@@ -1322,47 +318,12 @@ body.kit-active .site-footer { display: none; }
               <li>Step-by-step system building guide</li>
               <li>Full Capture &rarr; Translate &rarr; Deploy &rarr; Optimize framework</li>
             </ul>
-            <a href="#contact" class="upgrade-btn" target="_blank" rel="noopener">Get the Blueprint &#8599;</a>
-          </div>
-
-          <div class="upgrade-card featured">
-            <div class="upgrade-badge">Best Value</div>
-            <div class="upgrade-level">Level 3</div>
-            <h3 class="upgrade-title">Small Business AI Toolkit</h3>
-            <p class="upgrade-price">$149</p>
-            <p class="upgrade-desc">For the business owner with internal capacity to execute a complete AI system.</p>
-            <ul class="upgrade-features">
-              <li class="upgrade-included">Everything in the Starter Kit &amp; Blueprint, plus:</li>
-              <li>Full automation playbook across all four functions</li>
-              <li>Workflow examples across multiple industries</li>
-              <li>Templates, system diagrams &amp; checklists</li>
-              <li>DIY vs. implementation support decision guide</li>
-              <li class="upgrade-bonus">Includes credit toward any Jeong AI implementation</li>
-            </ul>
-            <a href="#contact" class="upgrade-btn primary" target="_blank" rel="noopener">Get the Toolkit &#8599;</a>
+            <a href="checkout-blueprint.html" class="upgrade-btn demo-cta">Get the Blueprint &#8599;</a>
           </div>
         </div>
 
         <div class="upgrade-note">
-          Already know what you need? <a href="index.html#contact" target="_blank" rel="noopener">Book a free automation audit</a> and we'll tell you exactly which level fits.
-        </div>
-      </div>
-
-      <!-- AUDIT PANEL -->
-      <div class="panel" id="panel-audit">
-        <div class="audit-hero">
-          <div class="audit-eyebrow">Your next step</div>
-          <div class="audit-title">You've got the tools.<br>Now let's build your system.</div>
-          <div class="audit-sub">A free 30-minute session. We map your business and identify the 3 automations with the biggest impact.</div>
-          <button class="audit-btn" onclick="window.open('https://jeongai.com/#contact','_blank')">
-            Book your free Audit <span style="font-size:15px">&#8599;</span>
-          </button>
-          <div class="audit-note">No pitch. No pressure. Just clarity on what to do next.</div>
-        </div>
-        <div class="audit-steps">
-          <div class="audit-step"><div class="as-num">1</div><div class="as-title">Map your four functions</div><div class="as-desc">Operations, sales, admin, and finance — we identify where time is lost and what repeats most.</div></div>
-          <div class="audit-step"><div class="as-num">2</div><div class="as-title">Identify your top 3 automations</div><div class="as-desc">Specific, practical, and sequenced by impact. Built around how your business actually works.</div></div>
-          <div class="audit-step"><div class="as-num">3</div><div class="as-title">Leave with a clear plan</div><div class="as-desc">Whether you build it yourself or work with us, you'll know exactly what to do next.</div></div>
+          Not sure which fits? <a href="index.html#contact" target="_blank" rel="noopener">Book a free automation audit</a> and we'll tell you exactly where to start.
         </div>
       </div>
 
@@ -1402,15 +363,14 @@ body.kit-active .site-footer { display: none; }
         <div class="footer-links">
           <h4>Connect</h4>
           <ul>
-            <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="https://tiktok.com" target="_blank" rel="noopener">TikTok</a></li>
-            <li><a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="checkout-starter-kit.html">Get the Full Kit</a></li>
+            <li><a href="index.html#contact">Free Audit</a></li>
             <li><a href="mailto:info@jeongai.com">info@jeongai.com</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Jeong AI / Jeong AI. All rights reserved.</p>
+        <p>&copy; 2026 Jeong AI &mdash; a division of EBYG Media LLC. All rights reserved.</p>
         <div class="footer-legal">
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms of Service</a>
@@ -1420,209 +380,116 @@ body.kit-active .site-footer { display: none; }
   </footer>
 
 <script>
-// ─── CONFIG ──────────────────────────────────────────────────
-// Replace with your actual Supabase project URL and anon key
-const SUPABASE_URL = 'https://YOUR_PROJECT.supabase.co';
-const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY';
-const STORAGE_KEY = 'jai_kit_key';
+// ═══ DEMO MODE — try-before-you-buy preview of the AI Starter Kit ═══
+// Unlocked subset: 4 tools, 4 prompts, 1 setup guide, 2 scenarios.
+// Everything else renders as a blurred locked card linking to checkout.
+
+const CHECKOUT_URL = 'checkout-starter-kit.html';
 
 // ─── DATA ────────────────────────────────────────────────────
 const BIZ_LABELS = {contractor:'General Contractor',consultant:'Consultant / Coach',realestate:'Real Estate',agency:'Marketing / Agency',property:'Property Management',healthcare:'Healthcare / Wellness',legal:'Legal / Financial',staffing:'Staffing / HR',other:'Service Business'};
 const PAIN_LABELS = {ops:'Operations',sales:'Sales & Communication',admin:'Administration',finance:'Finance & Reporting'};
 
+// Unlocked tools (4 of 13)
 const TOOLS = [
   {key:'chatgpt',name:'ChatGPT (GPT-4o)',cost:'Free / $20/mo',stars:5,desc:'Your all-purpose AI brain. Drafts, summarizes, analyzes, and executes tasks via natural language. The single most useful tool in this kit.',badge:'Daily driver',cats:['ops','admin','sales','finance'],url:'https://chat.openai.com'},
-  {key:'claude',name:'Claude (Anthropic)',cost:'Free / $20/mo',stars:5,desc:'Exceptionally strong at long-form writing, analysis, and following complex instructions. Best for documents, proposals, and nuanced work.',badge:'Proposals & docs',cats:['admin','sales'],url:'https://claude.ai'},
   {key:'zapier',name:'Zapier',cost:'Free / from $20/mo',stars:5,desc:'The most compatible automation platform. Connects your apps and runs tasks automatically. Best starting point for workflow automation.',badge:'Best for beginners',cats:['ops','sales'],url:'https://zapier.com'},
   {key:'otter',name:'Otter.ai',cost:'Free / $10/mo',stars:5,desc:'Records and transcribes meetings in real time. Generates summaries and action items automatically. No more taking notes.',badge:'Meeting notes gone',cats:['admin','ops'],url:'https://otter.ai'},
-  {key:'fathom',name:'Fathom Analytics',cost:'From $39/mo',stars:5,desc:'Connects to your accounting software and produces plain-English financial reports and dashboards automatically.',badge:'No more spreadsheets',cats:['finance'],url:'https://www.fathomhq.com'},
-  {key:'hubspot',name:'HubSpot CRM',cost:'Free CRM / from $20/mo',stars:4,desc:'CRM with AI-powered email drafting, lead scoring, and follow-up sequencing built in. The free plan is genuinely useful.',badge:'Lead pipeline',cats:['sales'],url:'https://www.hubspot.com/products/crm'},
   {key:'notion',name:'Notion AI',cost:'$10/mo add-on',stars:4,desc:'AI inside your workspace. Turns meeting notes into action items, drafts SOPs, and summarizes documents on the spot.',badge:'Ops knowledge base',cats:['ops','admin'],url:'https://www.notion.so/product/ai'},
-  {key:'copilot',name:'Microsoft Copilot',cost:'$30/user/mo',stars:4,desc:'AI inside Word, Excel, Outlook, and Teams. Best if you\'re already in the Microsoft 365 ecosystem.',badge:'If you use M365',cats:['admin'],url:'https://www.microsoft.com/en-us/microsoft-copilot'},
-  {key:'gemini',name:'Google Gemini',cost:'From $20/mo',stars:4,desc:'AI inside Gmail, Docs, and Sheets. The Google Workspace equivalent of Copilot.',badge:'If you use Google',cats:['admin'],url:'https://gemini.google.com'},
-  {key:'lavender',name:'Lavender',cost:'Free / from $29/mo',stars:4,desc:'AI email coach that scores your sales emails and suggests improvements before you hit send.',badge:'Email outreach',cats:['sales'],url:'https://www.lavender.ai'},
-  {key:'make',name:'Make (Integromat)',cost:'Free / from $9/mo',stars:3,desc:'More powerful than Zapier for complex workflows. Visual builder, more control, slightly steeper learning curve.',badge:'Advanced automation',cats:['ops'],url:'https://www.make.com'},
-  {key:'proposify',name:'Proposify',cost:'From $49/mo',stars:3,desc:'Proposal software with AI-assisted content blocks. Build polished proposals in minutes, not hours.',badge:'Proposals',cats:['sales'],url:'https://www.proposify.com'},
-  {key:'qbo',name:'QuickBooks + AI',cost:'From $30/mo',stars:4,desc:'Automated bookkeeping with AI-driven expense categorization, invoice generation, and cash flow insights.',badge:'Finance & invoicing',cats:['finance'],url:'https://quickbooks.intuit.com'},
+];
+
+// Locked tools (9 of 13) — name + badge shown, details blurred
+const LOCKED_TOOLS = [
+  {name:'Claude (Anthropic)',badge:'Proposals & docs',cost:'Free / $20/mo'},
+  {name:'Fathom Analytics',badge:'No more spreadsheets',cost:'From $39/mo'},
+  {name:'HubSpot CRM',badge:'Lead pipeline',cost:'Free CRM / from $20/mo'},
+  {name:'Microsoft Copilot',badge:'If you use M365',cost:'$30/user/mo'},
+  {name:'Google Gemini',badge:'If you use Google',cost:'From $20/mo'},
+  {name:'Lavender',badge:'Email outreach',cost:'Free / from $29/mo'},
+  {name:'Make (Integromat)',badge:'Advanced automation',cost:'Free / from $9/mo'},
+  {name:'Proposify',badge:'Proposals',cost:'From $49/mo'},
+  {name:'QuickBooks + AI',badge:'Finance & invoicing',cost:'From $30/mo'},
 ];
 
 const TOP_BY_PAIN = {
-  ops:['chatgpt','zapier','notion','make'],
-  sales:['chatgpt','hubspot','lavender','otter'],
-  admin:['chatgpt','otter','claude','notion'],
-  finance:['chatgpt','qbo','fathom','zapier']
+  ops:['chatgpt','zapier','notion'],
+  sales:['chatgpt','zapier','otter'],
+  admin:['chatgpt','otter','notion'],
+  finance:['chatgpt','zapier','notion']
 };
 
+// Prompts — 4 unlocked (one per category), the rest locked (title/preview visible, text hidden)
 const PROMPTS = [
-  {id:'p1',cat:'ops',title:'Create an SOP from scratch',preview:'Turn any verbal process into a professional step-by-step document.',text:'I need a Standard Operating Procedure for the following task in my business: [describe the task in plain English]. Format it as numbered steps with a brief explanation of why each step matters. Include a checklist at the end. My business is [type of business] and the person performing this task will be [employee role/experience level].',why:'Gives you a professional, actionable SOP in seconds. What would take an hour to write takes 30 seconds.'},
-  {id:'p2',cat:'ops',title:'Turn a messy process into a clean workflow',preview:'AI finds the hidden logic inside your chaotic processes.',text:'Here is how we currently handle [process name] in our business: [describe it messily — bullet points are fine]. Please organize this into a clear, logical step-by-step workflow. Identify any gaps or steps that seem inefficient and suggest improvements.',why:'AI is excellent at finding the hidden logic inside messy processes and surfacing what\'s missing.'},
-  {id:'p3',cat:'ops',title:'Identify your top 5 automation opportunities',preview:'Paste your week — get a personalized automation roadmap.',text:'Here is a description of my typical work week: [describe your week in detail — tasks, how long they take, what repeats]. Identify the top 5 tasks that are repetitive enough to automate and explain what tool or approach would automate each one. Prioritize by time saved.',why:'Your personalized automation roadmap — built from your own description of your day.'},
-  {id:'p4',cat:'ops',title:'Build a task delegation guide',preview:'Stop being the bottleneck on work that shouldn\'t need you.',text:'I run a [type of business] with [number] employees. I need to delegate the following tasks but want to make sure they\'re done right: [list tasks]. For each task, create: a clear description of what done right looks like, what information the employee needs, and what I should check when reviewing their work.',why:'Stops you from being the bottleneck on work that shouldn\'t require you.'},
-  {id:'p5',cat:'ops',title:'Weekly operations review',preview:'Turn your messy week into a structured retrospective in under a minute.',text:'Act as an operations consultant reviewing my business. Based on the following information about what happened this week — [paste your notes, emails, or summary] — identify: (1) what worked well, (2) what created friction or delays, (3) the single most important process improvement I should make before next week.',why:'Turns your messy week into a structured retrospective in under a minute.'},
-  {id:'p6',cat:'sales',title:'Follow-up email after a consultation',preview:'Personalized follow-up that makes prospects feel genuinely heard.',text:'Write a follow-up email to [prospect name] after our [call/meeting] today. During the conversation, we discussed: [key points]. They mentioned their biggest challenge is [pain point]. I want to: (1) recap what we discussed, (2) remind them of the value I can deliver, (3) include a clear next step. Tone: warm, professional, confident — not salesy.',why:'Personalizes a follow-up in seconds. The prospect feels heard because AI mirrors back what you told them.'},
-  {id:'p7',cat:'sales',title:'Re-engage a cold lead',preview:'Give cold leads a reason to come back without sounding desperate.',text:'Write a short, genuine re-engagement email to a prospect I haven\'t spoken to in [timeframe]. Last time we talked, they were interested in [topic/service] but weren\'t ready to move forward. I want to check in without being pushy. Include a reason to reply — something valuable, not just "just checking in."',why:'Gives cold leads a genuine reason to re-engage without making you sound desperate.'},
-  {id:'p8',cat:'sales',title:'Handle a price objection via email',preview:'Turn a stall into a conversation without discounting.',text:'A prospect responded to my proposal with: "[their exact words]." Write a response that acknowledges their concern, reinforces the value of what I\'m offering, and presents [an alternative option/a flexible approach] without discounting unnecessarily. Business: [type]. Service: [service name].',why:'Turns a stall into a conversation — without caving on your pricing.'},
-  {id:'p9',cat:'sales',title:'Write a compelling proposal introduction',preview:'Open with their problem, not your credentials.',text:'Write a compelling opening section for a proposal to [client name/type of company]. They came to me because [their problem]. My solution is [what you do]. Open with their problem, not my credentials. Make them feel understood before I start talking about what I offer.',why:'Clients read proposals when they feel understood. Starting with their problem triples engagement.'},
-  {id:'p10',cat:'sales',title:'Ask for a referral naturally',preview:'A genuine ask that doesn\'t feel transactional.',text:'Write a short, natural message to send to a happy client asking if they know anyone who might benefit from my services. I offer [service]. Don\'t make it transactional — I want it to feel like a genuine ask from someone they trust.',why:'The most effective referral asks feel like a trusted friend asking a favor, not a salesperson following a script.'},
-  {id:'p11',cat:'admin',title:'Summarize and triage a long email thread',preview:'Turn a 20-email chain into a clear action in 60 seconds.',text:'Here is an email thread I need to respond to: [paste thread]. Please: (1) summarize what the conversation is about in 3 sentences, (2) identify what is being asked of me specifically, (3) draft a concise professional reply that addresses their request.',why:'Turns a 20-email thread into a clear action in under 60 seconds.'},
-  {id:'p12',cat:'admin',title:'Write any professional email from bullet points',preview:'You think in bullets. AI writes in prose.',text:'Write a professional email from these rough notes: [paste your bullet points]. Recipient: [who]. Purpose: [what you want to achieve]. Tone: [formal/friendly/direct]. Keep it under [X] words.',why:'You think in bullets. AI writes in prose. This bridge saves 10+ minutes per email.'},
-  {id:'p13',cat:'admin',title:'Summarize any document instantly',preview:'Main point, 5 takeaways, and your action items — in one shot.',text:'Summarize the following document in plain language. Give me: (1) the main point in one sentence, (2) the 5 most important takeaways, (3) any actions I need to take. [Paste document].',why:'Never read a 20-page document before a meeting again.'},
-  {id:'p14',cat:'admin',title:'Decline a request professionally',preview:'Stay firm without damaging the relationship.',text:'Write a polite but firm email declining [request — e.g. a project, a discount, a scope addition] from [client/vendor]. Reason: [your reason]. I want to preserve the relationship but be clear about my position.',why:'The hardest emails to write are the ones where you say no. AI removes the emotional friction.'},
-  {id:'p15',cat:'admin',title:'Create an employee onboarding checklist',preview:'What success looks like in the first 30 days — in seconds.',text:'Create a first-week onboarding checklist for a new [role] at my [type of business]. Include: setup tasks, key people to meet, systems to get access to, and what success looks like in the first 30 days.',why:'A well-onboarded employee reaches full productivity 2–3x faster.'},
-  {id:'p16',cat:'finance',title:'Overdue invoice follow-up — 3-email sequence',preview:'Professional escalation without the awkwardness.',text:'Write 3 invoice follow-up emails for a client whose payment is overdue by [X] days. Invoice amount: $[amount]. Each email should escalate slightly in urgency while staying professional. Email 1: gentle reminder. Email 2: firm but patient. Email 3: final notice with consequences.',why:'The hardest part of chasing money is the awkwardness. AI removes the emotion.'},
-  {id:'p17',cat:'finance',title:'Analyze cash flow from raw numbers',preview:'Raw numbers \u2192 readable financial narrative.',text:'Here is my revenue and expense data for the past [timeframe]: [paste numbers or a simple table]. Please: (1) identify any patterns or trends, (2) flag any months where expenses are unusually high, (3) give me 3 specific recommendations to improve cash flow based on this data.',why:'Turns raw numbers into a readable narrative without needing an accountant.'},
-  {id:'p18',cat:'finance',title:'Write a price increase notice',preview:'Confident and appreciative — not apologetic.',text:'Write a professional email to existing clients notifying them of a price increase effective [date]. New pricing: [details]. Reason: [brief, honest explanation]. Tone: confident and appreciative — these are clients I value and want to retain.',why:'How you communicate a price increase is almost as important as the increase itself.'},
-  {id:'p19',cat:'finance',title:'Evaluate a business expense or investment',preview:'ROI, break-even, and alternatives — in one prompt.',text:'I\'m considering spending $[amount] on [tool/service/hire]. My business generates $[monthly revenue]. Help me think through whether this is a smart investment by analyzing: expected ROI, break-even point, and alternatives I might not have considered.',why:'Forces structured thinking before spending. Often reveals a cheaper path you hadn\'t considered.'},
-  {id:'p20',cat:'finance',title:'Build a KPI tracking list',preview:'The numbers that actually tell you how your business is doing.',text:'I run a [type of business]. Help me identify the 8\u201310 most important KPIs I should track monthly to understand the health of my business. For each KPI, explain what it measures and how to calculate it.',why:'Most small business owners track the wrong numbers \u2014 or none at all. This fixes that in 5 minutes.'},
+  {id:'p1',cat:'ops',locked:false,title:'Create an SOP from scratch',preview:'Turn any verbal process into a professional step-by-step document.',text:'I need a Standard Operating Procedure for the following task in my business: [describe the task in plain English]. Format it as numbered steps with a brief explanation of why each step matters. Include a checklist at the end. My business is [type of business] and the person performing this task will be [employee role/experience level].',why:'Gives you a professional, actionable SOP in seconds. What would take an hour to write takes 30 seconds.'},
+  {id:'p6',cat:'sales',locked:false,title:'Follow-up email after a consultation',preview:'Personalized follow-up that makes prospects feel genuinely heard.',text:'Write a follow-up email to [prospect name] after our [call/meeting] today. During the conversation, we discussed: [key points]. They mentioned their biggest challenge is [pain point]. I want to: (1) recap what we discussed, (2) remind them of the value I can deliver, (3) include a clear next step. Tone: warm, professional, confident — not salesy.',why:'Personalizes a follow-up in seconds. The prospect feels heard because AI mirrors back what you told them.'},
+  {id:'p11',cat:'admin',locked:false,title:'Summarize and triage a long email thread',preview:'Turn a 20-email chain into a clear action in 60 seconds.',text:'Here is an email thread I need to respond to: [paste thread]. Please: (1) summarize what the conversation is about in 3 sentences, (2) identify what is being asked of me specifically, (3) draft a concise professional reply that addresses their request.',why:'Turns a 20-email thread into a clear action in under 60 seconds.'},
+  {id:'p16',cat:'finance',locked:false,title:'Overdue invoice follow-up — 3-email sequence',preview:'Professional escalation without the awkwardness.',text:'Write 3 invoice follow-up emails for a client whose payment is overdue by [X] days. Invoice amount: $[amount]. Each email should escalate slightly in urgency while staying professional. Email 1: gentle reminder. Email 2: firm but patient. Email 3: final notice with consequences.',why:'The hardest part of chasing money is the awkwardness. AI removes the emotion.'},
+  {id:'p2',cat:'ops',locked:true,title:'Turn a messy process into a clean workflow',preview:'AI finds the hidden logic inside your chaotic processes.'},
+  {id:'p3',cat:'ops',locked:true,title:'Identify your top 5 automation opportunities',preview:'Paste your week — get a personalized automation roadmap.'},
+  {id:'p4',cat:'ops',locked:true,title:'Build a task delegation guide',preview:'Stop being the bottleneck on work that shouldn\'t need you.'},
+  {id:'p5',cat:'ops',locked:true,title:'Weekly operations review',preview:'Turn your messy week into a structured retrospective in under a minute.'},
+  {id:'p7',cat:'sales',locked:true,title:'Re-engage a cold lead',preview:'Give cold leads a reason to come back without sounding desperate.'},
+  {id:'p8',cat:'sales',locked:true,title:'Handle a price objection via email',preview:'Turn a stall into a conversation without discounting.'},
+  {id:'p9',cat:'sales',locked:true,title:'Write a compelling proposal introduction',preview:'Open with their problem, not your credentials.'},
+  {id:'p10',cat:'sales',locked:true,title:'Ask for a referral naturally',preview:'A genuine ask that doesn\'t feel transactional.'},
+  {id:'p12',cat:'admin',locked:true,title:'Write any professional email from bullet points',preview:'You think in bullets. AI writes in prose.'},
+  {id:'p13',cat:'admin',locked:true,title:'Summarize any document instantly',preview:'Main point, 5 takeaways, and your action items — in one shot.'},
+  {id:'p14',cat:'admin',locked:true,title:'Decline a request professionally',preview:'Stay firm without damaging the relationship.'},
+  {id:'p15',cat:'admin',locked:true,title:'Create an employee onboarding checklist',preview:'What success looks like in the first 30 days — in seconds.'},
+  {id:'p17',cat:'finance',locked:true,title:'Analyze cash flow from raw numbers',preview:'Raw numbers → readable financial narrative.'},
+  {id:'p18',cat:'finance',locked:true,title:'Write a price increase notice',preview:'Confident and appreciative — not apologetic.'},
+  {id:'p19',cat:'finance',locked:true,title:'Evaluate a business expense or investment',preview:'ROI, break-even, and alternatives — in one prompt.'},
+  {id:'p20',cat:'finance',locked:true,title:'Build a KPI tracking list',preview:'The numbers that actually tell you how your business is doing.'},
 ];
 
+// Setup guides — ChatGPT unlocked, Zapier & Otter locked
 const SETUPS = [
-  {icon:'C',title:'Get ChatGPT working for your business',time:'20 min',desc:'Set up with a Custom System Prompt that makes it behave like a business-savvy assistant who knows your company \u2014 then build your first real automation.',steps:[
+  {icon:'C',locked:false,title:'Get ChatGPT working for your business',time:'20 min',desc:'Set up with a Custom System Prompt that makes it behave like a business-savvy assistant who knows your company — then build your first real automation.',steps:[
     {title:'Create your account',desc:'Go to chat.openai.com and sign up with your business email. Start free, upgrade when you hit the limit (usually within a week).'},
-    {title:'Open Custom Instructions',desc:'Profile icon (bottom left) \u2192 Settings \u2192 Personalization \u2192 Custom Instructions.'},
-    {title:'Paste your business context',desc:'In the first box:',code:'I run [your business type] called [business name]. We serve [who you serve]. My role is [your role]. My biggest operational challenges are [list 2\u20133 challenges]. Always: use plain business language, be concise and actionable, assume I have limited time.'},
+    {title:'Open Custom Instructions',desc:'Profile icon (bottom left) → Settings → Personalization → Custom Instructions.'},
+    {title:'Paste your business context',desc:'In the first box:',code:'I run [your business type] called [business name]. We serve [who you serve]. My role is [your role]. My biggest operational challenges are [list 2–3 challenges]. Always: use plain business language, be concise and actionable, assume I have limited time.'},
     {title:'Set response style',desc:'In the second box:',code:'Keep responses clear and business-focused. Use bullet points for lists. Always end with a suggested next action. Never use jargon unless I ask.'},
     {title:'Save and test',desc:'Click Save. Every conversation now starts with your context. Test: ask it to draft a follow-up email for a recent meeting. It\'ll ask the right questions.'},
   ]},
-  {icon:'Z',title:'Build your first automation with Zapier',time:'30 min',desc:'Set up the lead intake \u2192 CRM \u2192 auto-follow-up pipeline. This single automation saves most small businesses 2\u20133 hours per week from day one.',steps:[
-    {title:'Create your Zapier account',desc:'Go to zapier.com. Free plan = 5 Zaps, 100 tasks/month. Enough to start.'},
-    {title:'Build your intake form',desc:'Create a lead inquiry form at tally.so (free). Include: name, email, company, and "What\'s your biggest challenge?" \u2014 that last field feeds your AI draft.'},
-    {title:'Create the Zap \u2014 Trigger',desc:'Zapier \u2192 Create Zap \u2192 Tally as trigger \u2192 Event: New Submission.'},
-    {title:'Action 1: Notify yourself',desc:'Add Gmail action: email yourself the lead details.',code:'Subject: New lead: {{name}} \u2014 {{company}}'},
-    {title:'Action 2: Add to HubSpot CRM',desc:'Add HubSpot action: Create Contact. Map form fields. HubSpot free plan handles this.'},
-    {title:'Action 3: Draft the follow-up (optional)',desc:'Add ChatGPT action with this prompt:',code:'Write a short, warm follow-up email to {{name}} from {{company}}. Their biggest challenge is: {{challenge}}. I offer [your service]. Keep it under 5 sentences. Open a conversation, don\'t pitch.'},
-    {title:'Publish and test',desc:'Turn it on, submit a test entry, and watch all three steps fire automatically in under 60 seconds.'},
-  ]},
-  {icon:'O',title:'Never take meeting notes again \u2014 Otter.ai',time:'10 min',desc:'Records, transcribes, and summarizes your meetings automatically. Your next call will produce a full transcript, a summary, and an action item list without you lifting a pen.',steps:[
-    {title:'Create your account',desc:'Go to otter.ai. Free plan = 300 minutes/month. Enough to start.'},
-    {title:'Connect your calendar',desc:'Settings \u2192 Calendar \u2192 Connect Google or Outlook. Otter will now see your upcoming meetings.'},
-    {title:'Enable Auto-Join',desc:'Settings \u2192 Meeting & Transcription \u2192 turn on "Otter joins Zoom/Teams/Meet automatically." It joins as "Otter.ai Notetaker."'},
-    {title:'After your first meeting',desc:'Open the Otter dashboard: full transcript, AI summary (3\u20135 sentences), and all action items with the speaker who mentioned them.'},
-    {title:'Turn notes into a follow-up',desc:'Copy Otter\'s action items \u2192 paste into ChatGPT:',code:'Based on these action items from a client meeting, write a professional follow-up email that recaps our discussion and confirms next steps:\n[paste action items]'},
-    {title:'Monthly insight (Pro move)',desc:'After 5 meetings, export all transcripts \u2192 paste into Claude:',code:'Review these transcripts and identify the 3 most common client concerns or objections I encounter. Then suggest how I could address each one proactively.'},
-  ]},
+  {icon:'Z',locked:true,title:'Build your first automation with Zapier',time:'30 min',desc:'Set up the lead intake → CRM → auto-follow-up pipeline. This single automation saves most small businesses 2–3 hours per week from day one.',stepCount:7},
+  {icon:'O',locked:true,title:'Never take meeting notes again — Otter.ai',time:'10 min',desc:'Records, transcribes, and summarizes your meetings automatically. Your next call will produce a full transcript, a summary, and an action item list without you lifting a pen.',stepCount:6},
 ];
 
+// Scenarios — 2 unlocked, 6 locked (industry visible, details hidden)
 const SCENARIOS = [
-  {industry:'General Contractor',role:'Owner, residential remodeling',biz:'contractor',pain:'ops',before:'Spent 3 hours every Monday writing estimates from handwritten notes. Copied from old proposals, updated numbers manually. Sometimes 2\u20133 days after the walkthrough \u2014 by then, some prospects had already called someone else.',after:'Records a voice memo during the walkthrough. Pastes the transcription into ChatGPT \u2192 formatted estimate with scope, timeline, materials, and labor. Reviews, adjusts pricing, sends within 2 hours.',result:'Estimate turnaround: 2\u20133 days \u2192 same day. Close rate improved ~30% \u2014 simply by being first to follow up.'},
-  {industry:'Independent Consultant',role:'Business strategy, solo practice',biz:'consultant',pain:'admin',before:'After every client call: 30\u201345 minutes writing notes, drafting a follow-up email, updating the project tracker. Billing 60% of hours. Spending the rest on admin.',after:'Otter.ai joins every call. Copies action items \u2192 pastes into ChatGPT \u2192 drafts follow-up email and tracker update in one shot. Total time: 5 minutes.',result:'Recovered 8+ hours of billable capacity per week. Onboarded 2 new clients with the recovered time \u2014 without hiring anyone.'},
-  {industry:'Real Estate Team',role:'4-person buyer\'s agent team',biz:'realestate',pain:'sales',before:'80+ active leads in a spreadsheet no one fully trusted. Follow-up was inconsistent. Lost 3 deals in one quarter to competitors who simply followed up faster.',after:'Zapier: new lead from website \u2192 HubSpot CRM \u2192 ChatGPT-generated personalized follow-up within 15 minutes \u2192 agent reminder in 3 days if no response. All automatic.',result:'Lead response time: 24+ hours \u2192 under 20 minutes. Re-engaged 11 cold leads in month one. Closed 2 additional deals.'},
-  {industry:'Marketing Agency',role:'Owner, 8-person creative team',biz:'agency',pain:'admin',before:'Monthly client reports: 3\u20134 hours per client. Pull from 4 platforms, paste into slides, write narrative. Most dreaded task on the team. Clients rarely read them.',after:'ChatGPT prompt takes raw performance data \u2192 plain-English executive summary, 3 key wins, 3 recommendations, next steps. Account manager reviews and sends. Time: 30 minutes.',result:'Reporting time cut 80%. Two clients specifically cited the reports as a reason they renewed their contracts.'},
-  {industry:'Property Management',role:'Owner, 120 residential units',biz:'property',pain:'ops',before:'Maintenance requests via text, phone, and email with no consistent system. Tracked on a whiteboard and a group chat. Things fell through the cracks constantly.',after:'Tally intake form routes to Notion database, assigns by category, sends automatic tenant acknowledgment. Weekly Zapier trigger sends open items list to team.',result:'Zero requests lost in the first 60 days. Tenant satisfaction improved noticeably. Owner recovered 6 hours/week from chasing status updates.'},
-  {industry:'Healthcare Practice',role:'Office manager, 3-physician practice',biz:'healthcare',pain:'admin',before:'Insurance pre-authorization letters: pull information from 3 systems, format correctly, fax. Each letter: 20\u201330 minutes. Processing 15\u201320 per week.',after:'ChatGPT generates the formatted letter from copy-pasted clinical criteria. Staff fills in a short template, reviews, prints. No sensitive data submitted.',result:'Authorization letter time: 20\u201330 min \u2192 4\u20135 minutes each. Staff recaptured 4\u20135 hours per week.'},
-  {industry:'Staffing Company',role:'Owner, regional light industrial staffing',biz:'staffing',pain:'ops',before:'Job order intake: phone call + manual notes + email confirmation. Slow, error-prone, dependent on one coordinator. If she was out, orders stalled.',after:'Tally form captures standard orders. Zapier populates Notion. ChatGPT drafts the confirmation email. Coordinator reviews and sends \u2014 even when she\'s out.',result:'Job order processing: same-day \u2192 under 30 minutes. Error rate dropped significantly. Coordinator handles 40% more volume.'},
-  {industry:'Financial Advisory',role:'Solo RIA, 60 client relationships',biz:'legal',pain:'admin',before:'After every quarterly review: 45\u201360 minutes drafting a meeting summary letter per client. With 60 clients, the quarterly summary period consumed an entire week.',after:'Otter transcript \u2192 Claude generates a personalized summary letter in the firm\'s voice. Advisor reviews, adjusts numbers, sends. Time: 10 minutes per client.',result:'Summary letter time: 45+ min \u2192 10 min per client. Saved 35+ hours per quarterly cycle. Clients said the letters felt more detailed than before.'},
+  {locked:false,industry:'General Contractor',role:'Owner, residential remodeling',biz:'contractor',pain:'ops',before:'Spent 3 hours every Monday writing estimates from handwritten notes. Copied from old proposals, updated numbers manually. Sometimes 2–3 days after the walkthrough — by then, some prospects had already called someone else.',after:'Records a voice memo during the walkthrough. Pastes the transcription into ChatGPT → formatted estimate with scope, timeline, materials, and labor. Reviews, adjusts pricing, sends within 2 hours.',result:'Estimate turnaround: 2–3 days → same day. Close rate improved ~30% — simply by being first to follow up.'},
+  {locked:false,industry:'Independent Consultant',role:'Business strategy, solo practice',biz:'consultant',pain:'admin',before:'After every client call: 30–45 minutes writing notes, drafting a follow-up email, updating the project tracker. Billing 60% of hours. Spending the rest on admin.',after:'Otter.ai joins every call. Copies action items → pastes into ChatGPT → drafts follow-up email and tracker update in one shot. Total time: 5 minutes.',result:'Recovered 8+ hours of billable capacity per week. Onboarded 2 new clients with the recovered time — without hiring anyone.'},
+  {locked:true,industry:'Real Estate Team',role:'4-person buyer\'s agent team',biz:'realestate',pain:'sales',teaser:'Lead response time: 24+ hours → under 20 minutes. Closed 2 additional deals.'},
+  {locked:true,industry:'Marketing Agency',role:'Owner, 8-person creative team',biz:'agency',pain:'admin',teaser:'Monthly reporting time cut 80%. Two clients cited the reports as a reason they renewed.'},
+  {locked:true,industry:'Property Management',role:'Owner, 120 residential units',biz:'property',pain:'ops',teaser:'Zero maintenance requests lost in 60 days. Owner recovered 6 hours/week.'},
+  {locked:true,industry:'Healthcare Practice',role:'Office manager, 3-physician practice',biz:'healthcare',pain:'admin',teaser:'Authorization letter time: 20–30 min → 4–5 minutes each.'},
+  {locked:true,industry:'Staffing Company',role:'Owner, regional light industrial staffing',biz:'staffing',pain:'ops',teaser:'Job order processing: same-day → under 30 minutes. 40% more volume, same coordinator.'},
+  {locked:true,industry:'Financial Advisory',role:'Solo RIA, 60 client relationships',biz:'legal',pain:'admin',teaser:'Summary letter time: 45+ min → 10 min per client. Saved 35+ hours per quarter.'},
 ];
 
 // ─── STATE ────────────────────────────────────────────────────
-let selectedBiz = '', selectedPain = '', promptCat = 'all', licenseKey = '';
+let selectedBiz = '', selectedPain = '', promptCat = 'all';
 
-// ─── KEY VALIDATION ──────────────────────────────────────────
-function formatKey(input) {
-  let v = input.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
-  let parts = [];
-  parts.push(v.slice(0,4));
-  if(v.length > 4) parts.push(v.slice(4,8));
-  if(v.length > 8) parts.push(v.slice(8,12));
-  if(v.length > 12) parts.push(v.slice(12,16));
-  input.value = parts.filter(p=>p).join('-');
-  input.classList.remove('error','success');
-  document.getElementById('unlock-msg').textContent = '';
+// ─── ANALYTICS ───────────────────────────────────────────────
+function track(name, params) {
+  if (typeof gtag === 'function') gtag('event', name, params || {});
 }
+track('demo_started', { page: 'starter-kit-demo' });
 
-async function validateKey() {
-  const input = document.getElementById('key-input');
-  const key = input.value.trim().toUpperCase();
-  if(key.length < 4) {
-    showMsg('error','Please enter your license key.');
-    input.classList.add('error');
-    return;
-  }
-
-  const btn = document.getElementById('unlock-btn');
-  const btnText = document.getElementById('unlock-btn-text');
-  btn.disabled = true;
-  btnText.innerHTML = '<span class="spinner"></span> Validating...';
-  showMsg('loading','Checking your key...');
-
-  try {
-    const result = await callValidate(key);
-    if(result.valid) {
-      input.classList.add('success');
-      showMsg('success','Key validated \u2014 unlocking your kit...');
-      licenseKey = key;
-      localStorage.setItem(STORAGE_KEY, key);
-      setTimeout(() => enterKit(), 900);
-    } else {
-      input.classList.add('error');
-      showMsg('error', result.reason || 'Invalid key. Check for typos or contact info@jeongai.com');
-      btn.disabled = false;
-      btnText.textContent = 'Unlock';
-    }
-  } catch(e) {
-    // Fallback: if Supabase isn't configured yet, validate format only
-    if(key.startsWith('JAI-') && key.length === 19) {
-      input.classList.add('success');
-      showMsg('success','Key accepted \u2014 unlocking your kit...');
-      licenseKey = key;
-      localStorage.setItem(STORAGE_KEY, key);
-      setTimeout(() => enterKit(), 900);
-    } else {
-      showMsg('error','Invalid key format. Keys look like JAI-XXXX-XXXX-XXXX');
-      input.classList.add('error');
-      btn.disabled = false;
-      btnText.textContent = 'Unlock';
-    }
-  }
-}
-
-async function callValidate(key) {
-  if(!SUPABASE_URL || SUPABASE_URL.includes('YOUR_PROJECT')) throw new Error('Not configured');
-  const fp = await getFingerprint();
-  const res = await fetch(`${SUPABASE_URL}/functions/v1/validate-key`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` },
-    body: JSON.stringify({ key, fingerprint: fp, ua: navigator.userAgent.slice(0,120) })
-  });
-  return res.json();
-}
-
-async function getFingerprint() {
-  const data = [navigator.userAgent, navigator.language, screen.width+'x'+screen.height, Intl.DateTimeFormat().resolvedOptions().timeZone].join('|');
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(data));
-  return Array.from(new Uint8Array(buf)).slice(0,8).map(b=>b.toString(16).padStart(2,'0')).join('');
-}
-
-function showMsg(type, text) {
-  const el = document.getElementById('unlock-msg');
-  el.className = 'unlock-msg ' + type;
-  el.textContent = text;
-}
-
-function enterKit() {
-  document.getElementById('unlock-screen').style.display = 'none';
-  document.getElementById('kit-screen').style.display = 'block';
-  document.body.classList.add('kit-active');
-  document.getElementById('topbar-key-display').textContent = licenseKey.slice(0,9)+'...';
-  renderSetup();
-}
-
-// Check for saved key on load
-window.addEventListener('load', () => {
-  const saved = localStorage.getItem(STORAGE_KEY);
-  if(saved) {
-    licenseKey = saved;
-    // Silently re-validate in background
-    callValidate(saved).then(r => {
-      if(r.valid) enterKit();
-      else localStorage.removeItem(STORAGE_KEY);
-    }).catch(() => {
-      // If backend not set up, trust saved key
-      licenseKey = saved;
-      enterKit();
-    });
-  }
+// begin_checkout on any demo CTA click
+document.addEventListener('click', function(e) {
+  var cta = e.target.closest('.demo-cta');
+  if (cta) track('begin_checkout', { source: 'demo', link: cta.getAttribute('href') });
 });
+
+// ─── LOCKED OVERLAY HELPER ───────────────────────────────────
+function lockOverlay(label) {
+  return `<div class="locked-overlay">
+    <div class="lock-icon">&#128274;</div>
+    <div class="lock-label">${label}</div>
+    <a href="${CHECKOUT_URL}" class="lock-cta demo-cta">Unlock for $29</a>
+  </div>`;
+}
 
 // ─── ONBOARDING ──────────────────────────────────────────────
 document.querySelectorAll('#biz-pills .pill').forEach(p => p.onclick = function() {
@@ -1641,6 +508,7 @@ function launchKit() {
   document.getElementById('sb-biz').textContent = BIZ_LABELS[selectedBiz] || selectedBiz;
   document.getElementById('sb-pain').textContent = 'Friction: '+PAIN_LABELS[selectedPain];
   renderTools(); renderPrompts(); renderScenarios();
+  track('demo_personalized', { biz: selectedBiz, pain: selectedPain });
   showPanel('tools');
 }
 
@@ -1651,7 +519,7 @@ function showPanel(name) {
   document.getElementById('panel-'+name).classList.add('active');
   const ni = document.querySelector(`[data-panel="${name}"]`);
   if(ni) ni.classList.add('active');
-  const pct = {onboard:5,tools:25,prompts:50,setup:65,scenarios:80,upgrade:90,audit:100};
+  const pct = {onboard:5,tools:25,prompts:50,setup:70,scenarios:85,upgrade:100};
   document.getElementById('prog-bar').style.width = (pct[name]||25)+'%';
   window.scrollTo(0,0);
 }
@@ -1665,31 +533,43 @@ function renderTools() {
 
   document.getElementById('tools-banner').style.display = 'flex';
   document.getElementById('tools-banner-text').textContent =
-    'Based on your biggest friction ('+pain+'), these 4 tools will have the highest immediate impact.';
+    'Based on your biggest friction ('+pain+'), start with these tools. The full kit matches all 13 tools to your business.';
 
   const out = document.getElementById('tools-output');
   out.innerHTML = '';
 
   const topLabel = document.createElement('div');
   topLabel.className = 'tools-section-label';
-  topLabel.textContent = 'Recommended for you \u2014 ' + pain;
+  topLabel.textContent = 'Unlocked in the demo — recommended for ' + pain;
   out.appendChild(topLabel);
 
   const topGrid = document.createElement('div');
   topGrid.className = 'tool-grid';
   topTools.forEach(t => { topGrid.innerHTML += toolCardHTML(t, true); });
+  restTools.forEach(t => { topGrid.innerHTML += toolCardHTML(t, false); });
   out.appendChild(topGrid);
 
-  const allLabel = document.createElement('div');
-  allLabel.className = 'tools-section-label';
-  allLabel.style.marginTop = '1.5rem';
-  allLabel.textContent = 'Full toolkit \u2014 all 13 tools';
-  out.appendChild(allLabel);
+  const lockLabel = document.createElement('div');
+  lockLabel.className = 'tools-section-label';
+  lockLabel.style.marginTop = '1.5rem';
+  lockLabel.textContent = 'In the full kit — 9 more tools';
+  out.appendChild(lockLabel);
 
-  const allGrid = document.createElement('div');
-  allGrid.className = 'tool-grid';
-  restTools.forEach(t => { allGrid.innerHTML += toolCardHTML(t, false); });
-  out.appendChild(allGrid);
+  const lockGrid = document.createElement('div');
+  lockGrid.className = 'tool-grid';
+  LOCKED_TOOLS.forEach(t => {
+    lockGrid.innerHTML += `<div class="tool-card locked-card">
+      <div class="locked-blur">
+        <div class="tool-name">${t.name}</div>
+        <div class="tool-cost">${t.cost}</div>
+        <div class="stars">\u2605\u2605\u2605\u2605\u2605</div>
+        <div class="tool-desc">Full review, use cases, and recommendation included in the kit. Full review, use cases, and recommendation.</div>
+        <div class="tool-footer"><span class="tool-badge">${t.badge}</span></div>
+      </div>
+      ${lockOverlay(t.name)}
+    </div>`;
+  });
+  out.appendChild(lockGrid);
 }
 
 function toolCardHTML(t, top) {
@@ -1716,28 +596,47 @@ function setChip(el, type) {
 }
 function renderPrompts() {
   const search = (document.getElementById('prompt-search').value || '').toLowerCase();
-  const painFirst = selectedPain;
   let list = [...PROMPTS].sort((a,b) => {
-    const ap = a.cat===painFirst ? 0 : 1;
-    const bp = b.cat===painFirst ? 0 : 1;
+    // Unlocked first, then user's friction area first
+    if (a.locked !== b.locked) return a.locked ? 1 : -1;
+    const ap = a.cat===selectedPain ? 0 : 1;
+    const bp = b.cat===selectedPain ? 0 : 1;
     return ap - bp;
   });
   if(promptCat !== 'all') list = list.filter(p => p.cat === promptCat);
   if(search) list = list.filter(p =>
     p.title.toLowerCase().includes(search) ||
     p.preview.toLowerCase().includes(search) ||
-    p.text.toLowerCase().includes(search)
+    (p.text && p.text.toLowerCase().includes(search))
   );
-  document.getElementById('prompt-count').textContent = list.length + ' prompt' + (list.length!==1?'s':'') + (painFirst && promptCat==='all' ? ' \u00b7 your friction area shown first':'');
+  const unlockedCount = list.filter(p => !p.locked).length;
+  document.getElementById('prompt-count').textContent =
+    unlockedCount + ' of ' + list.length + ' prompts unlocked in the demo';
   const container = document.getElementById('prompt-list');
   container.innerHTML = '';
   list.forEach(p => {
     const card = document.createElement('div');
+    if (p.locked) {
+      card.className = 'prompt-card '+p.cat+' locked-card';
+      card.innerHTML = `
+        <div class="locked-blur">
+          <div class="prompt-card-head">
+            <div class="prompt-meta">
+              <span class="prompt-cat-tag ${p.cat}">${catLabel(p.cat)}</span>
+              <div class="prompt-title">${p.title}</div>
+              <div class="prompt-preview">${p.preview}</div>
+            </div>
+          </div>
+        </div>
+        ${lockOverlay(p.title)}`;
+      container.appendChild(card);
+      return;
+    }
     card.className = 'prompt-card '+p.cat;
     card.innerHTML = `
       <div class="prompt-card-head">
         <div class="prompt-meta">
-          <span class="prompt-cat-tag ${p.cat}">${p.cat==='ops'?'Operations':p.cat==='sales'?'Sales':p.cat==='admin'?'Admin':'Finance'}</span>
+          <span class="prompt-cat-tag ${p.cat}">${catLabel(p.cat)}</span>
           <div class="prompt-title">${p.title}</div>
           <div class="prompt-preview">${p.preview}</div>
         </div>
@@ -1761,10 +660,15 @@ function renderPrompts() {
   });
 }
 
+function catLabel(cat) {
+  return cat==='ops'?'Operations':cat==='sales'?'Sales':cat==='admin'?'Admin':'Finance';
+}
+
 function copyPrompt(id, btn) {
   const text = document.getElementById('pt-'+id).textContent;
   navigator.clipboard.writeText(text).then(() => {
     btn.textContent = '\u2713 Copied!';
+    track('demo_prompt_copied', { prompt_id: id });
     setTimeout(() => btn.innerHTML = '&#128203; Copy prompt', 2000);
   });
 }
@@ -1773,8 +677,25 @@ function copyPrompt(id, btn) {
 function renderSetup() {
   const out = document.getElementById('setup-output');
   out.innerHTML = '';
-  SETUPS.forEach((s,i) => {
+  SETUPS.forEach((s) => {
     const card = document.createElement('div');
+    if (s.locked) {
+      card.className = 'guide-card locked-card';
+      card.innerHTML = `
+        <div class="locked-blur">
+          <div class="guide-head">
+            <div class="guide-icon">${s.icon}</div>
+            <div class="guide-info">
+              <div class="guide-title">${s.title}</div>
+              <div class="guide-meta">~${s.time} setup &middot; ${s.stepCount} steps</div>
+            </div>
+            <span class="guide-arrow">&#9654;</span>
+          </div>
+        </div>
+        ${lockOverlay(s.title)}`;
+      out.appendChild(card);
+      return;
+    }
     card.className = 'guide-card';
     let stepsHTML = '';
     s.steps.forEach((st,j) => {
@@ -1792,7 +713,7 @@ function renderSetup() {
         <div class="guide-icon">${s.icon}</div>
         <div class="guide-info">
           <div class="guide-title">${s.title}</div>
-          <div class="guide-meta">~${s.time} setup &middot; ${s.steps.length} steps</div>
+          <div class="guide-meta">~${s.time} setup &middot; ${s.steps.length} steps &middot; Unlocked</div>
         </div>
         <span class="guide-arrow">&#9654;</span>
       </div>
@@ -1814,25 +735,36 @@ function toggleGuide(head) {
 // ─── SCENARIOS ───────────────────────────────────────────────
 function renderScenarios() {
   const sorted = [...SCENARIOS].sort((a,b) => {
+    if (a.locked !== b.locked) return a.locked ? 1 : -1;
     const am = (a.biz===selectedBiz?2:0) + (a.pain===selectedPain?1:0);
     const bm = (b.biz===selectedBiz?2:0) + (b.pain===selectedPain?1:0);
     return bm - am;
   });
-  const top = sorted[0];
-  if(top) {
-    document.getElementById('scenario-banner').style.display = 'flex';
-    document.getElementById('scenario-banner-text').textContent =
-      'The \u201c'+top.industry+'\u201d scenario matches your profile most closely \u2014 it\u2019s shown first.';
-  }
   const out = document.getElementById('scenarios-output');
   out.innerHTML = '';
-  sorted.forEach((s,i) => {
+  sorted.forEach((s) => {
+    if (s.locked) {
+      out.innerHTML += `<div class="scenario-card locked-card">
+        <div class="locked-blur">
+          <div class="sc-header">
+            <span class="sc-industry">${s.industry}</span>
+            <span class="sc-role">${s.role}</span>
+          </div>
+          <div class="sc-result">
+            <span class="sc-result-check">&#10003;</span>
+            <span class="sc-result-text"><strong>Result:</strong> ${s.teaser}</span>
+          </div>
+        </div>
+        ${lockOverlay(s.industry)}
+      </div>`;
+      return;
+    }
     const isMatch = s.biz===selectedBiz || s.pain===selectedPain;
     out.innerHTML += `<div class="scenario-card">
       <div class="sc-header">
         <span class="sc-industry">${s.industry}</span>
         <span class="sc-role">${s.role}</span>
-        ${isMatch && i<3 ? '<span class="sc-match">Close match</span>' : ''}
+        ${isMatch ? '<span class="sc-match">Close match</span>' : ''}
       </div>
       <div class="sc-body">
         <div class="sc-col before"><div class="sc-col-head">Before</div><div class="sc-text">${s.before}</div></div>
@@ -1844,6 +776,46 @@ function renderScenarios() {
       </div>
     </div>`;
   });
+}
+
+// ─── INIT ────────────────────────────────────────────────────
+renderSetup();
+renderPrompts();
+renderScenarios();
+renderToolsDefault();
+
+// Before personalization, show tools without a friction match
+function renderToolsDefault() {
+  const out = document.getElementById('tools-output');
+  out.innerHTML = '';
+  const topLabel = document.createElement('div');
+  topLabel.className = 'tools-section-label';
+  topLabel.textContent = 'Unlocked in the demo';
+  out.appendChild(topLabel);
+  const grid = document.createElement('div');
+  grid.className = 'tool-grid';
+  TOOLS.forEach(t => { grid.innerHTML += toolCardHTML(t, false); });
+  out.appendChild(grid);
+  const lockLabel = document.createElement('div');
+  lockLabel.className = 'tools-section-label';
+  lockLabel.style.marginTop = '1.5rem';
+  lockLabel.textContent = 'In the full kit — 9 more tools';
+  out.appendChild(lockLabel);
+  const lockGrid = document.createElement('div');
+  lockGrid.className = 'tool-grid';
+  LOCKED_TOOLS.forEach(t => {
+    lockGrid.innerHTML += `<div class="tool-card locked-card">
+      <div class="locked-blur">
+        <div class="tool-name">${t.name}</div>
+        <div class="tool-cost">${t.cost}</div>
+        <div class="stars">\u2605\u2605\u2605\u2605\u2605</div>
+        <div class="tool-desc">Full review, use cases, and recommendation included in the kit. Full review, use cases, and recommendation.</div>
+        <div class="tool-footer"><span class="tool-badge">${t.badge}</span></div>
+      </div>
+      ${lockOverlay(t.name)}
+    </div>`;
+  });
+  out.appendChild(lockGrid);
 }
 </script>
 </body>

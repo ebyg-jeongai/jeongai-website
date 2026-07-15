@@ -20,7 +20,7 @@
   <title>AI Starter Kit — Jeong AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/kit.css">
   <link rel="icon" type="image/png" href="favicon.png">
@@ -59,6 +59,17 @@
         "url": "https://www.jeongai.com"
       }
     }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.jeongai.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.jeongai.com/#products" },
+      { "@type": "ListItem", "position": 3, "name": "AI Starter Kit", "item": "https://www.jeongai.com/starter-kit.html" }
+    ]
   }
   </script>
 </head>
@@ -121,6 +132,7 @@
       </button>
       <div class="unlock-msg" id="unlock-msg"></div>
       <div class="unlock-footer">
+        Don't have a kit yet? <a href="checkout-starter-kit.html">Get it for $29</a><br>
         Lost your key? <a href="mailto:info@jeongai.com">info@jeongai.com</a><br>
         A product of Jeong AI &middot; jeongai.com
       </div>
@@ -128,7 +140,7 @@
 
     <div class="features-row">
       <div class="feature-pill"><span class="dot"></span>13 curated AI tools</div>
-      <div class="feature-pill"><span class="dot"></span>100+ ready-to-use prompts</div>
+      <div class="feature-pill"><span class="dot"></span>20+ ready-to-use prompts</div>
       <div class="feature-pill"><span class="dot"></span>3 setup guides</div>
       <div class="feature-pill"><span class="dot"></span>8 real business scenarios</div>
     </div>
@@ -141,7 +153,7 @@
 <div id="kit-screen">
   <div class="kit-topbar">
     <div class="kit-topbar-logo">
-      <div class="kit-topbar-logo-mark">E</div>
+      <div class="kit-topbar-logo-mark">J</div>
       Jeong AI
     </div>
     <div class="kit-topbar-divider"></div>
@@ -392,7 +404,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Jeong AI / Jeong AI. All rights reserved.</p>
+        <p>&copy; 2026 Jeong AI &mdash; a division of EBYG Media LLC. All rights reserved.</p>
         <div class="footer-legal">
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms of Service</a>
@@ -401,7 +413,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 <script>
 // ─── CONFIG ──────────────────────────────────────────────────
 // Replace with your actual Supabase project URL and anon key
