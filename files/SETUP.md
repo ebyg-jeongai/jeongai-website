@@ -82,8 +82,10 @@ The Supabase URL and service role key are entered at login — no hardcoding nee
 2. Create a **Payment Link** for each product. On each link, set **Metadata**:
    - key: `product`
    - value: `ai-starter-kit`, `automation-blueprint`, or `automation-toolkit`
-3. Set each link's confirmation message to something like:
-   > "Your license key is on its way to your email. Save it — you'll need it to unlock your content."
+3. Under each link's **After payment** settings, choose **Redirect customers to your website** and set the URL to the matching success page:
+   - Starter Kit: `https://www.jeongai.com/purchase-success.html?product=ai-starter-kit`
+   - Blueprint: `https://www.jeongai.com/purchase-success.html?product=automation-blueprint`
+   - Toolkit: `https://www.jeongai.com/purchase-success.html?product=automation-toolkit`
 4. Go to **Developers → Webhooks → Add endpoint**:
    - **URL:** `https://YOUR_PROJECT.supabase.co/functions/v1/stripe-webhook`
    - **Events:** `checkout.session.completed`
