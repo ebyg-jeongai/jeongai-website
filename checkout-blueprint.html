@@ -254,10 +254,10 @@
             </ul>
           </div>
           <div class="card-divider"></div>
-          <a href="https://jeongai.lemonsqueezy.com/checkout/buy/1c8cb684-9dca-4b5d-8fce-d6930235894f" class="checkout-btn btn-level-2 lemonsqueezy-button" data-product="blueprint">Buy Now — $79</a>
+          <a href="https://buy.stripe.com/REPLACE_WITH_BLUEPRINT_LINK" class="checkout-btn btn-level-2 buy-button" data-product="blueprint">Buy Now — $79</a>
           <div class="checkout-guarantee">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Secure checkout via Lemon Squeezy
+            Secure checkout via Stripe
           </div>
         </div>
 
@@ -272,7 +272,7 @@
         <div class="trust-block">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           <h4>Secure Payment</h4>
-          <p>SSL-encrypted checkout powered by Lemon Squeezy. Your data is always protected.</p>
+          <p>SSL-encrypted checkout powered by Stripe. Your data is always protected.</p>
         </div>
         <div class="trust-block">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -349,7 +349,7 @@
     <div class="container">
       <h2>Ready to Build Your First Automation System?</h2>
       <p>Stop guessing and start building. The Blueprint gives you the frameworks, templates, and tools to implement AI automation independently.</p>
-      <a href="https://jeongai.lemonsqueezy.com/checkout/buy/1c8cb684-9dca-4b5d-8fce-d6930235894f" class="checkout-btn btn-level-2 lemonsqueezy-button" data-product="blueprint" style="max-width:360px;margin:0 auto;">Buy Now — $79</a>
+      <a href="https://buy.stripe.com/REPLACE_WITH_BLUEPRINT_LINK" class="checkout-btn btn-level-2 buy-button" data-product="blueprint" style="max-width:360px;margin:0 auto;">Buy Now — $79</a>
     </div>
   </section>
 
@@ -405,7 +405,6 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
   </button>
 
-  <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
   <script>
     document.querySelectorAll('.faq-question').forEach(function(btn) {
       btn.addEventListener('click', function() {
@@ -444,7 +443,7 @@
   </script>
   <script>
     // GA4 checkout funnel tracking
-    document.querySelectorAll('.lemonsqueezy-button').forEach(function(btn) {
+    document.querySelectorAll('.buy-button').forEach(function(btn) {
       btn.addEventListener('click', function() {
         if (typeof gtag === 'function') {
           gtag('event', 'begin_checkout', { item_id: btn.getAttribute('data-product') || 'unknown' });

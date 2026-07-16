@@ -5,13 +5,13 @@
 -- ─────────────────────────────────────────────────────────────
 
 -- License keys table
--- One row per key sold. Lemon Squeezy webhook creates these.
+-- One row per key sold. Stripe webhook creates these.
 CREATE TABLE IF NOT EXISTS license_keys (
   id              BIGSERIAL PRIMARY KEY,
   key             TEXT NOT NULL UNIQUE,         -- e.g. JAI-A1B2-C3D4-E5F6
   product         TEXT DEFAULT 'ai-starter-kit',
-  order_id        TEXT,                          -- Lemon Squeezy order ID
-  customer_email  TEXT,                          -- buyer's email (from LS webhook)
+  order_id        TEXT,                          -- Stripe checkout session ID
+  customer_email  TEXT,                          -- buyer's email (from Stripe webhook)
   customer_name   TEXT,
   created_at      TIMESTAMPTZ DEFAULT NOW(),
   revoked         BOOLEAN DEFAULT FALSE,
@@ -76,9 +76,9 @@ GROUP BY k.key, k.customer_email, k.customer_name, k.product,
 ORDER BY sessions_30d DESC NULLS LAST;
 
 -- ─────────────────────────────────────────────────────────────
--- LEMON SQUEEZY WEBHOOK HANDLER (separate edge function)
+-- STRIPE WEBHOOK HANDLER (separate edge function)
 -- Automatically creates a key when a purchase completes.
--- See: supabase/functions/ls-webhook/index.ts
+-- See: supabase/functions/stripe-webhook/index.ts
 -- ─────────────────────────────────────────────────────────────
 
 -- ─────────────────────────────────────────────────────────────

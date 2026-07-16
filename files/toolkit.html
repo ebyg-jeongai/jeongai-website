@@ -1379,7 +1379,6 @@ body { font-family:var(--sans); background:var(--surface); color:#1E293B; min-he
 const SUPABASE_URL      = 'https://YOUR_PROJECT.supabase.co';
 const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY';
 const STORAGE_KEY       = 'jai_toolkit_key';
-const TEST_KEY          = 'JAI-TEST-0000-0003';
 
 // == STATE ==
 let selectedBiz = '', selectedPain = '', promptCat = 'all', wfCat = 'all';
@@ -2169,14 +2168,9 @@ async function validateKey() {
       btn.disabled=false; btnTxt.textContent='Unlock Toolkit';
     }
   } catch(e) {
-    if(key===TEST_KEY||(key.startsWith('JAI-')&&key.length===19)) {
-      inp.classList.add('success'); showMsg('success','\u2713 Key accepted — unlocking your toolkit...');
-      licenseKey=key; localStorage.setItem(STORAGE_KEY,key);
-      setTimeout(()=>enterKit(),900);
-    } else {
-      showMsg('error','Invalid key format. Keys look like JAI-XXXX-XXXX-XXXX');
-      inp.classList.add('error'); btn.disabled=false; btnTxt.textContent='Unlock Toolkit';
-    }
+    // Fail closed: never unlock without a successful validation
+    showMsg('error','Could not reach the validation service. Please try again in a moment, or contact info@jeongai.com');
+    inp.classList.add('error'); btn.disabled=false; btnTxt.textContent='Unlock Toolkit';
   }
 }
 
@@ -2186,7 +2180,7 @@ async function callValidate(key) {
   const res = await fetch(SUPABASE_URL+'/functions/v1/validate-key',{
     method:'POST',
     headers:{'Content-Type':'application/json','Authorization':'Bearer '+SUPABASE_ANON_KEY},
-    body:JSON.stringify({key,fingerprint:fp,ua:navigator.userAgent.slice(0,120)})
+    body:JSON.stringify({key,fingerprint:fp,ua:navigator.userAgent.slice(0,120),product:'automation-toolkit'})
   });
   return res.json();
 }
@@ -2212,7 +2206,7 @@ function enterKit() {
 
 window.addEventListener('load',()=>{
   const saved=localStorage.getItem(STORAGE_KEY);
-  if(saved){ licenseKey=saved; callValidate(saved).then(r=>{ if(r.valid) enterKit(); else localStorage.removeItem(STORAGE_KEY); }).catch(()=>{ licenseKey=saved; enterKit(); }); }
+  if(saved){ licenseKey=saved; callValidate(saved).then(r=>{ if(r.valid) enterKit(); else localStorage.removeItem(STORAGE_KEY); }).catch(()=>{ /* fail closed: stay locked */ }); }
 });
 
 // ================================================================

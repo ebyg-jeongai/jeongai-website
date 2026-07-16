@@ -459,7 +459,7 @@
               <li>Priority support channel</li>
               <li class="upgrade-bonus">Bonus: Quarterly automation review session</li>
             </ul>
-            <a href="https://jeongai.lemonsqueezy.com/checkout/buy/986975ee-964d-4747-91ca-e00615697a36" class="upgrade-btn primary lemonsqueezy-button" target="_blank">Get the Full Toolkit →</a>
+            <a href="https://buy.stripe.com/REPLACE_WITH_TOOLKIT_LINK" class="upgrade-btn primary buy-button" target="_blank">Get the Full Toolkit →</a>
           </div>
         </div>
         <div class="upgrade-note">
@@ -981,14 +981,9 @@ async function validateKey() {
       btn.disabled=false; btnTxt.textContent='Unlock Blueprint';
     }
   } catch(e) {
-    if(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(key)) {
-      inp.classList.add('success'); showMsg('success','✓ Key accepted — unlocking your blueprint...');
-      licenseKey=key; localStorage.setItem(STORAGE_KEY,key);
-      setTimeout(()=>enterKit(),900);
-    } else {
-      showMsg('error','Invalid key. Check for typos or contact info@jeongai.com');
-      inp.classList.add('error'); btn.disabled=false; btnTxt.textContent='Unlock Blueprint';
-    }
+    // Fail closed: never unlock without a successful validation
+    showMsg('error','Could not reach the validation service. Please try again in a moment, or contact info@jeongai.com');
+    inp.classList.add('error'); btn.disabled=false; btnTxt.textContent='Unlock Blueprint';
   }
 }
 
@@ -998,7 +993,7 @@ async function callValidate(key) {
   const res = await fetch(`${SUPABASE_URL}/functions/v1/validate-key`,{
     method:'POST',
     headers:{'Content-Type':'application/json','Authorization':`Bearer ${SUPABASE_ANON_KEY}`},
-    body:JSON.stringify({key,fingerprint:fp,ua:navigator.userAgent.slice(0,120)})
+    body:JSON.stringify({key,fingerprint:fp,ua:navigator.userAgent.slice(0,120),product:'automation-blueprint'})
   });
   return res.json();
 }
@@ -1024,7 +1019,7 @@ function enterKit() {
 
 window.addEventListener('load',()=>{
   const saved=localStorage.getItem(STORAGE_KEY);
-  if(saved){ licenseKey=saved; callValidate(saved).then(r=>{ if(r.valid) enterKit(); else localStorage.removeItem(STORAGE_KEY); }).catch(()=>{ licenseKey=saved; enterKit(); }); }
+  if(saved){ licenseKey=saved; callValidate(saved).then(r=>{ if(r.valid) enterKit(); else localStorage.removeItem(STORAGE_KEY); }).catch(()=>{ /* fail closed: stay locked */ }); }
 });
 
 // ══════════════════════════════════════════════════════════════

@@ -8,7 +8,7 @@
 | `admin.html` | Your private monitoring dashboard |
 | `supabase/schema.sql` | Database tables — run once in Supabase |
 | `supabase/functions/validate-key/index.ts` | Validates keys + logs sessions |
-| `supabase/functions/ls-webhook/index.ts` | Creates a key on every Lemon Squeezy purchase |
+| `supabase/functions/stripe-webhook/index.ts` | Creates a key on every Stripe purchase and emails it via Resend |
 
 ---
 
@@ -35,20 +35,21 @@ supabase link --project-ref YOUR_PROJECT_REF
 
 Set environment variables:
 ```bash
-supabase secrets set SUPABASE_URL=https://YOUR_PROJECT.supabase.co
-supabase secrets set SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
-supabase secrets set LS_WEBHOOK_SECRET=your_lemon_squeezy_webhook_secret
+supabase secrets set STRIPE_WEBHOOK_SECRET=whsec_...      # from Stripe webhook endpoint
+supabase secrets set RESEND_API_KEY=re_...                # from resend.com
+supabase secrets set RESEND_FROM="Jeong AI <info@jeongai.com>"  # optional, this is the default
 ```
+(`SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are provided automatically to edge functions.)
 
 Deploy both functions:
 ```bash
 supabase functions deploy validate-key
-supabase functions deploy ls-webhook
+supabase functions deploy stripe-webhook --no-verify-jwt
 ```
 
 Your function URLs will be:
 - `https://YOUR_PROJECT.supabase.co/functions/v1/validate-key`
-- `https://YOUR_PROJECT.supabase.co/functions/v1/ls-webhook`
+- `https://YOUR_PROJECT.supabase.co/functions/v1/stripe-webhook`
 
 ---
 
@@ -75,32 +76,37 @@ The Supabase URL and service role key are entered at login — no hardcoding nee
 
 ---
 
-## Step 5 — Set up Lemon Squeezy webhook (10 minutes)
+## Step 5 — Set up Stripe (15 minutes)
 
-1. Log into Lemon Squeezy → Settings → Webhooks
-2. Add a new webhook:
-   - **URL:** `https://YOUR_PROJECT.supabase.co/functions/v1/ls-webhook`
-   - **Events:** `order_created`
-   - **Signing secret:** Copy this value → set it as `LS_WEBHOOK_SECRET` above
-3. Save
+1. In the Stripe Dashboard, create one **Product** per offering (Starter Kit, Blueprint, Toolkit) with a one-time price.
+2. Create a **Payment Link** for each product. On each link, set **Metadata**:
+   - key: `product`
+   - value: `ai-starter-kit`, `automation-blueprint`, or `automation-toolkit`
+3. Set each link's confirmation message to something like:
+   > "Your license key is on its way to your email. Save it — you'll need it to unlock your content."
+4. Go to **Developers → Webhooks → Add endpoint**:
+   - **URL:** `https://YOUR_PROJECT.supabase.co/functions/v1/stripe-webhook`
+   - **Events:** `checkout.session.completed`
+   - Copy the **Signing secret** → set it as `STRIPE_WEBHOOK_SECRET` above
+5. Paste each Payment Link URL into the matching checkout page (`checkout-*.html`), replacing the `https://buy.stripe.com/REPLACE_WITH_..._LINK` placeholders.
 
-Now every purchase automatically creates a key in your database.
+Now every purchase automatically creates a key and emails it to the buyer.
+
+**Tier enforcement:** keys unlock their own tier and everything below it
+(`automation-toolkit` ⊇ `automation-blueprint` ⊇ `ai-starter-kit`). The unlock
+pages send their product slug to `validate-key`, which compares it against the
+`product` column on the key. A Starter Kit key will not unlock the Blueprint
+or Toolkit pages.
 
 ---
 
-## Step 6 — Display key at checkout (Lemon Squeezy)
+## Step 6 — Set up Resend (10 minutes)
 
-In Lemon Squeezy, go to your product → **Confirmation page**:
+1. Create a free account at **resend.com**
+2. Add and verify the `jeongai.com` domain (DNS records shown in their dashboard)
+3. Create an API key → set it as `RESEND_API_KEY` above
 
-Add a message like:
-> "Your license key has been emailed to you. Save it — you'll need it to access your kit at kit.jeongai.com"
-
-To include the actual key in the confirmation email, set up a **Zapier automation**:
-- Trigger: Lemon Squeezy → New Order
-- Action: Look up the key from Supabase (using the order ID)
-- Action: Send email via Gmail/Mailchimp with the key
-
-Or use **Make.com** for the same flow.
+The webhook sends the license key from `Jeong AI <info@jeongai.com>` with a link to the content.
 
 ---
 

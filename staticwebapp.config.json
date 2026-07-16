@@ -51,6 +51,6 @@
     "Referrer-Policy": "strict-origin-when-cross-origin",
     "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
     "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
-    "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://assets.lemonsqueezy.com https://app.lemonsqueezy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.google.com https://stats.g.doubleclick.net https://www.googletagmanager.com https://api.web3forms.com https://*.supabase.co https://api.lemonsqueezy.com https://app.lemonsqueezy.com; frame-src https://*.lemonsqueezy.com; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com"
+    "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.google.com https://stats.g.doubleclick.net https://www.googletagmanager.com https://api.web3forms.com https://*.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com"
   }
 }

@@ -1492,14 +1492,9 @@ async function validateKey() {
       btn.disabled=false; btnTxt.textContent='Unlock Blueprint';
     }
   } catch(e) {
-    if(key.startsWith('JAI-')&&key.length===19) {
-      inp.classList.add('success'); showMsg('success','✓ Key accepted — unlocking your blueprint...');
-      licenseKey=key; localStorage.setItem(STORAGE_KEY,key);
-      setTimeout(()=>enterKit(),900);
-    } else {
-      showMsg('error','Invalid key format. Keys look like JAI-XXXX-XXXX-XXXX');
-      inp.classList.add('error'); btn.disabled=false; btnTxt.textContent='Unlock Blueprint';
-    }
+    // Fail closed: never unlock without a successful validation
+    showMsg('error','Could not reach the validation service. Please try again in a moment, or contact info@jeongai.com');
+    inp.classList.add('error'); btn.disabled=false; btnTxt.textContent='Unlock Blueprint';
   }
 }
 
@@ -1509,7 +1504,7 @@ async function callValidate(key) {
   const res = await fetch(`${SUPABASE_URL}/functions/v1/validate-key`,{
     method:'POST',
     headers:{'Content-Type':'application/json','Authorization':`Bearer ${SUPABASE_ANON_KEY}`},
-    body:JSON.stringify({key,fingerprint:fp,ua:navigator.userAgent.slice(0,120)})
+    body:JSON.stringify({key,fingerprint:fp,ua:navigator.userAgent.slice(0,120),product:'automation-blueprint'})
   });
   return res.json();
 }
@@ -1534,7 +1529,7 @@ function enterKit() {
 
 window.addEventListener('load',()=>{
   const saved=localStorage.getItem(STORAGE_KEY);
-  if(saved){ licenseKey=saved; callValidate(saved).then(r=>{ if(r.valid) enterKit(); else localStorage.removeItem(STORAGE_KEY); }).catch(()=>{ licenseKey=saved; enterKit(); }); }
+  if(saved){ licenseKey=saved; callValidate(saved).then(r=>{ if(r.valid) enterKit(); else localStorage.removeItem(STORAGE_KEY); }).catch(()=>{ /* fail closed: stay locked */ }); }
 });
 
 // ══════════════════════════════════════════════════════════════

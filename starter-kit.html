@@ -119,8 +119,8 @@
           class="key-input"
           id="key-input"
           type="text"
-          placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-          maxlength="36"
+          placeholder="JAI-XXXX-XXXX-XXXX"
+          maxlength="19"
           autocomplete="off"
           spellcheck="false"
           oninput="formatKey(this)"
@@ -514,13 +514,12 @@ let selectedBiz = '', selectedPain = '', promptCat = 'all', licenseKey = '';
 
 // ─── KEY VALIDATION ──────────────────────────────────────────
 function formatKey(input) {
-  let v = input.value.toLowerCase().replace(/[^a-f0-9]/g, '');
+  let v = input.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
   let parts = [];
-  if(v.length > 0) parts.push(v.slice(0,8));
-  if(v.length > 8) parts.push(v.slice(8,12));
-  if(v.length > 12) parts.push(v.slice(12,16));
-  if(v.length > 16) parts.push(v.slice(16,20));
-  if(v.length > 20) parts.push(v.slice(20,32));
+  if(v.length > 0) parts.push(v.slice(0,3));
+  if(v.length > 3) parts.push(v.slice(3,7));
+  if(v.length > 7) parts.push(v.slice(7,11));
+  if(v.length > 11) parts.push(v.slice(11,15));
   input.value = parts.filter(p=>p).join('-');
   input.classList.remove('error','success');
   document.getElementById('unlock-msg').textContent = '';
@@ -556,19 +555,11 @@ async function validateKey() {
       btnText.textContent = 'Unlock my kit';
     }
   } catch(e) {
-    // Fallback: if Supabase isn't configured yet, validate format only
-    if(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(key)) {
-      input.classList.add('success');
-      showMsg('success','Key accepted — unlocking your kit...');
-      licenseKey = key;
-      localStorage.setItem(STORAGE_KEY, key);
-      setTimeout(() => enterKit(), 900);
-    } else {
-      showMsg('error','Invalid key. Check for typos or contact info@jeongai.com');
-      input.classList.add('error');
-      btn.disabled = false;
-      btnText.textContent = 'Unlock my kit';
-    }
+    // Fail closed: never unlock without a successful validation
+    showMsg('error','Could not reach the validation service. Please try again in a moment, or contact info@jeongai.com');
+    input.classList.add('error');
+    btn.disabled = false;
+    btnText.textContent = 'Unlock my kit';
   }
 }
 
@@ -578,7 +569,7 @@ async function callValidate(key) {
   const res = await fetch(`${SUPABASE_URL}/functions/v1/validate-key`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` },
-    body: JSON.stringify({ key, fingerprint: fp, ua: navigator.userAgent.slice(0,120) })
+    body: JSON.stringify({ key, fingerprint: fp, ua: navigator.userAgent.slice(0,120), product: 'ai-starter-kit' })
   });
   return res.json();
 }
@@ -613,9 +604,7 @@ window.addEventListener('load', () => {
       if(r.valid) enterKit();
       else localStorage.removeItem(STORAGE_KEY);
     }).catch(() => {
-      // If backend not set up, trust saved key
-      licenseKey = saved;
-      enterKit();
+      // Fail closed: stay locked; the saved key is kept for the next attempt
     });
   }
 });
