@@ -13,6 +13,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 const STRIPE_WEBHOOK_SECRET = Deno.env.get("STRIPE_WEBHOOK_SECRET")!;
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY")!;
 const RESEND_FROM = Deno.env.get("RESEND_FROM") || "Jeong AI <info@jeongai.com>";
+const REPLY_TO = Deno.env.get("RESEND_REPLY_TO") || "derrick@jeongai.com";
 
 const PRODUCTS: Record<string, { name: string; accessUrl: string }> = {
   "ai-starter-kit": {
@@ -123,6 +124,8 @@ async function sendKeyEmail(
     },
     body: JSON.stringify({
       from: RESEND_FROM,
+      // Interim: info@ mailbox doesn't exist yet — route replies to derrick@
+      reply_to: REPLY_TO,
       to: [to],
       subject: `Your ${product.name} license key`,
       html: `
@@ -138,7 +141,7 @@ async function sendKeyEmail(
           </p>
           <p>Save this email — you'll need the key whenever you unlock the content on a new device.</p>
           <p style="color:#6b7a89;font-size:13px;margin-top:32px;">
-            Questions? Just reply to this email or write to info@jeongai.com.<br>
+            Questions? Just reply to this email.<br>
             Jeong AI — a division of EBYG Media LLC
           </p>
         </div>

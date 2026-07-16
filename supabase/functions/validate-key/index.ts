@@ -70,7 +70,7 @@ serve(async (req: Request) => {
     if (keyTier < requestedTier) {
       return json({
         valid: false,
-        reason: "Your key doesn't include this product. Upgrade at jeongai.com or contact info@jeongai.com.",
+        reason: "Your key doesn't include this product. Upgrade at jeongai.com or contact derrick@jeongai.com.",
       });
     }
 

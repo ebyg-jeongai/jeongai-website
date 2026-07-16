@@ -133,7 +133,7 @@
       <div class="unlock-msg" id="unlock-msg"></div>
       <div class="unlock-footer">
         Don't have a kit yet? <a href="checkout-starter-kit.html">Get it for $29</a><br>
-        Lost your key? <a href="mailto:info@jeongai.com">info@jeongai.com</a><br>
+        Lost your key? <a href="mailto:derrick@jeongai.com">derrick@jeongai.com</a><br>
         A product of Jeong AI &middot; jeongai.com
       </div>
     </div>
@@ -550,13 +550,13 @@ async function validateKey() {
       setTimeout(() => enterKit(), 900);
     } else {
       input.classList.add('error');
-      showMsg('error', result.reason || 'Invalid key. Check for typos or contact info@jeongai.com');
+      showMsg('error', result.reason || 'Invalid key. Check for typos or contact derrick@jeongai.com');
       btn.disabled = false;
       btnText.textContent = 'Unlock my kit';
     }
   } catch(e) {
     // Fail closed: never unlock without a successful validation
-    showMsg('error','Could not reach the validation service. Please try again in a moment, or contact info@jeongai.com');
+    showMsg('error','Could not reach the validation service. Please try again in a moment, or contact derrick@jeongai.com');
     input.classList.add('error');
     btn.disabled = false;
     btnText.textContent = 'Unlock my kit';

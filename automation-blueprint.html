@@ -136,7 +136,7 @@
       </button>
       <div class="unlock-msg" id="unlock-msg"></div>
       <div class="unlock-footer">
-        Lost your key? <a href="mailto:info@jeongai.com">info@jeongai.com</a><br>
+        Lost your key? <a href="mailto:derrick@jeongai.com">derrick@jeongai.com</a><br>
         A product of Jeong AI &middot; jeongai.com
       </div>
     </div>
@@ -463,7 +463,7 @@
           </div>
         </div>
         <div class="upgrade-note">
-          Already purchased? <a href="mailto:info@jeongai.com">Contact us</a> to activate your account.
+          Already purchased? <a href="mailto:derrick@jeongai.com">Contact us</a> to activate your account.
         </div>
       </div>
 
@@ -977,12 +977,12 @@ async function validateKey() {
       licenseKey=key; localStorage.setItem(STORAGE_KEY,key);
       setTimeout(()=>enterKit(),900);
     } else {
-      inp.classList.add('error'); showMsg('error',r.reason||'Invalid key. Check for typos or contact info@jeongai.com');
+      inp.classList.add('error'); showMsg('error',r.reason||'Invalid key. Check for typos or contact derrick@jeongai.com');
       btn.disabled=false; btnTxt.textContent='Unlock Blueprint';
     }
   } catch(e) {
     // Fail closed: never unlock without a successful validation
-    showMsg('error','Could not reach the validation service. Please try again in a moment, or contact info@jeongai.com');
+    showMsg('error','Could not reach the validation service. Please try again in a moment, or contact derrick@jeongai.com');
     inp.classList.add('error'); btn.disabled=false; btnTxt.textContent='Unlock Blueprint';
   }
 }

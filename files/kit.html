@@ -1026,7 +1026,7 @@ async function validateKey() {
     }
   } catch(e) {
     // Fail closed: never unlock without a successful validation
-    showMsg('error','Could not reach the validation service. Please try again in a moment, or contact info@jeongai.com');
+    showMsg('error','Could not reach the validation service. Please try again in a moment, or contact derrick@jeongai.com');
     input.classList.add('error');
     btn.disabled = false;
     btnText.textContent = 'Unlock my kit';
