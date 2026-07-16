@@ -69,6 +69,7 @@
       '.support-text', '.support-price-card',
       '.advantage-content', '.advantage-point',
       '.cta-content', '.cta-form-wrap',
+      '.newsletter-text', '.newsletter-form',
       '.web-card', '.web-services-bottom',
       '.section-center'
     ];
@@ -160,6 +161,55 @@
       })
       .catch(function () {
         btn.textContent = 'Something went wrong — please email info@jeongai.com';
+        btn.style.background = '#c0392b';
+        btn.style.borderColor = '#c0392b';
+        setTimeout(function () {
+          btn.textContent = originalText;
+          btn.style.background = '';
+          btn.style.borderColor = '';
+          btn.disabled = false;
+        }, 5000);
+      });
+    });
+  }
+
+  // ---------- NEWSLETTER FORM — Web3Forms ----------
+  var newsletterForm = document.getElementById('newsletter-form');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var btn = newsletterForm.querySelector('button[type="submit"]');
+      var originalText = btn.textContent;
+      btn.textContent = 'Subscribing...';
+      btn.disabled = true;
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(newsletterForm)
+      })
+      .then(function (res) { return res.json(); })
+      .then(function (json) {
+        if (json.success) {
+          btn.textContent = "You're In!";
+          btn.style.background = '#2a9d5c';
+          btn.style.borderColor = '#2a9d5c';
+          newsletterForm.reset();
+          if (typeof gtag === 'function') {
+            gtag('event', 'sign_up', { event_category: 'newsletter' });
+          }
+          setTimeout(function () {
+            btn.textContent = originalText;
+            btn.style.background = '';
+            btn.style.borderColor = '';
+            btn.disabled = false;
+          }, 4000);
+        } else {
+          throw new Error(json.message || 'Submission failed');
+        }
+      })
+      .catch(function () {
+        btn.textContent = 'Something went wrong — try again';
         btn.style.background = '#c0392b';
         btn.style.borderColor = '#c0392b';
         setTimeout(function () {
