@@ -59,3 +59,5 @@ gitignored and removed from the index.
 - The product apps' interiors (tool cards, prompt library, system builder) keep their own layouts under the new palette. A full pass on those would need its own brief.
 - Quote edits to the founder's words are listed in decisions.md under Voice and await confirmation.
 - Fonts load from Google Fonts. Self-hosting needs a CSP change (`font-src 'self'`).
+- privacy.html and terms.html keep their em-dashes. The brief says the legal text is unchanged, and punctuation edits to legal wording are the owner's call, not a design pass.
+- Sidebar icon glyphs in both apps and the demo were removed rather than redrawn. Navigation is text only, per the Components decision.
