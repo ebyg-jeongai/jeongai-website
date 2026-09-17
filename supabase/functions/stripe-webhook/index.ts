@@ -22,11 +22,11 @@ const PRODUCTS: Record<string, { name: string; accessUrl: string }> = {
   },
   "automation-blueprint": {
     name: "Automation Blueprint",
-    accessUrl: "https://www.jeongai.com/files/blueprint.html",
+    accessUrl: "https://www.jeongai.com/automation-blueprint.html",
   },
   "automation-toolkit": {
     name: "Automation Toolkit",
-    accessUrl: "https://www.jeongai.com/files/toolkit.html",
+    accessUrl: "https://www.jeongai.com/automation-blueprint.html",
   },
 };
 

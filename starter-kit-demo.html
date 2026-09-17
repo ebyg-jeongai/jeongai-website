@@ -11,17 +11,17 @@
     gtag('js', new Date());
     gtag('config', 'G-CX2B49MG98');
   </script>
-  <meta name="description" content="Try the AI Starter Kit free — interactive demo with real tools, prompts, and setup guides. Personalize it to your business and see how it works before you buy.">
+  <meta name="description" content="Try the AI Starter Kit free, interactive demo with real tools, prompts, and setup guides. Personalize it to your business and see how it works before you buy.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="AI Starter Kit — Free Interactive Demo | Jeong AI">
+  <meta property="og:title" content="AI Starter Kit, Free Interactive Demo | Jeong AI">
   <meta property="og:description" content="Try before you buy. Personalize the kit to your business, copy real prompts, and preview the full setup guides.">
   <meta property="og:site_name" content="Jeong AI">
   <meta property="og:locale" content="en_US">
-  <title>AI Starter Kit — Free Interactive Demo | Jeong AI</title>
+  <title>AI Starter Kit, Free Interactive Demo | Jeong AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20260716">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@400;500&family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=20260917">
   <link rel="stylesheet" href="css/kit.css">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="canonical" href="https://www.jeongai.com/starter-kit-demo.html">
@@ -29,9 +29,9 @@
   <meta property="og:image" content="https://www.jeongai.com/brand/assets/jeong-og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="AI Starter Kit Demo — Jeong AI">
+  <meta property="og:image:alt" content="AI Starter Kit Demo, Jeong AI">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Starter Kit — Free Interactive Demo | Jeong AI">
+  <meta name="twitter:title" content="AI Starter Kit, Free Interactive Demo | Jeong AI">
   <meta name="twitter:description" content="Try before you buy. Personalize the kit to your business, copy real prompts, and preview the full setup guides.">
   <meta name="twitter:image" content="https://www.jeongai.com/brand/assets/jeong-og-image.png">
   <script type="application/ld+json">
@@ -51,22 +51,22 @@
       position: sticky; top: 0; z-index: 300;
       display: flex; align-items: center; justify-content: center; gap: 14px;
       flex-wrap: wrap;
-      background: linear-gradient(90deg, #1d3557, #2b4a75);
-      color: #fff; padding: 10px 16px;
-      font-family: 'Montserrat', sans-serif; font-size: 13px;
+      background: linear-gradient(90deg, #111827, #2b4a75);
+      color: #FBF9F4; padding: 10px 16px;
+      font-family: var(--sans); font-size: 13px;
     }
     .demo-ribbon .rb-tag {
-      background: #e07a5f; color: #fff; font-weight: 700;
+      background: #C9A96E; color: #FBF9F4; font-weight: 700;
       font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
-      padding: 3px 9px; border-radius: 4px;
+      padding: 3px 9px; border-radius: 2px;
     }
     .demo-ribbon .rb-text { opacity: .92; }
     .demo-ribbon .rb-cta {
-      background: #fff; color: #1d3557; font-weight: 700; font-size: 12px;
-      padding: 6px 16px; border-radius: 6px; text-decoration: none;
+      background: #FBF9F4; color: #111827; font-weight: 700; font-size: 12px;
+      padding: 6px 16px; border-radius: 2px; text-decoration: none;
       white-space: nowrap; transition: transform .15s ease, box-shadow .15s ease;
     }
-    .demo-ribbon .rb-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,.25); }
+    .demo-ribbon .rb-cta:hover { transform: translateY(-1px); box-shadow: none; }
 
     /* ── Locked cards ── */
     .locked-card { position: relative; overflow: hidden; }
@@ -78,34 +78,34 @@
     }
     .locked-overlay .lock-icon {
       width: 34px; height: 34px; border-radius: 50%;
-      background: #1d3557; color: #fff;
+      background: #111827; color: #FBF9F4;
       display: flex; align-items: center; justify-content: center; font-size: 15px;
     }
     .locked-overlay .lock-label {
-      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 13px; color: #1d3557;
+      font-family: var(--sans); font-weight: 700; font-size: 13px; color: #111827;
     }
     .locked-overlay .lock-cta {
-      font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 12px;
-      color: #fff; background: #e07a5f; padding: 7px 16px; border-radius: 6px;
+      font-family: var(--sans); font-weight: 600; font-size: 12px;
+      color: #FBF9F4; background: #C9A96E; padding: 7px 16px; border-radius: 2px;
       text-decoration: none; transition: background .15s ease;
     }
-    .locked-overlay .lock-cta:hover { background: #c96548; }
+    .locked-overlay .lock-cta:hover { background: #B8955A; }
 
     /* ── Upsell strip inside panels ── */
     .demo-upsell {
       margin-top: 1.75rem; padding: 1.25rem 1.5rem;
-      border: 2px dashed #e07a5f; border-radius: 12px;
-      background: #fdf5f2;
+      border: 2px dashed #C9A96E; border-radius: 2px;
+      background: #F3EBDC;
       display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
     }
-    .demo-upsell .du-text { font-family: 'Montserrat', sans-serif; font-size: 14px; color: #1d3557; }
+    .demo-upsell .du-text { font-family: var(--sans); font-size: 14px; color: #111827; }
     .demo-upsell .du-text strong { font-weight: 700; }
     .demo-upsell .du-btn {
-      background: #e07a5f; color: #fff; font-family: 'Montserrat', sans-serif;
-      font-weight: 700; font-size: 13px; padding: 10px 22px; border-radius: 8px;
+      background: #C9A96E; color: #FBF9F4; font-family: var(--sans);
+      font-weight: 700; font-size: 13px; padding: 10px 22px; border-radius: 2px;
       text-decoration: none; white-space: nowrap; transition: background .15s ease, transform .15s ease;
     }
-    .demo-upsell .du-btn:hover { background: #c96548; transform: translateY(-1px); }
+    .demo-upsell .du-btn:hover { background: #B8955A; transform: translateY(-1px); }
 
     @media (max-width: 640px) {
       .demo-ribbon { font-size: 12px; gap: 8px; }
@@ -120,8 +120,8 @@
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="demo-ribbon">
   <span class="rb-tag">Free Demo</span>
-  <span class="rb-text">You're previewing the AI Starter Kit — a sample of the tools, prompts &amp; guides is unlocked.</span>
-  <a href="checkout-starter-kit.html" class="rb-cta demo-cta">Unlock everything — $29</a>
+  <span class="rb-text">You're previewing the AI Starter Kit, a sample of the tools, prompts &amp; guides is unlocked.</span>
+  <a href="checkout-starter-kit.html" class="rb-cta demo-cta">Unlock everything, $29</a>
 </div>
 
 <!-- ══════════════════════════════════════════════════════════ -->
@@ -151,30 +151,30 @@
         <span class="sidebar-change" onclick="showPanel('onboard')">&#8592; Change answers</span>
       </div>
       <div class="sidebar-section">
-        <div class="sidebar-label">Get started</div>
+        <div class="sidebar-label">Setup</div>
         <div class="nav-item active" data-panel="onboard" onclick="showPanel('onboard')">
-          <span class="nav-icon">&#8857;</span> Personalize
+          Personalize
         </div>
       </div>
       <div class="sidebar-section">
         <div class="sidebar-label">Demo preview</div>
         <div class="nav-item" data-panel="tools" onclick="showPanel('tools')">
-          <span class="nav-icon">&#9889;</span> Top Tools <span class="nav-badge">4/13</span>
+          Top Tools <span class="nav-badge">4/13</span>
         </div>
         <div class="nav-item" data-panel="prompts" onclick="showPanel('prompts')">
-          <span class="nav-icon">&#128172;</span> Prompts <span class="nav-badge">4/20</span>
+          Prompts <span class="nav-badge">4/20</span>
         </div>
         <div class="nav-item" data-panel="setup" onclick="showPanel('setup')">
-          <span class="nav-icon">&#9654;</span> Setup Guides <span class="nav-badge">1/3</span>
+          Setup Guides <span class="nav-badge">1/3</span>
         </div>
         <div class="nav-item" data-panel="scenarios" onclick="showPanel('scenarios')">
-          <span class="nav-icon">&#9672;</span> Scenarios <span class="nav-badge">2/8</span>
+          Scenarios <span class="nav-badge">2/8</span>
         </div>
       </div>
       <div class="sidebar-section">
         <div class="sidebar-label">Get the full kit</div>
         <div class="nav-item" data-panel="upgrade" onclick="showPanel('upgrade')">
-          <span class="nav-icon">&#9650;</span> Unlock Everything
+          Unlock Everything
         </div>
       </div>
     </nav>
@@ -187,7 +187,7 @@
         <div class="onboard-hero">
           <div class="oh-eyebrow">Free demo &middot; No sign-up required</div>
           <div class="oh-title">Try the kit. Personalize it.</div>
-          <div class="oh-sub">Two answers and this demo reconfigures around your business — exactly like the full kit does. A sample of every section is unlocked so you can see how it works.</div>
+          <div class="oh-sub">Two answers and this demo reconfigures around your business, exactly like the full kit does. A sample of every section is unlocked so you can see how it works.</div>
         </div>
         <div class="q-section">
           <div class="q-label">What type of business do you run?</div>
@@ -206,10 +206,10 @@
         <div class="q-section">
           <div class="q-label">Where is your biggest friction right now?</div>
           <div class="pill-grid" id="pain-pills">
-            <div class="pill" data-val="ops">Operations — things fall through the cracks</div>
-            <div class="pill" data-val="sales">Sales — follow-up is inconsistent</div>
-            <div class="pill" data-val="admin">Admin — buried in emails and documents</div>
-            <div class="pill" data-val="finance">Finance — reporting and invoicing are a mess</div>
+            <div class="pill" data-val="ops">Operations, things fall through the cracks</div>
+            <div class="pill" data-val="sales">Sales, follow-up is inconsistent</div>
+            <div class="pill" data-val="admin">Admin, buried in emails and documents</div>
+            <div class="pill" data-val="finance">Finance, reporting and invoicing are a mess</div>
           </div>
         </div>
         <button class="launch-btn" id="launch-btn" disabled onclick="launchKit()">
@@ -221,16 +221,16 @@
       <div class="panel" id="panel-tools">
         <div class="kit-section-head">
           <h2>Your Top Tools</h2>
-          <p>The full kit includes 13 curated AI tools across all four business functions. In the demo, 4 are unlocked — the rest come with the kit.</p>
+          <p>The full kit includes 13 curated AI tools across all four business functions. In the demo, 4 are unlocked, the rest come with the kit.</p>
         </div>
         <div id="tools-banner" class="p-banner" style="display:none">
-          <span class="icon">&#9733;</span>
+          
           <span id="tools-banner-text"></span>
         </div>
         <div id="tools-output"></div>
         <div class="demo-upsell">
-          <span class="du-text"><strong>9 more tools</strong> — including finance, CRM, and advanced automation picks — are in the full kit.</span>
-          <a href="checkout-starter-kit.html" class="du-btn demo-cta">Get the full kit — $29</a>
+          <span class="du-text"><strong>9 more tools</strong>, including finance, CRM, and advanced automation picks, are in the full kit.</span>
+          <a href="checkout-starter-kit.html" class="du-btn demo-cta">Get the full kit, $29</a>
         </div>
       </div>
 
@@ -251,8 +251,8 @@
         <div class="prompt-count" id="prompt-count"></div>
         <div class="prompt-list" id="prompt-list"></div>
         <div class="demo-upsell">
-          <span class="du-text"><strong>16 more prompts</strong> — the full library covers every recurring task in a service business.</span>
-          <a href="checkout-starter-kit.html" class="du-btn demo-cta">Unlock all 20+ prompts — $29</a>
+          <span class="du-text"><strong>16 more prompts</strong>, the full library covers every recurring task in a service business.</span>
+          <a href="checkout-starter-kit.html" class="du-btn demo-cta">Unlock all 20+ prompts, $29</a>
         </div>
       </div>
 
@@ -260,12 +260,12 @@
       <div class="panel" id="panel-setup">
         <div class="kit-section-head">
           <h2>Setup Guides</h2>
-          <p>Step-by-step guides that get real tools running in your business. The full ChatGPT guide is unlocked below — try it today.</p>
+          <p>Step-by-step guides that get real tools running in your business. The full ChatGPT guide is unlocked below, try it today.</p>
         </div>
         <div id="setup-output"></div>
         <div class="demo-upsell">
-          <span class="du-text"><strong>Zapier &amp; Otter.ai guides</strong> — build your first lead automation and never take meeting notes again.</span>
-          <a href="checkout-starter-kit.html" class="du-btn demo-cta">Unlock all 3 guides — $29</a>
+          <span class="du-text"><strong>Zapier &amp; Otter.ai guides</strong>, build your first lead automation and never take meeting notes again.</span>
+          <a href="checkout-starter-kit.html" class="du-btn demo-cta">Unlock all 3 guides, $29</a>
         </div>
       </div>
 
@@ -273,12 +273,12 @@
       <div class="panel" id="panel-scenarios">
         <div class="kit-section-head">
           <h2>Real Business Scenarios</h2>
-          <p>Before/after examples from the types of businesses Jeong AI works with. Two are unlocked in the demo — the full kit has eight.</p>
+          <p>Before/after examples from the types of businesses Jeong AI works with. Two are unlocked in the demo, the full kit has eight.</p>
         </div>
         <div id="scenarios-output"></div>
         <div class="demo-upsell">
-          <span class="du-text"><strong>6 more scenarios</strong> — real estate, agencies, property management, healthcare, staffing &amp; financial advisory.</span>
-          <a href="checkout-starter-kit.html" class="du-btn demo-cta">See all 8 scenarios — $29</a>
+          <span class="du-text"><strong>6 more scenarios</strong>, real estate, agencies, property management, healthcare, staffing &amp; financial advisory.</span>
+          <a href="checkout-starter-kit.html" class="du-btn demo-cta">See all 8 scenarios, $29</a>
         </div>
       </div>
 
@@ -286,7 +286,7 @@
       <div class="panel" id="panel-upgrade">
         <div class="kit-section-head">
           <h2>Like What You See?</h2>
-          <p>The full AI Starter Kit unlocks everything in this demo — all 13 tools, 20+ prompts, 3 setup guides, and 8 scenarios — personalized to your business, yours forever.</p>
+          <p>The full AI Starter Kit unlocks everything in this demo, all 13 tools, 20+ prompts, 3 setup guides, and 8 scenarios, personalized to your business, yours forever.</p>
         </div>
 
         <div class="upgrade-cards">
@@ -332,55 +332,20 @@
 </div>
 
   <!-- ========== FOOTER ========== -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="logo">
-            <span class="logo-jai">Jeong</span><span class="logo-auto">AI</span>
-          </a>
-          <p>AI systems built around how your business actually works &mdash; so you can focus on the work that actually grows it.</p>
-          <p class="footer-division">A division of EBYG Media LLC</p>
-        </div>
-        <div class="footer-links">
-          <h4>Learn</h4>
-          <ul>
-            <li><a href="index.html#about">About Jeong</a></li>
-            <li><a href="index.html#friction">The Problem</a></li>
-            <li><a href="index.html#products">Digital Products</a></li>
-            <li><a href="index.html#how-it-works">How It Works</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4>Partner</h4>
-          <ul>
-            <li><a href="index.html#jeong-ai">Jeong AI Services</a></li>
-            <li><a href="index.html#support">Support Plan</a></li>
-            <li><a href="index.html#contact">Free Automation Audit</a></li>
-            <li><a href="index.html#industries">Industries</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4>Connect</h4>
-          <ul>
-            <li><a href="checkout-starter-kit.html">Get the Full Kit</a></li>
-            <li><a href="index.html#contact">Free Audit</a></li>
-            <li><a href="mailto:info@jeongai.com">info@jeongai.com</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Jeong AI &mdash; a division of EBYG Media LLC. All rights reserved.</p>
-        <div class="footer-legal">
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms of Service</a>
-        </div>
-      </div>
+  <footer class="colophon">
+    <p>Jeong AI, a division of EBYG Media LLC. Northern Utah.</p>
+    <div class="colophon-links">
+      <a href="tel:+18016489652">(801) 648-9652</a>
+      <a href="mailto:info@jeongai.com">info@jeongai.com</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
     </div>
+    <p>&copy; 2026 Jeong AI. All rights reserved.</p>
+    <p class="close">Always there. That's <span lang="ko">정</span>.</p>
   </footer>
 
 <script>
-// ═══ DEMO MODE — try-before-you-buy preview of the AI Starter Kit ═══
+// ═══ DEMO MODE, try-before-you-buy preview of the AI Starter Kit ═══
 // Unlocked subset: 4 tools, 4 prompts, 1 setup guide, 2 scenarios.
 // Everything else renders as a blurred locked card linking to checkout.
 
@@ -398,7 +363,7 @@ const TOOLS = [
   {key:'notion',name:'Notion AI',cost:'$10/mo add-on',stars:4,desc:'AI inside your workspace. Turns meeting notes into action items, drafts SOPs, and summarizes documents on the spot.',badge:'Ops knowledge base',cats:['ops','admin'],url:'https://www.notion.so/product/ai'},
 ];
 
-// Locked tools (9 of 13) — name + badge shown, details blurred
+// Locked tools (9 of 13), name + badge shown, details blurred
 const LOCKED_TOOLS = [
   {name:'Claude (Anthropic)',badge:'Proposals & docs',cost:'Free / $20/mo'},
   {name:'Fathom Analytics',badge:'No more spreadsheets',cost:'From $39/mo'},
@@ -418,14 +383,14 @@ const TOP_BY_PAIN = {
   finance:['chatgpt','zapier','notion']
 };
 
-// Prompts — 4 unlocked (one per category), the rest locked (title/preview visible, text hidden)
+// Prompts, 4 unlocked (one per category), the rest locked (title/preview visible, text hidden)
 const PROMPTS = [
   {id:'p1',cat:'ops',locked:false,title:'Create an SOP from scratch',preview:'Turn any verbal process into a professional step-by-step document.',text:'I need a Standard Operating Procedure for the following task in my business: [describe the task in plain English]. Format it as numbered steps with a brief explanation of why each step matters. Include a checklist at the end. My business is [type of business] and the person performing this task will be [employee role/experience level].',why:'Gives you a professional, actionable SOP in seconds. What would take an hour to write takes 30 seconds.'},
-  {id:'p6',cat:'sales',locked:false,title:'Follow-up email after a consultation',preview:'Personalized follow-up that makes prospects feel genuinely heard.',text:'Write a follow-up email to [prospect name] after our [call/meeting] today. During the conversation, we discussed: [key points]. They mentioned their biggest challenge is [pain point]. I want to: (1) recap what we discussed, (2) remind them of the value I can deliver, (3) include a clear next step. Tone: warm, professional, confident — not salesy.',why:'Personalizes a follow-up in seconds. The prospect feels heard because AI mirrors back what you told them.'},
+  {id:'p6',cat:'sales',locked:false,title:'Follow-up email after a consultation',preview:'Personalized follow-up that makes prospects feel genuinely heard.',text:'Write a follow-up email to [prospect name] after our [call/meeting] today. During the conversation, we discussed: [key points]. They mentioned their biggest challenge is [pain point]. I want to: (1) recap what we discussed, (2) remind them of the value I can deliver, (3) include a clear next step. Tone: warm, professional, confident, not salesy.',why:'Personalizes a follow-up in seconds. The prospect feels heard because AI mirrors back what you told them.'},
   {id:'p11',cat:'admin',locked:false,title:'Summarize and triage a long email thread',preview:'Turn a 20-email chain into a clear action in 60 seconds.',text:'Here is an email thread I need to respond to: [paste thread]. Please: (1) summarize what the conversation is about in 3 sentences, (2) identify what is being asked of me specifically, (3) draft a concise professional reply that addresses their request.',why:'Turns a 20-email thread into a clear action in under 60 seconds.'},
-  {id:'p16',cat:'finance',locked:false,title:'Overdue invoice follow-up — 3-email sequence',preview:'Professional escalation without the awkwardness.',text:'Write 3 invoice follow-up emails for a client whose payment is overdue by [X] days. Invoice amount: $[amount]. Each email should escalate slightly in urgency while staying professional. Email 1: gentle reminder. Email 2: firm but patient. Email 3: final notice with consequences.',why:'The hardest part of chasing money is the awkwardness. AI removes the emotion.'},
+  {id:'p16',cat:'finance',locked:false,title:'Overdue invoice follow-up, 3-email sequence',preview:'Professional escalation without the awkwardness.',text:'Write 3 invoice follow-up emails for a client whose payment is overdue by [X] days. Invoice amount: $[amount]. Each email should escalate slightly in urgency while staying professional. Email 1: gentle reminder. Email 2: firm but patient. Email 3: final notice with consequences.',why:'The hardest part of chasing money is the awkwardness. AI removes the emotion.'},
   {id:'p2',cat:'ops',locked:true,title:'Turn a messy process into a clean workflow',preview:'AI finds the hidden logic inside your chaotic processes.'},
-  {id:'p3',cat:'ops',locked:true,title:'Identify your top 5 automation opportunities',preview:'Paste your week — get a personalized automation roadmap.'},
+  {id:'p3',cat:'ops',locked:true,title:'Identify your top 5 automation opportunities',preview:'Paste your week, get a personalized automation roadmap.'},
   {id:'p4',cat:'ops',locked:true,title:'Build a task delegation guide',preview:'Stop being the bottleneck on work that shouldn\'t need you.'},
   {id:'p5',cat:'ops',locked:true,title:'Weekly operations review',preview:'Turn your messy week into a structured retrospective in under a minute.'},
   {id:'p7',cat:'sales',locked:true,title:'Re-engage a cold lead',preview:'Give cold leads a reason to come back without sounding desperate.'},
@@ -433,18 +398,18 @@ const PROMPTS = [
   {id:'p9',cat:'sales',locked:true,title:'Write a compelling proposal introduction',preview:'Open with their problem, not your credentials.'},
   {id:'p10',cat:'sales',locked:true,title:'Ask for a referral naturally',preview:'A genuine ask that doesn\'t feel transactional.'},
   {id:'p12',cat:'admin',locked:true,title:'Write any professional email from bullet points',preview:'You think in bullets. AI writes in prose.'},
-  {id:'p13',cat:'admin',locked:true,title:'Summarize any document instantly',preview:'Main point, 5 takeaways, and your action items — in one shot.'},
+  {id:'p13',cat:'admin',locked:true,title:'Summarize any document instantly',preview:'Main point, 5 takeaways, and your action items, in one shot.'},
   {id:'p14',cat:'admin',locked:true,title:'Decline a request professionally',preview:'Stay firm without damaging the relationship.'},
-  {id:'p15',cat:'admin',locked:true,title:'Create an employee onboarding checklist',preview:'What success looks like in the first 30 days — in seconds.'},
+  {id:'p15',cat:'admin',locked:true,title:'Create an employee onboarding checklist',preview:'What success looks like in the first 30 days, in seconds.'},
   {id:'p17',cat:'finance',locked:true,title:'Analyze cash flow from raw numbers',preview:'Raw numbers → readable financial narrative.'},
-  {id:'p18',cat:'finance',locked:true,title:'Write a price increase notice',preview:'Confident and appreciative — not apologetic.'},
-  {id:'p19',cat:'finance',locked:true,title:'Evaluate a business expense or investment',preview:'ROI, break-even, and alternatives — in one prompt.'},
+  {id:'p18',cat:'finance',locked:true,title:'Write a price increase notice',preview:'Confident and appreciative, not apologetic.'},
+  {id:'p19',cat:'finance',locked:true,title:'Evaluate a business expense or investment',preview:'ROI, break-even, and alternatives, in one prompt.'},
   {id:'p20',cat:'finance',locked:true,title:'Build a KPI tracking list',preview:'The numbers that actually tell you how your business is doing.'},
 ];
 
-// Setup guides — ChatGPT unlocked, Zapier & Otter locked
+// Setup guides, ChatGPT unlocked, Zapier & Otter locked
 const SETUPS = [
-  {icon:'C',locked:false,title:'Get ChatGPT working for your business',time:'20 min',desc:'Set up with a Custom System Prompt that makes it behave like a business-savvy assistant who knows your company — then build your first real automation.',steps:[
+  {icon:'C',locked:false,title:'Get ChatGPT working for your business',time:'20 min',desc:'Set up with a Custom System Prompt that makes it behave like a business-savvy assistant who knows your company, then build your first real automation.',steps:[
     {title:'Create your account',desc:'Go to chat.openai.com and sign up with your business email. Start free, upgrade when you hit the limit (usually within a week).'},
     {title:'Open Custom Instructions',desc:'Profile icon (bottom left) → Settings → Personalization → Custom Instructions.'},
     {title:'Paste your business context',desc:'In the first box:',code:'I run [your business type] called [business name]. We serve [who you serve]. My role is [your role]. My biggest operational challenges are [list 2–3 challenges]. Always: use plain business language, be concise and actionable, assume I have limited time.'},
@@ -452,13 +417,13 @@ const SETUPS = [
     {title:'Save and test',desc:'Click Save. Every conversation now starts with your context. Test: ask it to draft a follow-up email for a recent meeting. It\'ll ask the right questions.'},
   ]},
   {icon:'Z',locked:true,title:'Build your first automation with Zapier',time:'30 min',desc:'Set up the lead intake → CRM → auto-follow-up pipeline. This single automation saves most small businesses 2–3 hours per week from day one.',stepCount:7},
-  {icon:'O',locked:true,title:'Never take meeting notes again — Otter.ai',time:'10 min',desc:'Records, transcribes, and summarizes your meetings automatically. Your next call will produce a full transcript, a summary, and an action item list without you lifting a pen.',stepCount:6},
+  {icon:'O',locked:true,title:'Never take meeting notes again, Otter.ai',time:'10 min',desc:'Records, transcribes, and summarizes your meetings automatically. Your next call will produce a full transcript, a summary, and an action item list without you lifting a pen.',stepCount:6},
 ];
 
-// Scenarios — 2 unlocked, 6 locked (industry visible, details hidden)
+// Scenarios, 2 unlocked, 6 locked (industry visible, details hidden)
 const SCENARIOS = [
-  {locked:false,industry:'General Contractor',role:'Owner, residential remodeling',biz:'contractor',pain:'ops',before:'Spent 3 hours every Monday writing estimates from handwritten notes. Copied from old proposals, updated numbers manually. Sometimes 2–3 days after the walkthrough — by then, some prospects had already called someone else.',after:'Records a voice memo during the walkthrough. Pastes the transcription into ChatGPT → formatted estimate with scope, timeline, materials, and labor. Reviews, adjusts pricing, sends within 2 hours.',result:'Estimate turnaround: 2–3 days → same day. Close rate improved ~30% — simply by being first to follow up.'},
-  {locked:false,industry:'Independent Consultant',role:'Business strategy, solo practice',biz:'consultant',pain:'admin',before:'After every client call: 30–45 minutes writing notes, drafting a follow-up email, updating the project tracker. Billing 60% of hours. Spending the rest on admin.',after:'Otter.ai joins every call. Copies action items → pastes into ChatGPT → drafts follow-up email and tracker update in one shot. Total time: 5 minutes.',result:'Recovered 8+ hours of billable capacity per week. Onboarded 2 new clients with the recovered time — without hiring anyone.'},
+  {locked:false,industry:'General Contractor',role:'Owner, residential remodeling',biz:'contractor',pain:'ops',before:'Spent 3 hours every Monday writing estimates from handwritten notes. Copied from old proposals, updated numbers manually. Sometimes 2–3 days after the walkthrough, by then, some prospects had already called someone else.',after:'Records a voice memo during the walkthrough. Pastes the transcription into ChatGPT → formatted estimate with scope, timeline, materials, and labor. Reviews, adjusts pricing, sends within 2 hours.',result:'Estimate turnaround: 2–3 days → same day. Close rate improved ~30%, simply by being first to follow up.'},
+  {locked:false,industry:'Independent Consultant',role:'Business strategy, solo practice',biz:'consultant',pain:'admin',before:'After every client call: 30–45 minutes writing notes, drafting a follow-up email, updating the project tracker. Billing 60% of hours. Spending the rest on admin.',after:'Otter.ai joins every call. Copies action items → pastes into ChatGPT → drafts follow-up email and tracker update in one shot. Total time: 5 minutes.',result:'Recovered 8+ hours of billable capacity per week. Onboarded 2 new clients with the recovered time, without hiring anyone.'},
   {locked:true,industry:'Real Estate Team',role:'4-person buyer\'s agent team',biz:'realestate',pain:'sales',teaser:'Lead response time: 24+ hours → under 20 minutes. Closed 2 additional deals.'},
   {locked:true,industry:'Marketing Agency',role:'Owner, 8-person creative team',biz:'agency',pain:'admin',teaser:'Monthly reporting time cut 80%. Two clients cited the reports as a reason they renewed.'},
   {locked:true,industry:'Property Management',role:'Owner, 120 residential units',biz:'property',pain:'ops',teaser:'Zero maintenance requests lost in 60 days. Owner recovered 6 hours/week.'},
@@ -540,7 +505,7 @@ function renderTools() {
 
   const topLabel = document.createElement('div');
   topLabel.className = 'tools-section-label';
-  topLabel.textContent = 'Unlocked in the demo — recommended for ' + pain;
+  topLabel.textContent = 'Unlocked in the demo, recommended for ' + pain;
   out.appendChild(topLabel);
 
   const topGrid = document.createElement('div');
@@ -552,7 +517,7 @@ function renderTools() {
   const lockLabel = document.createElement('div');
   lockLabel.className = 'tools-section-label';
   lockLabel.style.marginTop = '1.5rem';
-  lockLabel.textContent = 'In the full kit — 9 more tools';
+  lockLabel.textContent = 'In the full kit, 9 more tools';
   out.appendChild(lockLabel);
 
   const lockGrid = document.createElement('div');
@@ -645,7 +610,7 @@ function renderPrompts() {
       <div class="prompt-body" id="pb-${p.id}">
         <div class="prompt-text" id="pt-${p.id}">${p.text}</div>
         <div class="copy-row">
-          <button class="copy-btn" onclick="copyPrompt('${p.id}',this)">&#128203; Copy prompt</button>
+          <button class="copy-btn" onclick="copyPrompt('${p.id}',this)">&#0A4F8A; Copy prompt</button>
           <span class="why-tag"><strong>Why it works:</strong> ${p.why}</span>
         </div>
       </div>`;
@@ -669,7 +634,7 @@ function copyPrompt(id, btn) {
   navigator.clipboard.writeText(text).then(() => {
     btn.textContent = '\u2713 Copied!';
     track('demo_prompt_copied', { prompt_id: id });
-    setTimeout(() => btn.innerHTML = '&#128203; Copy prompt', 2000);
+    setTimeout(() => btn.innerHTML = '&#0A4F8A; Copy prompt', 2000);
   });
 }
 
@@ -799,7 +764,7 @@ function renderToolsDefault() {
   const lockLabel = document.createElement('div');
   lockLabel.className = 'tools-section-label';
   lockLabel.style.marginTop = '1.5rem';
-  lockLabel.textContent = 'In the full kit — 9 more tools';
+  lockLabel.textContent = 'In the full kit, 9 more tools';
   out.appendChild(lockLabel);
   const lockGrid = document.createElement('div');
   lockGrid.className = 'tool-grid';

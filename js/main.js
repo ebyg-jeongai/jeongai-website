@@ -1,38 +1,22 @@
 /* ============================================================
-   Jeong AI — Main JavaScript
+   Jeong AI. Shared page behaviour.
+   DOM contract: #site-header, #mobile-toggle, #main-nav,
+   #audit-form, #newsletter-form. Anything absent is skipped.
    ============================================================ */
 
 (function () {
   'use strict';
 
-  // ---------- HEADER SCROLL ----------
-  const header = document.getElementById('site-header');
-  let lastScroll = 0;
-
-  function onScroll() {
-    const y = window.scrollY;
-    if (y > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-    lastScroll = y;
-  }
-
-  if (header) window.addEventListener('scroll', onScroll, { passive: true });
-
-  // ---------- MOBILE NAV ----------
-  const toggle = document.getElementById('mobile-toggle');
-  const nav = document.getElementById('main-nav');
+  // ---------- MASTHEAD NAV (phone) ----------
+  var toggle = document.getElementById('mobile-toggle');
+  var nav = document.getElementById('main-nav');
 
   if (toggle && nav) {
     toggle.addEventListener('click', function () {
       var isOpen = toggle.classList.toggle('active');
-      nav.classList.toggle('open');
+      nav.classList.toggle('open', isOpen);
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
-
-    // Close mobile nav on link click
     nav.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         toggle.classList.remove('active');
@@ -40,186 +24,81 @@
         toggle.setAttribute('aria-expanded', 'false');
       });
     });
-  }
-
-  // ---------- SCROLL TO TOP ----------
-  const scrollBtn = document.getElementById('scroll-top');
-
-  if (scrollBtn) {
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 600) {
-        scrollBtn.classList.add('visible');
-      } else {
-        scrollBtn.classList.remove('visible');
-      }
-    }, { passive: true });
-
-    scrollBtn.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  // ---------- SCROLL REVEAL ----------
-  function addRevealClasses() {
-    var selectors = [
-      '.about-text', '.about-visual',
-      '.friction-card', '.eco-brand', '.eco-transition',
-      '.product-card', '.service-card',
-      '.step-card', '.industry-card',
-      '.support-text', '.support-price-card',
-      '.advantage-content', '.advantage-point',
-      '.cta-content', '.cta-form-wrap',
-      '.newsletter-text', '.newsletter-form',
-      '.web-card', '.web-services-bottom',
-      '.section-center'
-    ];
-    selectors.forEach(function (sel) {
-      document.querySelectorAll(sel).forEach(function (el) {
-        el.classList.add('reveal');
-      });
-    });
-  }
-
-  function revealOnScroll() {
-    var reveals = document.querySelectorAll('.reveal');
-    var windowH = window.innerHeight;
-
-    reveals.forEach(function (el, i) {
-      var top = el.getBoundingClientRect().top;
-      var triggerPoint = windowH - 80;
-
-      if (top < triggerPoint) {
-        // Stagger siblings slightly
-        var delay = 0;
-        var parent = el.parentElement;
-        if (parent) {
-          var siblings = parent.querySelectorAll('.reveal');
-          siblings.forEach(function (sib, idx) {
-            if (sib === el) delay = idx * 80;
-          });
-        }
-        setTimeout(function () {
-          el.classList.add('visible');
-        }, Math.min(delay, 400));
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && nav.classList.contains('open')) {
+        toggle.classList.remove('active');
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
       }
     });
   }
 
-  addRevealClasses();
-  window.addEventListener('scroll', revealOnScroll, { passive: true });
-  // Trigger initial check
-  setTimeout(revealOnScroll, 100);
-
-  // ---------- SMOOTH SCROLL for anchor links ----------
+  // ---------- SMOOTH SCROLL for same-page anchors ----------
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
-      var target = document.querySelector(this.getAttribute('href'));
+      var id = this.getAttribute('href');
+      if (id.length < 2) return;
+      var target = document.querySelector(id);
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
+        target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+        history.replaceState(null, '', id);
       }
     });
   });
 
-  // ---------- AUDIT FORM — Web3Forms ----------
-  var form = document.getElementById('audit-form');
-  if (form) {
+  // ---------- WEB3FORMS ----------
+  function wireForm(form, opts) {
+    if (!form) return;
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-
       var btn = form.querySelector('button[type="submit"]');
       var originalText = btn.textContent;
-      btn.textContent = 'Sending...';
+      btn.textContent = opts.sending;
       btn.disabled = true;
 
-      var data = new FormData(form);
-
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: data
-      })
-      .then(function (res) { return res.json(); })
-      .then(function (json) {
-        if (json.success) {
-          btn.textContent = 'Request Received!';
-          btn.style.background = '#2a9d5c';
-          btn.style.borderColor = '#2a9d5c';
+      fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) })
+        .then(function (res) { return res.json(); })
+        .then(function (json) {
+          if (!json.success) throw new Error(json.message || 'Submission failed');
+          btn.textContent = opts.done;
+          btn.classList.add('is-success');
           form.reset();
-          // GA4 conversion event — fires when analytics is added
-          if (typeof gtag === 'function') {
-            gtag('event', 'generate_lead', { event_category: 'audit_form' });
-          }
+          if (typeof gtag === 'function') gtag('event', opts.event, { event_category: opts.category });
           setTimeout(function () {
             btn.textContent = originalText;
-            btn.style.background = '';
-            btn.style.borderColor = '';
+            btn.classList.remove('is-success');
             btn.disabled = false;
           }, 4000);
-        } else {
-          throw new Error(json.message || 'Submission failed');
-        }
-      })
-      .catch(function () {
-        btn.textContent = 'Something went wrong — please email info@jeongai.com';
-        btn.style.background = '#c0392b';
-        btn.style.borderColor = '#c0392b';
-        setTimeout(function () {
-          btn.textContent = originalText;
-          btn.style.background = '';
-          btn.style.borderColor = '';
-          btn.disabled = false;
-        }, 5000);
-      });
+        })
+        .catch(function () {
+          btn.textContent = opts.failed;
+          btn.classList.add('is-error');
+          setTimeout(function () {
+            btn.textContent = originalText;
+            btn.classList.remove('is-error');
+            btn.disabled = false;
+          }, 6000);
+        });
     });
   }
 
-  // ---------- NEWSLETTER FORM — Web3Forms ----------
-  var newsletterForm = document.getElementById('newsletter-form');
-  if (newsletterForm) {
-    newsletterForm.addEventListener('submit', function (e) {
-      e.preventDefault();
+  wireForm(document.getElementById('audit-form'), {
+    sending: 'Sending',
+    done: 'Received. We will be in touch.',
+    failed: 'Something went wrong. Email info@jeongai.com',
+    event: 'generate_lead',
+    category: 'audit_form'
+  });
 
-      var btn = newsletterForm.querySelector('button[type="submit"]');
-      var originalText = btn.textContent;
-      btn.textContent = 'Subscribing...';
-      btn.disabled = true;
-
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: new FormData(newsletterForm)
-      })
-      .then(function (res) { return res.json(); })
-      .then(function (json) {
-        if (json.success) {
-          btn.textContent = "You're In!";
-          btn.style.background = '#2a9d5c';
-          btn.style.borderColor = '#2a9d5c';
-          newsletterForm.reset();
-          if (typeof gtag === 'function') {
-            gtag('event', 'sign_up', { event_category: 'newsletter' });
-          }
-          setTimeout(function () {
-            btn.textContent = originalText;
-            btn.style.background = '';
-            btn.style.borderColor = '';
-            btn.disabled = false;
-          }, 4000);
-        } else {
-          throw new Error(json.message || 'Submission failed');
-        }
-      })
-      .catch(function () {
-        btn.textContent = 'Something went wrong — try again';
-        btn.style.background = '#c0392b';
-        btn.style.borderColor = '#c0392b';
-        setTimeout(function () {
-          btn.textContent = originalText;
-          btn.style.background = '';
-          btn.style.borderColor = '';
-          btn.disabled = false;
-        }, 5000);
-      });
-    });
-  }
+  wireForm(document.getElementById('newsletter-form'), {
+    sending: 'Sending',
+    done: 'You are on the list.',
+    failed: 'Something went wrong. Try again.',
+    event: 'sign_up',
+    category: 'newsletter'
+  });
 
 })();

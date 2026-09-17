@@ -15,6 +15,10 @@ jobs:
     name: Build and Deploy
     steps:
       - uses: actions/checkout@v4
+      - name: Remove non-public files from the upload
+        # Versioned in git, never served. _private holds client proposals, build
+        # scripts, internal docs and distributable product copies. The rest is tooling.
+        run: rm -rf _private supabase .claude .craft .github
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
         with:
