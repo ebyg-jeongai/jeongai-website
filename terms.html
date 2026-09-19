@@ -30,8 +30,8 @@
   <title>Terms of Service — Jeong AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20260715">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@400;500&family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=20260917">
   <link rel="stylesheet" href="css/legal.css">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="alternate" type="text/plain" href="/llms.txt">
@@ -39,25 +39,22 @@
 <body>
 
   <!-- ========== HEADER ========== -->
-  <header class="site-header" id="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">
-        <span class="logo-jai">Jeong</span><span class="logo-auto">AI</span>
-      </a>
-      <nav class="main-nav" id="main-nav">
-        <ul class="nav-list">
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#friction">The Problem</a></li>
-          <li><a href="index.html#products">Products</a></li>
-          <li><a href="index.html#jeong-ai">Jeong AI</a></li>
-          <li><a href="index.html#how-it-works">How It Works</a></li>
-          <li><a href="index.html#contact" class="nav-cta">Free Audit</a></li>
-        </ul>
-      </nav>
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
+  <header class="masthead" id="site-header">
+    <a href="index.html" class="wordmark" aria-label="Jeong AI, home"><img src="brand/assets/jeong-mark-gold.png" alt="" width="968" height="1104">Jeong <span class="ai">AI</span></a>
+    <div class="masthead-right">
+      <a class="masthead-cta" href="index.html#audit">Book a free audit</a>
+      <button class="masthead-toggle" id="mobile-toggle" aria-expanded="false" aria-controls="main-nav">
+        <span class="when-closed">Menu</span><span class="when-open">Close</span>
       </button>
     </div>
+    <nav class="masthead-nav" id="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="index.html#systems">Systems</a></li>
+        <li><a href="index.html#websites">Websites</a></li>
+        <li><a href="index.html#audit">Audit</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- ========== CONTENT ========== -->
@@ -182,53 +179,18 @@
   </main>
 
   <!-- ========== FOOTER ========== -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="logo">
-            <span class="logo-jai">Jeong</span><span class="logo-auto">AI</span>
-          </a>
-          <p>AI systems built around how your business actually works &mdash; so you can focus on the work that actually grows it.</p>
-          <p class="footer-division">A division of EBYG Media LLC</p>
-        </div>
-        <div class="footer-links">
-          <h4>Learn</h4>
-          <ul>
-            <li><a href="index.html#about">About Jeong</a></li>
-            <li><a href="index.html#friction">The Problem</a></li>
-            <li><a href="index.html#products">Digital Products</a></li>
-            <li><a href="index.html#how-it-works">How It Works</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4>Partner</h4>
-          <ul>
-            <li><a href="index.html#jeong-ai">Jeong AI Services</a></li>
-            <li><a href="index.html#support">Support Plan</a></li>
-            <li><a href="index.html#contact">Free Automation Audit</a></li>
-            <li><a href="index.html#web-services">Web Services</a></li>
-            <li><a href="index.html#industries">Industries</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4>Connect</h4>
-          <ul>
-            <li><a href="tel:+18016955673">(801) 695-5673</a></li>
-            <li><a href="mailto:info@jeongai.com">info@jeongai.com</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Jeong AI &mdash; a division of EBYG Media LLC. All rights reserved.</p>
-        <div class="footer-legal">
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms of Service</a>
-        </div>
-      </div>
+  <footer class="colophon">
+    <p>Jeong AI, a division of EBYG Media LLC. Northern Utah.</p>
+    <div class="colophon-links">
+      <a href="tel:+18016955673">(801) 695-5673</a>
+      <a href="mailto:info@jeongai.com">info@jeongai.com</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
     </div>
+    <p>&copy; 2026 Jeong AI. All rights reserved.</p>
+    <p class="close">Always there. That's <span lang="ko">정</span>.</p>
   </footer>
 
-  <script src="js/main.js" defer></script>
+  <script src="js/main.js?v=20260917" defer></script>
 </body>
 </html>

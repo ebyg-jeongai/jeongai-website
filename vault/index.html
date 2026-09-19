@@ -7,27 +7,30 @@
   <title>Document Vault — Jeong AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css?v=20260715">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@400;500&family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css?v=20260917">
   <link rel="stylesheet" href="../css/vault.css">
   <link rel="icon" type="image/png" href="../favicon.png">
 </head>
 <body>
 
   <!-- ========== HEADER ========== -->
-  <header class="site-header" id="site-header">
-    <div class="container header-inner">
-      <a href="/" class="logo">
-        <span class="logo-jai">Jeong</span><span class="logo-auto">AI</span>
-      </a>
-      <nav class="main-nav">
-        <ul class="nav-list">
-          <li><a href="/">Home</a></li>
-          <li><a href="/vault" class="active">Vault</a></li>
-          <li><a href="/.auth/logout" class="nav-cta">Sign Out</a></li>
-        </ul>
-      </nav>
+  <header class="masthead" id="site-header">
+    <a href="../index.html" class="wordmark" aria-label="Jeong AI, home"><img src="../brand/assets/jeong-mark-gold.png" alt="" width="968" height="1104">Jeong <span class="ai">AI</span></a>
+    <div class="masthead-right">
+      <a class="masthead-cta" href="../index.html#audit">Book a free audit</a>
+      <button class="masthead-toggle" id="mobile-toggle" aria-expanded="false" aria-controls="main-nav">
+        <span class="when-closed">Menu</span><span class="when-open">Close</span>
+      </button>
     </div>
+    <nav class="masthead-nav" id="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="../index.html#products">Products</a></li>
+        <li><a href="../index.html#systems">Systems</a></li>
+        <li><a href="../index.html#websites">Websites</a></li>
+        <li><a href="../index.html#audit">Audit</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- ========== VAULT CONTENT ========== -->

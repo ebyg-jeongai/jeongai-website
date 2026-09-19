@@ -36,3 +36,9 @@ dist/
 !.claude/skills/
 .firecrawl/
 .playwright-mcp/
+
+# craft render captures
+.craft/shots/
+
+# local supabase link metadata (leaks project ref)
+supabase/.temp/

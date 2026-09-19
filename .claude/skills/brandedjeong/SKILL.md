@@ -82,9 +82,13 @@ Determine two things:
   for breaking changes → upgrade steps.
 
 ## Canonical brand facts (use exactly)
-- **Jeong AI**, a division of **EBYG Media LLC**
+- **Jeong AI**
 - (801) 695-5673 · info@jeongai.com · jeongai.com
-- Tagline / philosophy: *Consistent presence. Genuine care. Quiet reliability.*
-- Logo: the 정 brush mark + Montserrat "Jeong AI" wordmark (already in the template).
-- Do **not** use the retired "EBYG Automation" navy/gold branding or the old
-  `letterhead` skill — those are superseded by this brand package.
+- Tagline / philosophy: *Quietly reliable. Precisely yours.*
+- Logo: the 정 brush mark + Cormorant Garamond "Jeong AI" wordmark (already in the template),
+  "AI" set in Jeong Gold.
+- Colors: Jeong Navy `#111827`, Primary Blue `#0A4F8A`, Sky Blue `#60A5D4`, Jeong Gold `#C9A96E`
+  (signature accent, used sparingly), Parchment `#F5F1E8`, Ink `#1F2937`. No gradients, no purple
+  or indigo. Type: Cormorant Garamond (display) + Inter (body).
+- Do **not** use the retired "EBYG Automation" navy/gold branding, terracotta, Montserrat/Source
+  Sans 3, or the old `letterhead` skill — those are superseded by this brand package.
