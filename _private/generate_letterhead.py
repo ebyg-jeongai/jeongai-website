@@ -55,7 +55,7 @@ def draw_letterhead(c):
     right_x = WIDTH - 0.75 * inch
     c.setFillColor(WHITE)
     c.setFont("Helvetica", 9)
-    c.drawRightString(right_x, HEIGHT - 0.55 * inch, "(801) 648-9652")
+    c.drawRightString(right_x, HEIGHT - 0.55 * inch, "(801) 695-5673")
     c.drawRightString(right_x, HEIGHT - 0.72 * inch, "info@ebygautomation.com")
     c.drawRightString(right_x, HEIGHT - 0.89 * inch, "www.ebygautomation.com")
 
@@ -73,7 +73,7 @@ def draw_letterhead(c):
     c.setFillColor(LIGHT_GRAY)
     c.setFont("Helvetica", 7.5)
     c.drawCentredString(WIDTH / 2, 0.38 * inch,
-                        "(801) 648-9652  |  info@ebygautomation.com  |  www.ebygautomation.com")
+                        "(801) 695-5673  |  info@ebygautomation.com  |  www.ebygautomation.com")
     c.setFillColor(ACCENT_GOLD)
     c.setFont("Helvetica-Oblique", 7)
     c.drawCentredString(WIDTH / 2, 0.2 * inch,

@@ -59,7 +59,7 @@ duplicate the HTML file if you want a stored copy of a specific document.
 - **Wordmark:** "Jeong" (Montserrat 700, `#0A4F8A`) + "AI" (Montserrat 500, `#6B6B7B`). Text only — no image logo.
 - **Primary blue** `#0A4F8A` · **Terracotta accent** `#C7553B` · **Ink** `#1A1A2E`
 - **Type:** Montserrat (headings) / Source Sans 3 (body)
-- **Contact:** (801) 648-9652 · info@jeongai.com · jeongai.com
+- **Contact:** (801) 695-5673 · info@jeongai.com · jeongai.com
 - **Tagline:** *Consistent presence. Genuine care. Quiet reliability.*
 
 ## Note on legacy branding

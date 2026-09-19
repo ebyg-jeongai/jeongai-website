@@ -19,7 +19,7 @@ Sells three digital products (AI Starter Kit $29, AI Automation Blueprint $79, S
 AI Toolkit $149) through Stripe Payment Links with license keys issued by a Supabase webhook,
 three implementation tiers (Jeong Assistant $2,500 to $3,500; Jeong Operations Agent $4,000
 to $6,000; Jeong Workforce System $8,000 to $15,000), and the Jeong Support Plan at $300 to
-$500 a month [REPO]. Phone (801) 648-9652, email info@jeongai.com [BG, REPO].
+$500 a month [REPO]. Phone (801) 695-5673, email info@jeongai.com [BG, REPO].
 The owner's other work is never mentioned [USER].
 
 ## Raw material

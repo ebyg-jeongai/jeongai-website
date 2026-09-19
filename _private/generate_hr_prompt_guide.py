@@ -74,7 +74,7 @@ def draw_header(c):
     x_right = W - MARGIN
     c.setFont("Helvetica", 9)
     c.setFillColor(WHITE)
-    c.drawRightString(x_right, H - 0.45 * inch, "(801) 648-9652")
+    c.drawRightString(x_right, H - 0.45 * inch, "(801) 695-5673")
     c.drawRightString(x_right, H - 0.62 * inch, "info@jeongai.com")
     c.drawRightString(x_right, H - 0.79 * inch, "www.jeongai.com")
 
@@ -93,7 +93,7 @@ def draw_footer(c):
     c.setFont("Helvetica", 7.5)
     c.setFillColor(LIGHT_GRAY)
     c.drawCentredString(W / 2, 0.38 * inch,
-                        "(801) 648-9652  |  info@jeongai.com  |  www.jeongai.com")
+                        "(801) 695-5673  |  info@jeongai.com  |  www.jeongai.com")
 
     # Philosophy tagline
     c.setFont("Helvetica-Oblique", 7)

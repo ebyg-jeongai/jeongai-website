@@ -76,6 +76,6 @@ See `api/README.md` for setup instructions.
 
 | Field | Value |
 |-------|-------|
-| Phone | (801) 648-9652 |
+| Phone | (801) 695-5673 |
 | Email | info@jeongai.com |
 | Domain | jeongai.com |

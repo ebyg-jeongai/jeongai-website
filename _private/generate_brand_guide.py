@@ -72,7 +72,7 @@ def footer(c, page_num):
     c.setFillColor(HexColor("#cccccc"))
     c.setFont("Helvetica", 6.5)
     c.drawCentredString(W / 2, 0.27 * inch,
-                        "info@jeongai.com  |  (801) 648-9652  |  jeongai.com")
+                        "info@jeongai.com  |  (801) 695-5673  |  jeongai.com")
     c.setFillColor(HexColor("#555555"))
     c.setFont("Helvetica", 6.5)
     c.drawRightString(W - MG, 0.27 * inch, str(page_num))
@@ -194,7 +194,7 @@ def page_cover(c):
     c.setFillColor(HexColor("#555555"))
     c.setFont("Helvetica", 8)
     c.drawString(MG, 0.85 * inch, "jeongai.com")
-    c.drawCentredString(W / 2, 0.85 * inch, "info@jeongai.com  |  (801) 648-9652")
+    c.drawCentredString(W / 2, 0.85 * inch, "info@jeongai.com  |  (801) 695-5673")
     c.drawRightString(W - MG, 0.85 * inch, "May 2026")
 
     # Accent bottom bar
@@ -219,7 +219,7 @@ def page_identity(c):
         ("Tagline", "Software Is Not One Size Fits All"),
         ("Meta Title", "Jeong AI — Custom Software & AI Tools Built for Your Business"),
         ("Domain", "jeongai.com"),
-        ("Phone", "(801) 648-9652"),
+        ("Phone", "(801) 695-5673"),
         ("Email", "info@jeongai.com"),
         ("Address", "Fully remote — no physical address"),
     ]
@@ -637,7 +637,7 @@ def page_voice(c):
     contact_rows = [
         ("Business",  "Jeong AI"),
         ("Parent",    "EBYG Media LLC"),
-        ("Phone",     "(801) 648-9652"),
+        ("Phone",     "(801) 695-5673"),
         ("Email",     "info@jeongai.com"),
         ("Website",   "jeongai.com"),
         ("Address",   "Fully remote — not displayed"),

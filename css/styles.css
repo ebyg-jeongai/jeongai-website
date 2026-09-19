@@ -243,6 +243,21 @@ h3.display { font-size: var(--t2); font-weight: 400; }
   align-items: center;
 }
 .masthead-call:hover, .masthead-call:focus-visible { color: var(--gold); }
+.masthead-cta {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--sans);
+  font-size: var(--t-1);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 0.55rem 1.1rem;
+  min-height: 40px;
+  border-radius: 2px;
+}
+.masthead-cta:hover, .masthead-cta:focus-visible { opacity: 0.9; }
 .masthead-toggle {
   background: none;
   border: 0;

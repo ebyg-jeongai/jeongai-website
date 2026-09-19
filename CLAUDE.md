@@ -12,7 +12,7 @@
 
 ## Contact Info (canonical)
 - **Business:** Jeong AI (a division of EBYG Media LLC)
-- **Phone:** (801) 648-9652
+- **Phone:** (801) 695-5673
 - **Email:** info@jeongai.com
 - **Address:** Fully remote — no physical address displayed
 - **Hours:** Not displayed

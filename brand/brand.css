@@ -2,30 +2,25 @@
    Jeong AI — Brand Tokens & Document Foundation
    Single source of truth for brand guidelines, invoices,
    and proposals. Mirrors the design tokens in /css/styles.css.
-   A division of EBYG Media LLC.
+   Palette + type per Jeong AI Brand Guidelines, Edition One (2026).
    ============================================================ */
 
 :root {
-  /* ---- Core palette ---- */
-  --primary:        #0a4f8a;  /* Jeong Blue — primary brand color */
-  --primary-dark:   #083d6b;  /* Deep blue — headers, emphasis */
-  --primary-light:  #1a6fb8;  /* Bright blue — links, hovers */
-  --accent:         #c7553b;  /* Terracotta — CTAs, highlights, accent rules */
-  --accent-hover:   #a8432d;
-
-  /* ---- Secondary / partnership ---- */
-  --purple:         #7C3AED;
-  --purple-mid:     #8B5CF6;
-  --purple-light:   #EDE9FE;
-  --purple-pale:    #F5F3FF;
+  /* ---- Core palette (Jeong AI Brand Guidelines, Edition One 2026) ---- */
+  --primary:        #0A4F8A;  /* Primary Blue - links, primary actions, structural accents */
+  --primary-dark:   #111827;  /* Jeong Navy - primary anchor, headers, emphasis */
+  --primary-light:  #60A5D4;  /* Sky Blue - highlights/accents, used sparingly */
+  --accent:         #C9A96E;  /* Jeong Gold - the signature accent, one per view */
+  --accent-hover:   #B8965A;
+  --blue-tint:      #E6EEF5;  /* Blue tint for table stripes / soft note panels */
 
   /* ---- Neutrals ---- */
-  --dark:           #1a1a2e;  /* Headings */
-  --text:           #3a3a4a;  /* Body text */
-  --text-light:     #6b6b7b;  /* Secondary text, labels */
-  --light:          #f7f8fa;  /* Section / table backgrounds */
+  --dark:           #111827;  /* Jeong Navy - headings */
+  --text:           #1F2937;  /* Ink - body text on light */
+  --text-light:     #4B5563;  /* Muted ink - captions, secondary text */
+  --light:          #F5F1E8;  /* Parchment - page / section backgrounds */
   --white:          #ffffff;
-  --border:         #e2e4e8;
+  --border:         rgba(31,41,55,.16);
 
   /* ---- Elevation ---- */
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
@@ -38,8 +33,8 @@
   --transition: 0.25s ease;
 
   /* ---- Type ---- */
-  --font-heading: 'Montserrat', 'Segoe UI', sans-serif;
-  --font-body: 'Source Sans 3', 'Source Sans Pro', 'Segoe UI', sans-serif;
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
 }
 
 /* ---- Reset ---- */
@@ -56,7 +51,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   color: var(--dark);
   line-height: 1.25;
-  font-weight: 600;
+  font-weight: 400;
 }
 a { color: var(--primary); text-decoration: none; }
 
@@ -70,11 +65,11 @@ a { color: var(--primary); text-decoration: none; }
   font-family: var(--font-heading);
   line-height: 1;
 }
-.jai-logo .jai-mark  { font-weight: 700; color: var(--primary); }
-.jai-logo .jai-auto  { font-weight: 500; color: var(--text-light); }
+.jai-logo .jai-mark  { font-weight: 600; color: var(--primary); }
+.jai-logo .jai-auto  { font-weight: 300; color: var(--accent); }
 /* Reversed (on dark backgrounds) */
 .jai-logo--reverse .jai-mark { color: var(--white); }
-.jai-logo--reverse .jai-auto { color: rgba(255,255,255,0.7); }
+.jai-logo--reverse .jai-auto { color: var(--accent); }
 .jai-division {
   font-family: var(--font-body);
   font-size: 0.7rem;
@@ -111,7 +106,7 @@ a { color: var(--primary); text-decoration: none; }
 .jai-seal {
   display: inline-flex; align-items: center; justify-content: center;
   border-radius: 22%;
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  background: var(--primary-dark);
 }
 .jai-seal img { height: 64%; width: auto; }
 
@@ -185,12 +180,12 @@ a { color: var(--primary); text-decoration: none; }
 }
 .party-block { flex: 1; }
 .party-label {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--accent);
+  letter-spacing: 0.14em;
+  color: var(--primary);
   margin-bottom: 0.5rem;
 }
 .party-name { font-weight: 600; color: var(--dark); font-size: 1.05rem; }
@@ -217,7 +212,7 @@ a { color: var(--primary); text-decoration: none; }
   vertical-align: top;
 }
 .doc-table tbody td.num { text-align: right; white-space: nowrap; }
-.doc-table tbody tr:nth-child(even) { background: var(--light); }
+.doc-table tbody tr:nth-child(even) { background: var(--blue-tint); }
 .doc-table .item-title { font-weight: 600; color: var(--dark); }
 .doc-table .item-desc { font-size: 0.82rem; color: var(--text-light); margin-top: 0.2rem; }
 
@@ -232,8 +227,9 @@ a { color: var(--primary); text-decoration: none; }
 .doc-totals .row.grand {
   background: var(--primary-dark);
   color: var(--white);
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-weight: 700;
+  font-variant-numeric: tabular-nums;
   font-size: 1.05rem;
   border-radius: var(--radius);
   margin-top: 0.4rem;
@@ -243,10 +239,12 @@ a { color: var(--primary); text-decoration: none; }
 /* Notes / terms */
 .doc-section { margin-top: 2.25rem; }
 .doc-section h3 {
+  font-family: var(--font-body);
   font-size: 0.8rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--accent);
+  letter-spacing: 0.14em;
+  color: var(--primary);
   margin-bottom: 0.6rem;
 }
 .doc-section p, .doc-section li { font-size: 0.88rem; color: var(--text); line-height: 1.7; }
@@ -269,7 +267,7 @@ a { color: var(--primary); text-decoration: none; }
 
 /* Editable hint — screen only */
 [contenteditable]:hover { outline: 1px dashed var(--border); }
-[contenteditable]:focus { outline: 2px solid var(--primary-light); background: var(--purple-pale); }
+[contenteditable]:focus { outline: 2px solid var(--primary-light); background: var(--blue-tint); }
 
 /* ============================================================
    DOCUMENT CONTENT COMPONENTS
@@ -279,17 +277,17 @@ a { color: var(--primary); text-decoration: none; }
 
 /* Cover band — full-bleed branded header for the first page */
 .doc-cover {
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  background: var(--primary-dark);
   color: var(--white);
   margin: -0.75in -0.75in 2rem;
   padding: 2.25in 0.75in 1.25in;
 }
 .doc-cover .doc-kicker {
-  font-family: var(--font-heading);
-  font-size: 0.72rem; font-weight: 600; letter-spacing: 2px;
-  text-transform: uppercase; color: rgba(255,255,255,0.75);
+  font-family: var(--font-body);
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: rgba(245,241,232,0.75);
 }
-.doc-cover h1 { color: var(--white); font-size: 2.6rem; margin: 0.75rem 0; max-width: 6.2in; }
+.doc-cover h1 { color: var(--white); font-family: var(--font-heading); font-weight: 300; font-style: italic; font-size: 2.6rem; margin: 0.75rem 0; max-width: 6.2in; }
 .doc-cover .subtitle { color: rgba(255,255,255,0.85); font-size: 1.05rem; max-width: 5.6in; }
 .doc-cover .accent { width: 90px; height: 3px; background: var(--accent); margin: 1.1rem 0; }
 .doc-cover .doc-meta-inline { font-size: 0.85rem; color: rgba(255,255,255,0.8); margin-top: 1.1rem; }
@@ -325,9 +323,9 @@ a { color: var(--primary); text-decoration: none; }
 /* Section eyebrow tag */
 .doc-tag {
   display: inline-block;
-  font-family: var(--font-heading);
-  font-size: 0.7rem; font-weight: 600; letter-spacing: 1.5px;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--primary); margin-bottom: 0.4rem;
 }
 
 /* Numbered step list (training / how-to) */
@@ -342,7 +340,7 @@ a { color: var(--primary); text-decoration: none; }
   position: absolute; left: -1rem; top: -0.15rem;
   width: 2rem; height: 2rem; border-radius: 50%;
   background: var(--primary); color: #fff;
-  font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem;
+  font-family: var(--font-body); font-weight: 600; font-size: 0.9rem;
   display: flex; align-items: center; justify-content: center;
 }
 .steps > li .step-title { font-family: var(--font-heading); font-weight: 600; color: var(--dark); display: block; margin-bottom: 0.2rem; }
@@ -354,23 +352,23 @@ a { color: var(--primary); text-decoration: none; }
   font-size: 0.9rem;
 }
 .callout .callout-label {
-  font-family: var(--font-heading); font-weight: 700; font-size: 0.78rem;
-  letter-spacing: 0.5px; text-transform: uppercase; display: block; margin-bottom: 0.3rem;
+  font-family: var(--font-body); font-weight: 700; font-size: 0.78rem;
+  letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 0.3rem;
   color: var(--primary);
 }
 .callout.tip  { border-left-color: #2e7d4f; background: #f0f7f1; }
 .callout.tip  .callout-label { color: #2e7d4f; }
-.callout.warn { border-left-color: var(--accent); background: #fdf1ee; }
-.callout.warn .callout-label { color: var(--accent); }
-.callout.note { border-left-color: var(--purple); background: var(--purple-pale); }
-.callout.note .callout-label { color: var(--purple); }
+.callout.warn { border-left-color: var(--accent); background: #FAF3E2; }
+.callout.warn .callout-label { color: #A6803D; }
+.callout.note { border-left-color: var(--primary-light); background: var(--blue-tint); }
+.callout.note .callout-label { color: var(--primary); }
 
 /* Table of contents */
 .doc-toc {
   background: var(--light); border: 1px solid var(--border);
   border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; margin-bottom: 2rem;
 }
-.doc-toc h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); margin-bottom: 0.6rem; }
+.doc-toc h3 { font-family: var(--font-body); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--primary); margin-bottom: 0.6rem; }
 .doc-toc ol { padding-left: 1.2rem; margin: 0; }
 .doc-toc li { margin-bottom: 0.3rem; font-size: 0.9rem; }
 .doc-toc a { color: var(--primary-dark); }
@@ -382,7 +380,7 @@ a { color: var(--primary); text-decoration: none; }
 }
 .doc-toolbar .hint { margin-right: auto; font-size: 0.82rem; color: var(--text-light); }
 .doc-toolbar button {
-  font-family: var(--font-heading); font-weight: 600; font-size: 0.85rem;
+  font-family: var(--font-body); font-weight: 600; font-size: 0.85rem;
   padding: 0.6rem 1.3rem; border-radius: var(--radius); border: 2px solid var(--primary);
   background: var(--primary); color: #fff; cursor: pointer;
 }

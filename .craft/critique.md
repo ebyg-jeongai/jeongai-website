@@ -61,3 +61,4 @@ gitignored and removed from the index.
 - Fonts load from Google Fonts. Self-hosting needs a CSP change (`font-src 'self'`).
 - privacy.html and terms.html keep their em-dashes. The brief says the legal text is unchanged, and punctuation edits to legal wording are the owner's call, not a design pass.
 - Sidebar icon glyphs in both apps and the demo were removed rather than redrawn. Navigation is text only, per the Components decision.
+- The Blueprint app interior still uses a check glyph for completed checklist items and star glyphs for tool ratings. Those carry state, not decoration, so they were left in place. The ban-list lint reports them and will keep doing so until the owner either accepts them in `.craft/ban-list.json` or a later pass redraws them as text.
