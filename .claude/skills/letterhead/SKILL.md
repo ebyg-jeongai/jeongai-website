@@ -16,7 +16,7 @@ Output filename: $ARGUMENTS (default: `EBYG_Automation_Letterhead.pdf` if no arg
 - **Parent**: A Division of EBYG Media LLC
 - **Tagline**: "AI Systems Built Around How Your Business Actually Works"
 - **Philosophy**: "Consistent presence. Genuine care. Quiet reliability."
-- **Phone**: (801) 648-9652
+- **Phone**: (801) 695-5673
 - **Email**: info@ebygautomation.com
 - **Website**: www.ebygautomation.com
 
@@ -54,7 +54,7 @@ Output filename: $ARGUMENTS (default: `EBYG_Automation_Letterhead.pdf` if no arg
 ### Footer (bottom 0.9 inches)
 - 2pt accent gold line at 0.9" from bottom, inset 0.75" from each side
 - Full-width dark navy rectangle, 0.65" tall from bottom edge
-- Centered contact: Helvetica 7.5pt light gray — `(801) 648-9652  |  info@ebygautomation.com  |  www.ebygautomation.com`
+- Centered contact: Helvetica 7.5pt light gray — `(801) 695-5673  |  info@ebygautomation.com  |  www.ebygautomation.com`
 - Centered philosophy: Helvetica-Oblique 7pt accent gold — `Consistent presence. Genuine care. Quiet reliability.`
 
 ## Implementation

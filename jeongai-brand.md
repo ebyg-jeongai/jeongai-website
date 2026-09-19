@@ -14,7 +14,7 @@ Use this document to maintain visual and tonal consistency across all content, d
 | **Page title format** | `Jeong AI — Custom Software & AI Tools Built for Your Business` |
 | **Meta description** | Software is not one size fits all. Custom software, AI agents, and automated workflows built precisely around how your business works. |
 | **Domain** | jeongai.com |
-| **Phone** | (801) 648-9652 |
+| **Phone** | (801) 695-5673 |
 | **Email** | info@jeongai.com |
 
 ---
@@ -181,7 +181,7 @@ The education side graduates into the partnership/services side — it's a pipel
 
 ```
 Business:  Jeong AI (a division of EBYG Media LLC)
-Phone:     (801) 648-9652
+Phone:     (801) 695-5673
 Email:     info@jeongai.com
 Website:   jeongai.com
 Address:   Fully remote — no physical address displayed

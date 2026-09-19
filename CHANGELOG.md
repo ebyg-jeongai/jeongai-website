@@ -3,7 +3,7 @@
 ## 2026-03-18 — Production Readiness & Azure SWA Setup
 
 ### Standardization
-- Added phone number (801) 648-9652 to all page footers
+- Added phone number (801) 695-5673 to all page footers
 - Removed placeholder social links (LinkedIn, TikTok, YouTube) across all pages
 - Added Open Graph meta tags to all pages (index, checkout, privacy, terms)
 - Added favicon link to all pages

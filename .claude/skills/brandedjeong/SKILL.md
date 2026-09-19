@@ -83,7 +83,7 @@ Determine two things:
 
 ## Canonical brand facts (use exactly)
 - **Jeong AI**, a division of **EBYG Media LLC**
-- (801) 648-9652 · info@jeongai.com · jeongai.com
+- (801) 695-5673 · info@jeongai.com · jeongai.com
 - Tagline / philosophy: *Consistent presence. Genuine care. Quiet reliability.*
 - Logo: the 정 brush mark + Montserrat "Jeong AI" wordmark (already in the template).
 - Do **not** use the retired "EBYG Automation" navy/gold branding or the old
